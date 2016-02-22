@@ -1,49 +1,40 @@
 # Flux Stores
 
-### NoteStore
+### TaskerStore
 
-Holds all persisted note data.
+Holds persisted date for taskers.
 
 ##### Actions:
-- `receiveAllNotes`
-- `receiveSingleNote`
-- `removeNote`
+- `receiveTaskers`
+  - include reviews
+- `receiveSingleTasker`
+  - for all the tasker profile info
 
 ##### Listeners:
-- `NotesIndex` (passes to `NoteIndexItem` via props)
-- `NoteDetail`
+- `TaskersIndex`
+- `TaskerDetail`
 
-### NoteFormStore
+### BookingFormStore
 
 Holds un-persisted note data to send to the API.
 
 ##### Actions:
-- `receiveNoteFormParams`
+- `receiveBookingFormParams`
 
 ##### Listeners:
-- `NoteForm`
+- `BookingForm`
 
-### NotebookStore
+### TaskStore
 
-Holds all persisted notebook data.
+Holds all persisted task data.
 
 ##### Actions:
-- `receiveAllNotebooks`
-- `receiveSingleNotebook`
-- `removeNotebook`
+- `receiveAllCategories`
+- `receiveTasksForCategory`
 
 ##### Listeners:
-- `NotebookIndex`
-
-### NotebookFormStore
-
-Holds un-persisted notebook data to send to the API.
-
-##### Actions:
-- `receiveNotebookFormParams`
-
-##### Listeners:
-- `NotebookForm`
+- `CategoryIndex`
+- `TaskIndex`
 
 ### SearchStore
 
@@ -53,14 +44,4 @@ Holds search parameters to send to the API.
 - `receiveSearchParams`
 
 ##### Listeners:
-- `SearchIndex`
-
-### SearchSuggestionStore
-
-Holds typeahead suggestions for search.
-
-##### Actions:
-- `receiveSearchSuggestions`
-
-##### Listeners:
-- `SearchSuggestions`
+- `SearchTaskIndex`

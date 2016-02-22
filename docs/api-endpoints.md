@@ -7,6 +7,7 @@
 - `GET /users/new`
 - `POST /users`
 - `PATCH /users`
+- `GET /account`
 
 ### Session
 
@@ -16,34 +17,53 @@
 
 ## JSON API
 
-### Notes
+### Categories
 
-- `GET /api/notes`
-  - Notes index/search
-  - accepts `tag_name` query param to list notes by tag
-  - accepts pagination params (if I get there)
-- `POST /api/notes`
-- `GET /api/notes/:id`
-- `PATCH /api/notes/:id`
-- `DELETE /api/notes/:id`
+- `GET /api/categories`
+- `POST /api/categories`
+- `GET /api/categories/:id`
+- `PATCH /api/categories/:id`
+- `DELETE /api/categories/:id`
 
-### Notebooks
 
-- `GET /api/notebooks`
-- `POST /api/notebooks`
-- `GET /api/notebooks/:id`
-- `PATCH /api/notebooks/:id`
-- `DELETE /api/notebooks/:id`
-- `GET /api/notebooks/:id/notes`
-  - index of all notes for a notebook
-  - accepts pagination params (if I get there)
+### Taskers
 
-### Tags
+- `GET taskers/:id`
+- `POST taskers`
+- `PATCH taskers/:id`
+- `GET tasks/:id/taskers/`
+  - filter by location
 
-- A note's tags will be included in the note show template
-- `GET /api/tags`
-  - includes query param for typeahead suggestions
-- `POST /api/notes/:note_id/tags`: add tag to note by name
-  - if note doesn't already exist, it will be created
-- `DELETE /api/notes/:note_id/tags/:tag_name`: remove tag from note by
-  name
+### AvailableTasks
+
+- `GET taskers/:id/available_tasks`
+- `POST taskers/:id/`
+- `DELETE taskers/:id/available_tasks/:id`
+- `PATCH taskers/:id/available_tasks/:id`
+
+### Tasks
+
+- `GET /api/tasks`
+- `POST /api/tasks`
+- `GET /api/tasks/:id`
+- `PATCH /api/tasks/:id`
+- `DELETE /api/tasks/:id`
+
+### Bookings
+
+- `GET /bookings/new`
+- `GET /api/bookings/:id`
+- `DELETE /api/bookings/:id`
+- `PATCH /api/bookings/:id`
+- `POST /api/bookings`
+- `GET /api/users/bookings`
+  - for a client's bookings
+- `GET /api/taskers/bookings`
+  - for a tasker's bookings
+
+### Reviews
+
+- `GET /reviews/new`
+- `GET /api/taskers/:id/reviews`
+- `POST /api/reviews/`
+- `PATCH /api/reviews/:id`
