@@ -1,19 +1,16 @@
 # View Wireframes
 
-## New User
-![new-user]
+![booking_confirmation]
+![booking_form_task_detail]
+![region_index]
+![root_header]
+![task_categories]
+![task_index]
+![tasker_profile]
+![tasker_quick_overview]
+![user_account]
 
-## New Session
-![new-session]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
-
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
-
-## NotebookForm
-![notebook-form]
 
 [booking_confirmation]: ./wireframes/booking_confirmation.png
 [booking_form_task_detail]: ./wireframes/booking_form_task_detail.png
