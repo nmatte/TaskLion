@@ -1,40 +1,45 @@
 ## Component Hierarchy
 
 * `App`
-  * `SignUpForm`
-  * `LoginForm`
 
+  * `Header`
+    * `SignUpForm`
+    * `LoginForm`
+    * `UserAccountPage`
+      * `UserOptionsIndex`
+        * `UserOptionsItem`
+      * `UserOptionsDetail`
 
-  * `UserAccountPage`
-    * `UserOptionsIndex`
-    * `UserOptionsDetail`
-
-
-  * `SearchIndex`
-    * `SearchResultIndex`
-    * `SearchResultIndexItem`
+    * `SearchBar`
+      * `SearchResultIndex`
+      * `SearchResultIndexItem`
 
   * `CategoryIndex`
     * `CategoryIndexItem`
-      * `TaskIndex`
-        * `TaskIndexItem`
 
-
+  * `TaskIndex`
+    * `TaskIndexItem`
 
   * `Booking`
+    * `BookingPhasesHeader`
     * `BookingDetailForm`
-    * `TaskerForm`
+      * `BookingDetailInput`
+    * `TaskerAssignmentSearch`
       * `QuickAssignment`
       * `FilterForm`
       * `TaskerIndex`
         * `TaskerIndexItem`
-          * `TaskerFeedback`
-            * `TaskerReviewList`
-              * `TaskerReviewListItem`
+    * `BookingConfirmationForm`
+
+  * `TaskerQuickOverview`
+    * `TaskerBlurb`
+    * `TaskerReviewList`
+      * `TaskerReviewListItem`
 
 
   * `TaskerProfile`
     * `ProfileHeader`
+    * `ProfileTabs`
     * `AvailableTaskIndex`
       * `AvailableTaskIndexItem`
     * `ReviewIndex`
