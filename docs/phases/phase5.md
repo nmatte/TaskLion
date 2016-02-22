@@ -1,40 +1,32 @@
-# Phase 5: Reminders and Garbage Collection
+# Phase 5: Bookings (1.5 days)
 
 ## Rails
 ### Models
-* Reminder
 
 ### Controllers
-* Api::RemindersController (create, destroy, index, show, update)
 
 ### Views
-* reminders/index.json.jbuilder
 
 ## Flux
+
 ### Views (React Components)
-* RemindersIndex
-  - ReminderIndexItem
-* ReminderShow
-* ReminderForm
 
 ### Stores
-* Reminder
 
 ### Actions
-* ApiActions.receiveAllReminders -> triggered by ApiUtil
-* ApiActions.receiveSingleReminder
-* ApiActions.deleteReminder
-* ReminderActions.fetchAllReminders -> triggers ApiUtil
-* ReminderActions.fetchSingleReminder
-* ReminderActions.createReminder
-* ReminderActions.updateReminder
-* ReminderActions.destroyReminder
 
 ### ApiUtil
-* ApiUtil.fetchAllReminders
-* ApiUtil.fetchSingleReminder
-* ApiUtil.createReminder
-* ApiUtil.updateReminder
-* ApiUtil.destroyReminder
 
 ## Gems/Libraries
+
+
+
+
+
+**Objective:** Bookings are tasks assigned to a tasker at a given date.
+
+- [ ] create `Booking` model
+- build out API, Flux loop, and components for:
+  - [ ] Booking CRUD
+  - [ ] Booking form with specialized options (e.g. some tasks ask if they need a car)
+- Use CSS to style new views

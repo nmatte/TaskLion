@@ -1,4 +1,4 @@
-# FresherNote
+# TaskLion
 
 [Heroku link][heroku] **NB:** This should be a link to your production site
 
@@ -6,7 +6,7 @@
 
 ## Minimum Viable Product
 
-TaskCat is a web application inspired by TaskRabbit and built using Ruby on Rails and React.js. TaskCat allows users to:
+TaskLion is a web application inspired by TaskRabbit and built using Ruby on Rails and React.js. TaskLion allows users to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your
 progress. Put an x between the brackets for a checkmark: [x] -->
@@ -47,77 +47,85 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] user signup/signin pages
 - [ ] blank landing page after signin
 
-### Phase 2: Task, Booking, Review Models; API, basic APIUtil (1 day)
+### Phase 2: Task and TaskCategory Models, API, basic APIUtil (1 day)
 
-**Objective:** Bookings and reviews can be created, read, edited and destroyed through the API. Tasks and taskers can be read.
+**Objective:** Tasks and categories can be created, read, edited and destroyed through the API. Users can modify account.
 
-- [ ] create `Task`, `Booking`, `Review` models
-- [ ] extend `User` to include `Tasker` functionality
+- [ ] create `Task`, `TaskCategory` models
 - [ ] seed the database with a small amount of test data
-- [ ] CRUD API for tasks (`TaskersController`, `TasksContoller` etc.)
+- [ ] CRUD API for tasks (`TasksContoller`)
 - [ ] jBuilder views for tasks
 - [ ] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
+- [ ] create user account page
 
-### Phase 3: Flux Architecture and Router (1 day)
 
-**Objective:** Task bookings can be created, read, edited, and destroyed through the user interface.
-Tasker information can be read through the interface.
-
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
-- implement each note component, building out the flux loop as needed.
-  - [ ] `TasksIndex`
-  - [ ] `TaskIndexItem`
-  - [ ] `BookingForm`
-  - [ ] `TaskerReviewIndex`
-  - [ ] `TaskerReviewItem`
-- [ ] save Notes to the DB when the form loses focus or is left idle
-  after editing.
-
-### Phase 4: Start Styling (1 days)
-
-**Objective:** Existing pages (including singup/signin) will look good.
+### Phase 3: Initial Styling (0.5 days)
+**Objective:** Existing pages will look good.
 
 - [ ] create a basic style guide
 - [ ] position elements on the page
 - [ ] add basic colors & styles
+- [ ] style the homepage and add some static content
 
-### Phase 5: Notebooks (1 day)
+### Phase 4: Flux Architecture and Router; Tasker models (1 day)
 
-**Objective:** Notes belong to Notebooks, and can be viewed by notebook.
+**Objective:** Taskers and their AvailableTasks can be created, read, updated, and destroyed through the API.
 
-- [ ] create `Notebook` model
+- [ ] setup the flux loop with skeleton files
+- [ ] setup React Router
+- implement components for existing API
+  - [ ] `TaskCategory`
+  - [ ] `TasksIndex`
+  - [ ] `TaskIndexItem`
+  - [ ] `TaskerIndex`
+  - [ ] `TaskerIndexItem`
+  - [ ] `TaskerQuickOverview`
+
+### Phase 5: Further Styling (1 day)
+**Objective:** Components will look good.
+
+- [ ] style current components
+- [ ] add more static content to landing page
+
+### Phase 5: Bookings (1.5 days)
+
+**Objective:** Bookings are tasks assigned to a tasker at a given date.
+
+- [ ] create `Booking` model
 - build out API, Flux loop, and components for:
-  - [ ] Notebook CRUD
-  - [ ] adding notes requires a notebook
-  - [ ] moving notes to a different notebook
-  - [ ] viewing notes by notebook
+  - [ ] Booking CRUD
+  - [ ] Booking form with specialized options (e.g. some tasks ask if they need a car)
 - Use CSS to style new views
 
-Phase 3 adds organization to the Notes. Notes belong to a Notebook,
-which has its own `Index` view.
+### Phase 6: Tasker reviews (0.5 days)
 
-### Phase 6: Tags (1.5 days)
+**Objective:** Taskers can have reviews on their profile.
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
-
-- [ ] create `Tag` model and join table
 - build out API, Flux loop, and components for:
-  - [ ] fetching tags for notebook
-  - [ ] adding tags to notebook
-  - [ ] creating tags while adding to notebooks
-  - [ ] searching notebooks by tag
+  - [ ] fetching tasker's reviews
+  - [ ] getting review highlights
+  - [ ] aggregating review data (e.g. "97% positive")
 - [ ] Style new elements
 
-### Phase 7: Allow Complex Styling in Notes (0.5 days)
+### Phase 6: Tasker profiles (1 day)
 
-**objective:** Enable complex styling of notes.
+**Objective:** Taskers have a full profile you can view.
 
-- [ ] Integrate `react-quill` (based on Quill.js).
-- [ ] Use Rails helpers to sanitize HTML before rendering.
-- [ ] Style the new Quill elements.
+- build out API, Flux loop, and components for:
+  - [ ] fetching tasker's blurb
+  - [ ] fetching associated reviews
+- [ ] Style new elements
+
+### Phase 7: Search (1 day)
+
+**Objective:** Tasks can be searched.
+
+- build out API, Flux loop, and components for:
+  - [ ] searching for tasks
+- [ ] Style new elements
+
 
 ### Phase 8: Styling Cleanup and Seeding (1 day)
 
@@ -128,14 +136,17 @@ which has its own `Index` view.
 - [ ] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)
-- [ ] Search through notes for blocks of text
-- [ ] Pagination / infinite scroll for Notes Index
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
-- [ ] Multiple sessions
+- [ ] Add regions that TaskLion is restricted to
+- [ ] Some functionality for the tasker side
+- [ ] quick assignment feature
+- [ ] improve search?
+- [ ] Extra cute pictures of cats
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
+[phase-six]: ./docs/phases/phase6.md
+[phase-seven]: ./docs/phases/phase7.md
+[phase-eight]: ./docs/phases/phase8.md
