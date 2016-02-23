@@ -49,7 +49,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 ### Phase 2: Task and TaskCategory Models, API, basic APIUtil (1 day)
 
-**Objective:** Tasks and categories can be created, read, edited and destroyed through the API. Users can modify account.
+**Objective:** Tasks and categories can be read through the API. Users can modify account.
 
 - [ ] create `Task`, `TaskCategory` models
 - [ ] seed the database with a small amount of test data

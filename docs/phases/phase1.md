@@ -27,3 +27,12 @@
 
 ## Gems/Libraries
 * BCrypt (Gem)
+
+
+<!-- I encountered a silly bug that I hadn't seen before. My user model was
+failing validations when it shouldn't have. I had provided an attr_reader for
+some of the model's attributes, i.e. :email, :fname, :lname.
+
+The problem was that by specifying an attr_reader for these attributes,
+I was overriding the ActiveRecord::Base version of these readers. Thus the
+attr_readers were returning nil rather than the actual values. -->

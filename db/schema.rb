@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223181728) do
+ActiveRecord::Schema.define(version: 20160223220915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",                                  null: false
+    t.string   "description",                           null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "{:index=>true, :foreign_key=>true}_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.integer  "category_id", null: false
+    t.string   "name",        null: false
+    t.json     "details"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "description", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false
