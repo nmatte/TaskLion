@@ -55,7 +55,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [x] seed the database with a small amount of test data
 - [x] CRUD API for tasks (`TasksController`, `CategoriesController`)
 - [x] jBuilder views for tasks
-- [ ] setup Webpack & Flux scaffold
+- [x] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
 - [ ] create user account page
