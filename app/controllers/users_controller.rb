@@ -13,16 +13,19 @@
 #
 
 class UsersController < ApplicationController
+  before_action :require_signed_out, only: [:new, :create]
   def new
   end
 
   def create
-    user = User.new(user_params)
-
+    user = User.new(email: user_params[:email], password: user_params[:password], lname: user_params[:lname], fname: user_params[:fname])
+    require 'byebug'; debugger
     if user.save
+      log_in_user(user)
       redirect_to root_url
     else
-      flash[:errors] = user.errors.full_messages
+      flash[:errors] = user.errors.full_messages.concat([user_params])
+      render :new
     end
   end
 

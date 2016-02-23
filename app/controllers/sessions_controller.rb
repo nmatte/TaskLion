@@ -1,11 +1,14 @@
 class SessionsController < ApplicationController
+  before_action :require_signed_out, only: [:create, :new]
+  before_action :require_signed_in, only: [:destroy]
   def create
-    @user = User.find_by_credentials(user_params[:email], user_params[:password])
+    user = User.find_by_credentials(user_params[:email], user_params[:password])
 
-    if @user.save
-      #TODO
+    if user.save
+      log_in_user(user)
+      redirect_to :root
     else
-      #TODO
+      flash.now[:errors] = user.errors.full_messages
     end
   end
 
@@ -14,6 +17,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out!
+    redirect_to root_url
   end
 
   private
