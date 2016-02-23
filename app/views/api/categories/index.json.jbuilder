@@ -1,4 +1,3 @@
 json.array! @categories do |category|
-  json.name category.name
-  json.description category.description
+  json.partial! 'api/categories/category', category: category
 end

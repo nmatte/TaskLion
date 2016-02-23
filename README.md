@@ -51,10 +51,10 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Tasks and categories can be read through the API. Users can modify account.
 
-- [ ] create `Task`, `TaskCategory` models
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for tasks (`TasksContoller`)
-- [ ] jBuilder views for tasks
+- [x] create `Task`, `TaskCategory` models
+- [x] seed the database with a small amount of test data
+- [x] CRUD API for tasks (`TasksController`, `CategoriesController`)
+- [x] jBuilder views for tasks
 - [ ] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.

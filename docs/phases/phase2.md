@@ -2,11 +2,19 @@
 
 ## Rails
 ### Models
+* Category
+* Task
 
 ### Controllers
+* TasksController(read)
+* CategoriesController(read)
 
 ### Views
-
+* api/categories/\_category.json.jbuilder
+* api/categories/new.json.jbuilder
+* api/categories/index.json.jbuilder
+* api/task/\_task.json.jbuilder
+* api/task/show.json.jbuilder
 ## Flux
 
 ### Views (React Components)
@@ -18,18 +26,3 @@
 ### ApiUtil
 
 ## Gems/Libraries
-
-
-
-
-
-**Objective:** Tasks and categories can be created, read, edited and destroyed through the API. Users can modify account.
-
-- [ ] create `Task`, `TaskCategory` models
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for tasks (`TasksContoller`)
-- [ ] jBuilder views for tasks
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
-- [ ] create user account page
