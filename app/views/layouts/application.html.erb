@@ -8,12 +8,13 @@
 </head>
 <body>
 
+<%= link_to "Home", root_url %>
 <% if signed_in? %>
-  <h3>Hola, <%= current_user.fname %> <%= current_user.lname %></h3>
-  <%= button_to "Sign out", session_url, method: :delete %>
+  <%= link_to "Account", account_url %>
   <% else %>
   <%= link_to "Sign up", new_user_url %>
-  <%= link_to "Sign in", new_session_url %>
+  <%= link_to "How it works", root_url %>
+  <%= link_to "Log in", new_session_url %>
 <% end %>
 
 <% if flash[:errors] %>

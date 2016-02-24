@@ -56,8 +56,8 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [x] CRUD API for tasks (`TasksController`, `CategoriesController`)
 - [x] jBuilder views for tasks
 - [x] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
+- [x] setup `APIUtil` to interact with the API
+- [x] test out API interaction in the console.
 - [ ] create user account page
 
 

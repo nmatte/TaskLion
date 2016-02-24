@@ -1,3 +1,3 @@
 # json.name category.name
 # json.description category.description
-json.extract! category, :name, :description
+json.extract! category, :id, :name, :description

@@ -3,12 +3,17 @@ class SessionsController < ApplicationController
   before_action :require_signed_in, only: [:destroy]
   def create
     user = User.find_by_credentials(user_params[:email], user_params[:password])
-
-    if user.save
-      log_in_user(user)
-      redirect_to :root
+    if user
+      if user.save
+        log_in_user(user)
+        redirect_to :root
+      else
+        flash.now[:errors] = user.errors.full_messages
+        render :new
+      end
     else
-      flash.now[:errors] = user.errors.full_messages
+      flash.now[:errors] = ["Incorrect login info, please try again."]
+      render :new
     end
   end
 

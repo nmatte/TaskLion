@@ -14,12 +14,19 @@
 
 class UsersController < ApplicationController
   before_action :require_signed_out, only: [:new, :create]
+  before_action :require_signed_in, only: [:edit, :update]
   def new
   end
 
+  def edit
+  end
+
+  def update
+    # user = User.find_by(session_token: session[:session_token]);
+  end
+
   def create
-    user = User.new(email: user_params[:email], password: user_params[:password], lname: user_params[:lname], fname: user_params[:fname])
-    require 'byebug'; debugger
+    user = User.new(user_params)
     if user.save
       log_in_user(user)
       redirect_to root_url
