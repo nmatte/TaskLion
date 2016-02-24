@@ -1,13 +1,14 @@
 var React = require('react'),
     SessionStore = require('../stores/session'),
+    AccountDetail = require('./account_detail'),
+    PasswordDetail = require('./password_detail'),
     ApiUtil = require('../util/api_util'),
     Link = require('react-router').Link;
 
 module.exports = React.createClass({
   getInitialState: function () {
     return {
-      user: SessionStore.user(),
-      tab: "account"
+      user: SessionStore.user()
     };
   },
 
@@ -18,45 +19,36 @@ module.exports = React.createClass({
   },
 
   componentDidMount: function () {
-    SessionStore.addListener(this._onSessionChange);
+    this.sessionListener = SessionStore.addListener(this._onSessionChange);
     ApiUtil.fetchCurrentUser();
   },
 
-  _showAccount: function () {
-    this.setState({
-      tab: "account"
-    });
-  },
-
-  _showPassword: function () {
-    this.setState({
-      tab: "password"
-    });
+  componentWillUnmount: function () {
+    this.sessionListener.remove();
+    this.sessionListener = null;
   },
 
   render: function () {
-    var logoutLink = <Link to={"/"}>Log Out</Link>;
-
-
-    var content;
-
-    switch (this.state.tab) {
-      case "account":
-        content = <text>{this.state.user.fname}</text>;
-        break;
-      case "password":
-        content = <text>password</text>;
-    }
 
     return (
-      <div>
-        <h3>Your Account</h3>
-        <ul>
-          <li onClick={this._showAccount}>Account</li>
-          <li onClick={this._showPassword}>Password</li>
-          <li>{logoutLink}</li>
+      <div className="accountContainer">
+        <h1 className="accountHeader">Your Account</h1>
+
+      <div className="accountIndex">
+
+        <ul className="accountList">
+          <li>
+            <Link to="/acct" className="accountLink">Account</Link>
+          </li>
+          <li>
+            <Link to="/password" className="accountLink">Password</Link>
+          </li>
+          <li>
+            <Link to={"/"} className="accountLink">Log Out</Link>
+          </li>
         </ul>
-        <div>{content}</div>
+        <div className="accountDetail">{this.props.children}</div>
+      </div>
       </div>
     );
   }

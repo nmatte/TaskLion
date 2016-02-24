@@ -58,7 +58,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [x] setup Webpack & Flux scaffold
 - [x] setup `APIUtil` to interact with the API
 - [x] test out API interaction in the console.
-- [ ] create user account page
+- [x] create user account page
 
 
 ### Phase 3: Initial Styling (0.5 days)

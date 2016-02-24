@@ -1,0 +1,60 @@
+body {
+ font-family: 'Roboto', sans-serif;
+ font-weight: 300;
+
+ background-color: #F5F6F6;
+}
+
+.accountIndex {
+ padding: 0px;
+ width: 900px;
+ background-color: white;
+ display: inline-block;
+}
+
+.accountHeader {
+ color: #323A3B;
+}
+
+.accountList {
+ list-style: none;
+ float: left;
+ display: inline-block;
+ margin: 0px;
+ padding: 0px;
+ border-right: 1px solid #EBECEC;
+}
+
+.accountLink {
+ text-decoration: none;
+ width: 184px;
+ display: inline-block;
+ font-size: 14px;
+ font-weight: 300;
+ padding: 0px 0px 0px 16px;
+
+ line-height: 40px;
+ color: #828A8B;
+}
+
+.accountContainer {
+ width: 900px;
+ margin: auto;
+}
+
+.accountLink:visited {
+ color: #828A8B;
+}
+
+.accountLink:hover {
+ background-color: #1DA3BF;
+ color: white;
+}
+
+
+
+.accountDetail {
+ width: 615px;
+ padding: 16px;
+ float:left;
+}
