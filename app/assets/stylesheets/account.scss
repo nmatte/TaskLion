@@ -16,7 +16,7 @@ body {
  color: #323A3B;
 }
 
-.accountList {
+.account-list {
  list-style: none;
  float: left;
  display: inline-block;
@@ -25,8 +25,7 @@ body {
  border-right: 1px solid #EBECEC;
 }
 
-.accountLink {
- text-decoration: none;
+.account-link {
  width: 184px;
  display: inline-block;
  font-size: 14px;
@@ -42,16 +41,14 @@ body {
  margin: auto;
 }
 
-.accountLink:visited {
+.account-link:visited {
  color: #828A8B;
 }
 
-.accountLink:hover {
+.account-link:hover {
  background-color: #1DA3BF;
  color: white;
 }
-
-
 
 .accountDetail {
  width: 615px;

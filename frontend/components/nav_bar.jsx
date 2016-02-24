@@ -4,11 +4,13 @@ var React = require('react'),
 module.exports = React.createClass({
   render: function () {
 
-    
+
     return (
-      <div>
-        <Link to={"/dashboard"}>Home</Link>
-        <Link to={"/account"}>Account</Link>
+      <div className="nav-bar">
+        <div className="navBarThin">
+          <Link to={"/account"} className="nav-bar-link">Account</Link>
+          <Link to={"/dashboard"} className="nav-bar-link">Home</Link>
+        </div>
       </div>
     );
   }

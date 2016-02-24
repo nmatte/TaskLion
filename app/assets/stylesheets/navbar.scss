@@ -1,0 +1,38 @@
+.nav-bar {
+  padding: 12px 0px 12px 0px;
+  display: block;
+  background-color: white;
+  height: 36px;
+  border-bottom: 1px solid #EBECEC;
+}
+
+.navBarThin {
+  padding: 0px 36px 0px 36px;
+  display: block;
+  position: relative;
+}
+
+.nav-bar-link {
+  font-size: 13px;
+  float: right;
+  display: inline-block;
+  padding: 0px 16.8px 0px 16.8px;
+  line-height: 36px;
+  color: #626A6B;
+}
+
+.nav-bar-link:visited {
+  color: #626A6B;
+}
+
+.nav-bar-link:not(:last-child):before {
+  border-left: 1px solid #cfd2d3;
+  height: 1.25rem;
+  content: "";
+  position: absolute;
+  right: 115px;
+  transform: translateY(50%);
+}
+
+// CFD2D3 link divider
+// EBECEC
