@@ -1,6 +1,7 @@
 var React = require('react'),
     SessionStore = require('../stores/session'),
-    ApiUtil = require('../util/api_util');
+    ApiUtil = require('../util/api_util'),
+    Link = require('react-router').Link;
 
 module.exports = React.createClass({
   getInitialState: function () {
@@ -34,6 +35,9 @@ module.exports = React.createClass({
   },
 
   render: function () {
+    var logoutLink = <Link to={"/"}>Log Out</Link>;
+
+
     var content;
 
     switch (this.state.tab) {
@@ -50,7 +54,7 @@ module.exports = React.createClass({
         <ul>
           <li onClick={this._showAccount}>Account</li>
           <li onClick={this._showPassword}>Password</li>
-          <li>Log Out</li>
+          <li>{logoutLink}</li>
         </ul>
         <div>{content}</div>
       </div>

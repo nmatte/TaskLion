@@ -21,9 +21,12 @@ module.exports = {
     });
   },
 
-  updateUser: function () {
+  updateUser: function (user) {
     $.ajax({
       url: '/api/current_user',
+      method: 'PATCH',
+      data: user,
+      dataType: 'json',
       success: function (response) {
         console.log(response);
         ApiActions.receiveCurrentUser(response);

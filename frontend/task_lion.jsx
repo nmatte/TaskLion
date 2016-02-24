@@ -10,7 +10,7 @@ window.ApiUtil = ApiUtil;
 
 var routes = (
   <Route component={App} path="/">
-    <Route component={Account} path="account">
+    <Route component={Account} path="/account">
     </Route>
   </Route>
 );
