@@ -43,9 +43,12 @@ module.exports = React.createClass({
       );
     }
     return (
-      <ul>
-        {content}
-      </ul>
+      <div className="task-body">
+        <ul className="task-container">
+          {content}
+        </ul>
+        <div className="marketing-col"></div>
+      </div>
     );
   }
 });
