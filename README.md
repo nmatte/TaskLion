@@ -64,21 +64,21 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 ### Phase 3: Initial Styling (0.5 days)
 **Objective:** Existing pages will look good.
 
-- [ ] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
-- [ ] style the homepage and add some static content
+- [x] position elements on the page
+- [x] add basic colors & styles
+- [x] style the homepage and add some static content
 
 ### Phase 4: Flux Architecture and Router; Tasker models (1 day)
 
-**Objective:** Taskers and their AvailableTasks can be created, read, updated, and destroyed through the API.
+**Objective:** Taskers and their AvailableTasks can be read through the API.
 
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
+- [x] setup the flux loop with skeleton files
+- [x] setup React Router
 - implement components for existing API
-  - [ ] `TaskCategory`
-  - [ ] `TasksIndex`
-  - [ ] `TaskIndexItem`
+  - [x] `CategoryIndex`
+  - [x] `CategoryIndexItem`
+  - [x] `TaskIndex`
+  - [x] `TaskIndexItem`
   - [ ] `TaskerIndex`
   - [ ] `TaskerIndexItem`
   - [ ] `TaskerQuickOverview`

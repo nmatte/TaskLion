@@ -11,11 +11,19 @@ module.exports = {
     });
   },
 
+  fetchSingleCategory: function (id) {
+    $.ajax({
+      url: '/api/categories/' + id,
+      success: function (response) {
+        ApiActions.receiveSingleCategory(response);
+      }
+    });
+  },
+
   fetchCurrentUser: function () {
     $.ajax({
       url: '/api/current_user',
       success: function (response) {
-        console.log(response);
         ApiActions.receiveCurrentUser(response);
       }
     });
@@ -28,7 +36,6 @@ module.exports = {
       data: user,
       dataType: 'json',
       success: function (response) {
-        console.log(response);
         ApiActions.receiveCurrentUser(response);
       }
     });

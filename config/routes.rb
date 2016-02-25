@@ -6,7 +6,10 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :categories, only: [:index, :show]
-    resources :tasks, only: [:show]
+    resources :tasks, only: [:show] do
+      resources :taskers, only: [:index]
+    end
+    resources :taskers, only: [:show]
     match 'current_user', to: 'users#current', via: [:get]
   end
 

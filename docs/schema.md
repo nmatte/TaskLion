@@ -15,16 +15,17 @@ card_expiration | int       |
 security_code   | int       |
 zip_code        | int       |
 
-## tasker_profiles
+## tasker
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 user_id         | integer   | not null, foreign key (references users), indexed
+<!-- TODO: add regions -->
 region_id       | integer   | not null, foreign key (references regions)
 is_elite        | boolean   | not null, default: false
 blurbs          | json      | not null
 vehicles        | json      |
-last_online     | datetime  | not null
+last_online     | datetime  |
 
 ## available_tasks
 column name | data type | details

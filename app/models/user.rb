@@ -2,14 +2,15 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  email           :string           not null
-#  password_digest :string           not null
-#  session_token   :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  lname           :string           not null
-#  fname           :string           not null
+#  id                                    :integer          not null, primary key
+#  email                                 :string           not null
+#  password_digest                       :string           not null
+#  session_token                         :string
+#  created_at                            :datetime         not null
+#  updated_at                            :datetime         not null
+#  lname                                 :string           not null
+#  fname                                 :string           not null
+#  {:index=>true, :foreign_key=>true}_id :integer
 #
 
 class User < ActiveRecord::Base
@@ -18,6 +19,7 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 6, allow_nil: true}
   validates :fname, :lname, presence: true
   validates :email, uniqueness: true, presence: true
+  has_one :tasker
   # after_initialize :ensure_session_token
 
   def self.find_by_credentials(email, password)

@@ -4,6 +4,7 @@ var React = require('react'),
     Account = require('./components/account'),
     AccountDetail = require('./components/account_detail'),
     PasswordDetail = require('./components/password_detail'),
+    TaskIndex = require('./components/task_index'),
     App = require('./components/app'),
     Dashboard = require('./components/dashboard'),
     Router = require('react-router').Router,
@@ -17,8 +18,13 @@ var routes = (
       <Route component={AccountDetail} path="/acct"/>
       <Route component={PasswordDetail} path="/password"/>
     </Route>
+
     <Route component={Dashboard} path="/dashboard">
     </Route>
+
+    <Route component={TaskIndex} path="/category/:category_id">
+    </Route>
+
   </Route>
 );
 

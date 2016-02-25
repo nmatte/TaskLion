@@ -18,10 +18,18 @@ CategoryStore.all = function () {
   return categories;
 };
 
+CategoryStore.find = function (id) {
+  return _categories[id];
+};
+
 CategoryStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case CategoryConstants.RECEIVE_ALL_CATEGORIES:
       this.setCategories(payload.categories);
+      CategoryStore.__emitChange();
+      break;
+    case CategoryConstants.RECEIVE_SINGLE_CATEGORY:
+      _categories[payload.category.id] = payload.category;
       CategoryStore.__emitChange();
       break;
   }

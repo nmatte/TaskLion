@@ -44,3 +44,91 @@ Category.create(
   name: "Hunting",
   description: "Need a mouser? We've got some of the best hunters you'll find."
 )
+
+b = User.create(
+  fname: "Breakfast",
+  lname: "Frey",
+  email: "breakfast@catmail.com",
+  password: "password"
+)
+
+Tasker.create(
+  user: b,
+  blurbs: {}
+)
+
+m = User.create(
+  fname: "Markov",
+  lname: "Stark",
+  email: "markov@catmail.com",
+  password: "password"
+)
+
+Tasker.create(
+  user: m,
+  is_elite: true,
+  blurbs: {}
+)
+
+c = User.create(
+  fname: "Curie",
+  lname: "Stark",
+  email: "curie@catmail.com",
+  password: "password"
+)
+
+Tasker.create(
+  user: c,
+  is_elite: true,
+  blurbs: {}
+)
+
+g = User.create(
+  fname: "Gizmo",
+  lname: "Tully",
+  email: "gizmo@catmail.com",
+  password: "password"
+)
+
+Tasker.create(
+  user: g,
+  blurbs: {}
+)
+
+a = User.create(
+  fname: "Aslan",
+  lname: "Lewis",
+  email: "aslan@catmail.com",
+  password: "password"
+)
+
+Tasker.create(
+  user: a,
+  is_elite: true,
+  blurbs: {}
+)
+
+gu = User.create(
+  fname: "Guenhywar",
+  lname: "Salvatore",
+  email: "guen@catmail.com",
+  password: "password"
+)
+
+Tasker.create(
+  user: gu,
+  blurbs: {}
+)
+
+k = User.create(
+  fname: "Kasha",
+  lname: "Pendragon",
+  email: "kasha@catmail.com",
+  password: "password"
+)
+
+Tasker.create(
+  user: k,
+  is_elite: true,
+  blurbs: {}
+)

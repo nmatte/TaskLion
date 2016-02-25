@@ -10,6 +10,13 @@ module.exports = {
     });
   },
 
+  receiveSingleCategory: function (category) {
+    Dispatcher.dispatch({
+      actionType: CategoryConstants.RECEIVE_SINGLE_CATEGORY,
+      category: category
+    });
+  },
+
   receiveCurrentUser: function (currentUser) {
     Dispatcher.dispatch({
       actionType: UserConstants.RECEIVE_CURRENT_USER,

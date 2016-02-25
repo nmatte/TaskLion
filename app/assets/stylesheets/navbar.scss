@@ -8,6 +8,7 @@
 
 .navBarThin {
   padding: 0px 36px 0px 36px;
+  height: 36px;
   display: block;
   position: relative;
 }
@@ -32,6 +33,14 @@
   position: absolute;
   right: 115px;
   transform: translateY(50%);
+}
+
+.color-logo {
+  height: 24px;
+  width: auto;
+  position: absolute;
+  top: 20%;
+  // transform: translateY(50%);
 }
 
 // CFD2D3 link divider

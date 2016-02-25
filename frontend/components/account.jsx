@@ -35,7 +35,6 @@ module.exports = React.createClass({
         <h1 className="accountHeader">Your Account</h1>
 
       <div className="accountIndex">
-
         <ul className="account-list">
           <li>
             <Link to="/acct" className="account-link">Account</Link>
