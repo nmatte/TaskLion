@@ -1,0 +1,81 @@
+.category-container {
+  list-style: none;
+  padding: 0px;// 36px 0px 36px;
+  display: table;
+  margin: auto;
+  width: 100%;
+}
+
+.category-index-item {
+  float: left;
+  padding-left: 36px;
+  height: 311px;
+  width: 30%;
+}
+
+.category-tile {
+  height: 275px;
+
+  position: relative;
+
+  :hover .category-title {
+    color: #004C5A;
+  }
+}
+
+.category-title {
+  max-width: 85%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 400;
+  text-align: center;
+  padding: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.25rem;
+  color: #158AA2;
+  transition: 0.2s;
+}
+// 
+// .category-tile:hover .category-title {
+//   color: #004C5A;
+// }
+
+.category-title:visited {
+  color: #158AA2;
+}
+
+.category-subtitle {
+  font-size: 0.875rem;
+  color: #757D7E;
+
+  :visited {
+    color: #757D7E;
+  }
+}
+// .category-subtitle:visited {
+// }
+
+
+.title-bar {
+  background: white;
+  text-align: center;
+  // padding: 0.6em 0px 0.6em 0px;
+  margin: 0px;
+  padding: 10.8px;
+  position: absolute;
+  // width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.shadow {
+  -webkit-box-shadow: 0px 1px 1px 1px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    0px 1px 1px 1px #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         0px 1px 1px 1px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}

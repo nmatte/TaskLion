@@ -74,14 +74,16 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [x] setup the flux loop with skeleton files
 - [x] setup React Router
+- [x] create Tasker model with seed data
+- [x] create AvailableTasks model with seed data
 - implement components for existing API
   - [x] `CategoryIndex`
   - [x] `CategoryIndexItem`
   - [x] `TaskIndex`
   - [x] `TaskIndexItem`
-  - [ ] `TaskerIndex`
-  - [ ] `TaskerIndexItem`
-  - [ ] `TaskerQuickOverview`
+  - [x] `TaskerIndex`
+  - [x] `TaskerIndexItem`
+  <!-- - [ ] `TaskerQuickOverview` -->
 
 ### Phase 5: Further Styling (1 day)
 **Objective:** Components will look good.

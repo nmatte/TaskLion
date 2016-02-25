@@ -34,9 +34,9 @@ module.exports = React.createClass({
       }
     );
     return (
-      <div>
+      <ul className="category-container">
         {catLis}
-      </div>
+      </ul>
     );
   }
 });

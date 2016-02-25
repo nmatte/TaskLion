@@ -14,13 +14,21 @@ module.exports = React.createClass({
   },
 
   render: function () {
-    var descr = this._truncateDescription(this.props.category.description);
+    // var descr = this._truncateDescription(this.props.category.description);
+    var descr = this.props.category.description;
     return (
-      <li>
-        <Link to={"/category/" + this.props.category.id}>linky</Link>
-        {this.props.category.name}
-        <br/>
-        {descr}
+      <li className="category-index-item">
+        <Link to={"/category/" + this.props.category.id}>
+          <div className="category-tile shadow">
+            <div className="title-bar">
+              <h4 className="category-title">{this.props.category.name}</h4>
+              <text className="category-subtitle">{descr}</text>
+            </div>
+          </div>
+
+        </Link>
+
+
       </li>
     );
   }

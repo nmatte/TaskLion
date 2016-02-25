@@ -4,6 +4,7 @@ class Api::TaskersController < ApplicationController
   end
 
   def index
-    @taskers = Tasker.all
+    task = Task.find(params[:task_id])
+    @taskers = task.taskers
   end
 end

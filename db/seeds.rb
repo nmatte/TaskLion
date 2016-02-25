@@ -6,9 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Category.create(
+  name: "Featured",
+  description: "View our most popular tasks."
+)
+
 deco = Category.create(
   name: "Decorating",
-  description: "Let us help with all your decoration needs, from drape restructuring to adding new scents to your carpet."
+  description: "Let us help with all your decoration needs."
 )
 
 Task.create(
@@ -35,100 +40,123 @@ Task.create(
   description: "You never know when your home decor is positioned precariously. We'll bring those weaknesses to your attention."
 )
 
-Category.create(
+therapy = Category.create(
   name: "Therapy",
   description: "We'll make you feel refreshed and happy with these laid-back taskers."
 )
 
-Category.create(
+Task.create(
+  category: therapy,
+  name: "Purring",
+  description: "We'll soothe you to sleep with our cuddliest taskers."
+)
+
+Task.create(
+  category: therapy,
+  name: "Lap Sitting",
+  description: "Keep yourself warm and your pants covered in cat hair."
+)
+
+Task.create(
+  category: therapy,
+  name: "Leg Rubbing",
+  description: "Our expert taskers might even beg for treats."
+)
+
+Task.create(
+  category: therapy,
+  name: "Ignoring",
+  description: "..."
+)
+
+hunting = Category.create(
   name: "Hunting",
   description: "Need a mouser? We've got some of the best hunters you'll find."
 )
 
-b = User.create(
-  fname: "Breakfast",
-  lname: "Frey",
-  email: "breakfast@catmail.com",
-  password: "password"
+Task.create(
+  category: hunting,
+  name: "Mouse Removal",
+  description: "We'll take care of those pesky critters!"
 )
 
-Tasker.create(
-  user: b,
-  blurbs: {}
+Task.create(
+  category: hunting,
+  name: "Bird Removal",
+  description: "The bells come off for this one. That songbird outside your window won't pose a problem anymore."
 )
 
-m = User.create(
-  fname: "Markov",
-  lname: "Stark",
-  email: "markov@catmail.com",
-  password: "password"
+Task.create(
+  category: hunting,
+  name: "Miscellaneous",
+  description: "We can't guarantee we'll catch it, but we'll careen around your house as necessary."
 )
 
-Tasker.create(
-  user: m,
-  is_elite: true,
-  blurbs: {}
-)
+b = User.create(fname: "Breakfast", lname: "Frey", email: "breakfast@catmail.com",
+  password: "password")
+Tasker.create(user_id: b.id, blurbs: {})
 
-c = User.create(
-  fname: "Curie",
-  lname: "Stark",
-  email: "curie@catmail.com",
-  password: "password"
-)
+m = User.create(fname: "Markov", lname: "Stark", email: "markov@catmail.com",
+  password: "password")
+Tasker.create(user_id: m.id, is_elite: true,  blurbs: {})
 
-Tasker.create(
-  user: c,
-  is_elite: true,
-  blurbs: {}
-)
+c = User.create(fname: "Curie", lname: "Stark", email: "curie@catmail.com",
+  password: "password")
+Tasker.create(user_id: c.id, is_elite: true,  blurbs: {})
 
-g = User.create(
-  fname: "Gizmo",
-  lname: "Tully",
-  email: "gizmo@catmail.com",
-  password: "password"
-)
+g = User.create(fname: "Gizmo", lname: "Tully", email: "gizmo@catmail.com",
+  password: "password")
+Tasker.create(user_id: g.id, blurbs: {})
 
-Tasker.create(
-  user: g,
-  blurbs: {}
-)
+a = User.create(fname: "Aslan", lname: "Lewis", email: "aslan@catmail.com",
+  password: "password")
+Tasker.create(user_id: a.id, is_elite: true,  blurbs: {})
 
-a = User.create(
-  fname: "Aslan",
-  lname: "Lewis",
-  email: "aslan@catmail.com",
-  password: "password"
-)
+gu = User.create(fname: "Guenhywar", lname: "Salvatore", email: "guen@catmail.com",
+  password: "password")
+Tasker.create(user_id: gu.id, blurbs: {})
 
-Tasker.create(
-  user: a,
-  is_elite: true,
-  blurbs: {}
-)
+k = User.create(fname: "Kasha", lname: "Pendragon", email: "kasha@catmail.com",
+  password: "password")
+Tasker.create(user_id: k.id, is_elite: true,  blurbs: {})
 
-gu = User.create(
-  fname: "Guenhywar",
-  lname: "Salvatore",
-  email: "guen@catmail.com",
-  password: "password"
-)
+mrs = User.create(fname: "Mrs", lname: "Bojangles", email: "bojangles@catmail.com", password: "password")
+Tasker.create(user_id: mrs.id, is_elite: true, blurbs: {})
 
-Tasker.create(
-  user: gu,
-  blurbs: {}
-)
+sarah = User.create(fname: "Sara", lname: "Cat", email: "sara@catmail.com", password: "password")
+Tasker.create(user_id: sarah.id, blurbs: {})
 
-k = User.create(
-  fname: "Kasha",
-  lname: "Pendragon",
-  email: "kasha@catmail.com",
-  password: "password"
-)
+def random_rate
+  ((rand * 50) + 20).floor
+end
 
-Tasker.create(
-  user: k,
-  is_elite: true,
-  blurbs: {}
-)
+def random_blurb
+  blurbs = ["Prrrrt meow.",
+  "Meow meow reow.",
+  "Meeeeeeeeeeeeeeeeeeooooow.",
+  "Zzzzzzzzzzzzzzzzzz",
+  "(Is it naptime yet?)",
+  "PrrrrrrrrrrrRrrrrRrrrrrr.",
+  "*roar*",
+  "*yawn*",
+  "*hiss*"]
+
+  blurbs.sample
+end
+
+def random_task_id
+  max_tasks = Task.count
+  ids = (0..max_tasks-1).to_a.shuffle
+
+  if ids.nil? || ids.length.zero?
+    ids = (0..max_tasks-1).to_a.shuffle
+  end
+  ids.shift
+end
+
+Tasker.all.each do |cat|
+  task_start = (rand * Task.count).floor
+  AvailableTask.create!(tasker_id: cat.id, task_id: task_start % Task.count + 1, blurb: random_blurb, rate: random_rate, schedule: {})
+  AvailableTask.create!(tasker_id: cat.id, task_id: (task_start + 1 ) % Task.count + 1, blurb: random_blurb, rate: random_rate, schedule: {})
+  AvailableTask.create!(tasker_id: cat.id, task_id: (task_start + 2) % Task.count + 1, blurb: random_blurb, rate: random_rate, schedule: {})
+end

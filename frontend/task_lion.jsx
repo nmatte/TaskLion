@@ -7,11 +7,13 @@ var React = require('react'),
     TaskIndex = require('./components/task_index'),
     App = require('./components/app'),
     Dashboard = require('./components/dashboard'),
+    TaskerIndex = require('./components/tasker_index'),
     Router = require('react-router').Router,
     Route = require('react-router').Route;
 
 window.ApiUtil = ApiUtil;
-
+window.TaskerApiUtil = require('./util/tasker_api_util');
+window.TaskerStore = require('./stores/tasker');
 var routes = (
   <Route component={App} path="/">
     <Route component={Account} path="/account">
@@ -24,6 +26,11 @@ var routes = (
 
     <Route component={TaskIndex} path="/category/:category_id">
     </Route>
+
+    <Route component={TaskerIndex} path="/tasks/:task_id">
+      
+    </Route>
+
 
   </Route>
 );

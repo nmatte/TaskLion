@@ -43,9 +43,9 @@ module.exports = React.createClass({
       );
     }
     return (
-      <div>
+      <ul>
         {content}
-      </div>
+      </ul>
     );
   }
 });

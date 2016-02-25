@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: available_tasks
+#
+#  id         :integer          not null, primary key
+#  tasker_id  :integer          not null
+#  task_id    :integer          not null
+#  blurb      :text             not null
+#  rate       :integer          not null
+#  schedule   :json             not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+class AvailableTask < ActiveRecord::Base
+  belongs_to :tasker
+  belongs_to :task
+
+  validates :tasker, :task, presence: true
+end
