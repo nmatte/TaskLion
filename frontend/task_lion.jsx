@@ -28,10 +28,7 @@ var routes = (
     </Route>
 
     <Route component={TaskerIndex} path="/tasks/:task_id">
-      
     </Route>
-
-
   </Route>
 );
 

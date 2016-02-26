@@ -34,8 +34,6 @@ module.exports = React.createClass({
   render: function () {
     var content = "Loading tasks...";
     if (this.state.category !== undefined && this.state.category.tasks !== undefined) {
-      console.log("category", this.state.category);
-      console.log("tasks", this.state.category.tasks);
       content = this.state.category.tasks.map(
         function (task, index) {
             return <TaskIndexItem task={task} key={index}/>;

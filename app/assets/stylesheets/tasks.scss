@@ -12,10 +12,41 @@
   float: left;
 }
 
+.task-link {
+  position: relative;
+  color: #323A3B;
+}
+
+.task-link:visited {
+  color: #323A3B;
+}
+
+.task-link:hover {
+  color: #626A6B;
+}
+
+.task-image {
+  background-color: black;
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+}
+
+.task-image-container {
+  float: left;
+  padding-right: 32px;
+}
+
+.task-content-container {
+  float: right;
+  position: relative;
+}
+
 .task-item {
   background-color: white;
   padding: 28px 48px 32px 32px;
-  display:block;
+  display: inline-block;
+  width: 100%;
 }
 
 .task-item:not(:first-child) {
@@ -24,12 +55,19 @@
 
 .task-description {
   display: block;
+  vertical-align: baseline;
+  padding-bottom: 18px;
+  margin: 0px;
 }
 
 .task-header {
+  font-weight: 400;
   padding: 0px;
   margin: 0px;
   display: block;
+  vertical-align: baseline;
+  line-height: 44.8px;
+  margin-bottom: 11.65px;
 }
 
 .marketing-col {
@@ -44,19 +82,20 @@
   color: #23B4D2;
   border: 1px solid #23B4D2;
   background-color: white;
-  display: inline-block;
+  display: table-cell;
+  vertical-align: bottom;
   padding-bottom: 8px;
   padding-left: 22.08px;
   padding-right: 22.08px;
   padding-top: 8px;
   border-radius: 4px;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 16px;
   transition: 0.16s;
-  vertical-align: baseline;
-}
 
-.blue-button:hover {
-  color: white;
-  background-color: #23B4D2;
+  &:hover {
+    color: white;
+    cursor: pointer;
+    background-color: #23B4D2;
+  }
 }
