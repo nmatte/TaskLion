@@ -95,7 +95,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Bookings are tasks assigned to a tasker at a given date.
 
-- [ ] create `Booking` model
+- [x] create `Booking` model
 - build out API, Flux loop, and components for:
   - [ ] Booking CRUD
   - [ ] Booking form with specialized options (e.g. some tasks ask if they need a car)
@@ -143,6 +143,9 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] quick assignment feature
 - [ ] improve search?
 - [ ] Extra cute pictures of cats
+- [ ] responsive layout
+- [ ] autocomplete location
+- [ ] booking session (preserve after refresh)
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
