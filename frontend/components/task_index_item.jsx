@@ -9,15 +9,14 @@ module.exports = React.createClass({
           <div className="task-image">
           </div>
         </div>
-        <div class="task-content-container">
-          <Link className="task-link" to={"/tasks/" + this.props.task.id}>
+        <div className="task-content-container">
+          <Link className="task-link" to={"/book/"}>
             <h2 className="task-header">
               {this.props.task.name}
             </h2>
           </Link>
           <p className="task-description">{this.props.task.description}</p>
-          <a className="blue-button">Select Task</a>
-
+          <Link className="blue-button" to={"/book/" + this.props.task.id}>Select Task</Link>
         </div>
       </li>
     );

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :tasks, only: [:show] do
       resources :taskers, only: [:index]
     end
+
+    resources :bookings, only: [:show, :create, :destroy, :update]
     resources :taskers, only: [:show]
     match 'current_user', to: 'users#current', via: [:get]
   end

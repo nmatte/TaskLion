@@ -45,9 +45,13 @@ body {
  color: #828A8B;
 }
 
-.account-link:hover {
- background-color: #1DA3BF;
- color: white;
+.account-link:hover:not(.selected) {
+ background-color: #EEF9FB;
+}
+
+.selected {
+  background-color: #1DA3BF;
+  color: white;
 }
 
 .accountDetail {

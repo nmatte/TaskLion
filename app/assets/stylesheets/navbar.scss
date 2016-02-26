@@ -13,12 +13,19 @@
   position: relative;
 }
 
-.nav-bar-link {
-  font-size: 13px;
+.nav-bar-link-container {
   float: right;
-  display: inline-block;
+  height: 36px;
+}
+
+.nav-bar-link {
+  font-size: 0.75rem;
+  float: right;
+
   padding: 0px 16.8px 0px 16.8px;
   line-height: 36px;
+  vertical-align: middle;
+  box-sizing: border-box;
   color: #626A6B;
 }
 
@@ -27,12 +34,13 @@
 }
 
 .nav-bar-link:not(:last-child):before {
-  border-left: 1px solid #cfd2d3;
-  height: 1.25rem;
+  position: relative;;
   content: "";
-  position: absolute;
-  right: 115px;
-  transform: translateY(50%);
+  display: inline-block;
+  height: 1.25rem;
+  border-left: 1px solid #cfd2d3;
+  left: -16.8px;
+  transform: translateY(25%);
 }
 
 .color-logo {

@@ -88,8 +88,8 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 ### Phase 5: Further Styling (1 day)
 **Objective:** Components will look good.
 
-- [ ] style current components
-- [ ] add more static content to landing page
+- [x] style current components
+- [x] add more static content to landing page
 
 ### Phase 5: Bookings (1.5 days)
 

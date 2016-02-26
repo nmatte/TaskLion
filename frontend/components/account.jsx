@@ -3,9 +3,14 @@ var React = require('react'),
     AccountDetail = require('./account_detail'),
     PasswordDetail = require('./password_detail'),
     ApiUtil = require('../util/api_util'),
-    Link = require('react-router').Link;
+    Link = require('react-router').Link,
+    IndexLink = require('react-router').IndexLink,
+    History = require('react-router').History,
+    Router = require('react-router');
 
 module.exports = React.createClass({
+  mixins: [History],
+
   getInitialState: function () {
     return {
       user: SessionStore.user()
@@ -28,7 +33,31 @@ module.exports = React.createClass({
     this.sessionListener = null;
   },
 
+  _pushAcct: function () {
+    var url = "/account/";
+    this.history.push({pathname: url});
+  },
+
+  _pushPass: function () {
+    var url = "/account/password/";
+    this.history.push({pathname: url});
+    // debugger;
+  },
+
+
   render: function () {
+    var pathWords = this.props.location.pathname
+    .split("/")
+    .filter(function(el) {return el.length !== 0;});
+
+    var passLink = "";
+    var accLink = "";
+    // debugger;
+    if (pathWords.indexOf("password") !== -1) {
+      passLink = " selected";
+    } else {
+      accLink = " selected";
+    }
 
     return (
       <div className="accountContainer">
@@ -37,10 +66,17 @@ module.exports = React.createClass({
       <div className="accountIndex">
         <ul className="account-list">
           <li>
-            <Link to="/acct" className="account-link">Account</Link>
+            <IndexLink
+              to="/account/"
+              className={"account-link " + accLink}
+              onClick={this._pushAcct}>
+              Account</IndexLink>
           </li>
           <li>
-            <Link to="/password" className="account-link">Password</Link>
+            <Link
+              to="/account/password/"
+              className={"account-link " + passLink}
+              onClick={this._pushPass}>Password</Link>
           </li>
           <li>
             <Link to={"/"} className="account-link">Log Out</Link>
