@@ -8,9 +8,9 @@ var React = require('react'),
     App = require('./components/app'),
     Dashboard = require('./components/dashboard'),
     TaskerIndex = require('./components/tasker_index'),
-    BookingForm = require('./components/booking_form'),
-    BookingTaskers = require('./components/booking_taskers'),
-    BookingDetails = require('./components/booking_details'),
+    BookingForm = require('./components/booking/form'),
+    BookingTaskers = require('./components/booking/taskers'),
+    BookingDetails = require('./components/booking/details'),
 
     Router = require('react-router').Router,
     Route = require('react-router').Route,
@@ -37,7 +37,7 @@ var routes = (
     </Route>
 
     <Route component={BookingForm} path="/book/:task_id">
-      <IndexRedirect from="/book/:task_id" to="/book/:task_id/details"/>
+      <IndexRedirect to="/book/:task_id/details"/>
       <Route component={BookingDetails} path="/book/:task_id/details">
       </Route>
       <Route component={BookingTaskers} path="/book/:task_id/taskers">

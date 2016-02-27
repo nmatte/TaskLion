@@ -5,10 +5,19 @@ module.exports = {
     $.ajax({
       url: '/api/tasks/' + id + "/taskers",
       success: function (response) {
-        console.log("taskers for task" + id, response);
         TaskerApiActions.receiveTaskers(response);
       }
     });
 
+  },
+
+  fetchTask: function (id) {
+    $.ajax({
+      url: '/api/tasks/' + id,
+      success: function (response) {
+        TaskerApiActions.receiveTask(response);
+      }
+    });
   }
+
 };

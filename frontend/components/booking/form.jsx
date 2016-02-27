@@ -1,6 +1,6 @@
 var React = require('react'),
-    SessionStore = require('../stores/session'),
-    ApiUtil = require('../util/api_util');
+    SessionStore = require('../../stores/session'),
+    ApiUtil = require('../../util/api_util');
 
 module.exports = React.createClass({
   getInitialState: function() {
@@ -25,7 +25,6 @@ module.exports = React.createClass({
   },
 
   render: function () {
-    console.log(SessionStore.user());
     return (
       <div>
         {this.props.children}

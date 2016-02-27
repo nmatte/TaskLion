@@ -1,7 +1,7 @@
 var React = require('react'),
-    BookingActions = require('../actions/booking_actions'),
+    BookingActions = require('../../actions/booking_actions'),
     History = require('react-router').History,
-    BookingStore = require('../stores/booking');
+    BookingStore = require('../../stores/booking');
 
 
 module.exports = React.createClass({
@@ -31,7 +31,6 @@ module.exports = React.createClass({
     this.setState({
       booking: BookingStore.current()
     });
-    console.log(this.state.booking);
   },
 
   _locationChange: function (event) {

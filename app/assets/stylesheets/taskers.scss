@@ -2,28 +2,67 @@
   background-color: white;
   margin-bottom: 32px;
   width: 736px;
-  height: auto;
   min-height: 201px;
-  display: block;
+  display: flex;
+  flex-direction: row;
   padding: 32px;
 }
 
 .tasker-img {
   width: 201px;
   height: 201px;
-  display: block;
+  background-color: black;
+  border-radius: 4px;
 }
 
 .tasker-select-box {
   width: 201px;
   height: auto;
-  float: left;
 }
 
 .tasker-index-item-content {
-  width: auto;
-  height: auto;
   margin-left: 32px;
+  width: 100%;
+}
+
+.tasker-name {
+  margin: 0px;
   display: inline-block;
-  float: left;
+  line-height: 44px;
+  font-size: 32px;
+}
+
+.rate-badge {
+  display: inline-block;
+  float: right;
+  height: 40px;
+  line-height: 40px;
+  font-size: 24px;
+  background-color: #EBECEC;
+  border-radius: 1.25rem;
+  padding: 0rem 1rem;
+}
+
+.tasker-select-button {
+  color: white;
+  border: 1px solid #23B4D2;
+  background-color: #23B4D2;
+  width: 100%;
+  margin: 16px 0px 16px 0px;
+  padding: 8px 22.08px 8px 22.08px;
+  border-radius: 4px;
+  font-weight: 300;
+  font-size: 16px;
+  transition: 0.16s;
+
+  &:hover {
+    cursor: pointer;
+    border: 1px solid #0D7488;
+    background-color: #0D7488;
+  }
+}
+
+.tasker-index-item-top {
+  height: 44px;
+  margin-bottom: 8px;
 }

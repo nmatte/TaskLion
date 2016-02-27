@@ -7,5 +7,12 @@ module.exports = {
       actionType: TaskerConstants.RECEIVE_TASKERS,
       taskers: taskers
     });
+  },
+
+  receiveTask: function (task) {
+    Dispatcher.dispatch({
+      actionType: TaskerConstants.RECEIVE_TASK,
+      task: task
+    });
   }
 };

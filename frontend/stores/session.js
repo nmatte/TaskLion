@@ -14,7 +14,6 @@ SessionStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case UserConstants.RECEIVE_CURRENT_USER:
       user = payload.currentUser;
-      console.log("SessionStore", user);
       SessionStore.__emitChange();
       break;
   }

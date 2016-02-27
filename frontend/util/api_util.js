@@ -5,7 +5,6 @@ module.exports = {
     $.ajax({
       url: '/api/categories',
       success: function (response) {
-        console.log(response);
         ApiActions.receiveAll(response);
       }
     });

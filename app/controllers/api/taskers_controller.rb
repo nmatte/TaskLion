@@ -4,7 +4,8 @@ class Api::TaskersController < ApplicationController
   end
 
   def index
-    task = Task.find(params[:task_id])
-    @taskers = task.taskers
+    # task = Task.find(params[:task_id])
+    tasks = AvailableTask.where(task_id: params[:task_id]).includes(:tasker)
+    @tasks = tasks;
   end
 end
