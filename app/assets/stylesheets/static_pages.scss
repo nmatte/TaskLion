@@ -1,3 +1,28 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hero-container {
+  height: 320px;
+
+}
+
+.hero {
+  height: 100%;
+  padding-top: 180px;
+  // background:#626A6B;
+  overflow: hidden;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url('http://res.cloudinary.com/duwqltu7o/image/upload/c_scale,w_1920/v1456699920/cat_poised_xotjx3.jpg');
+}
+
+.hero-header {
+  line-height: 72px;
+  margin: 0px;
+  font-size: 64px;
+  color: white;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;
+}

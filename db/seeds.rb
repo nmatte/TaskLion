@@ -92,6 +92,27 @@ Task.create(
   description: "We can't guarantee we'll catch it, but we'll careen around your house as necessary."
 )
 
+protection = Category.create(
+  name: "Protection",
+  description: "Sleep tight knowing we're by your side."
+)
+
+entertainment = Category.create(
+  name: "Entertainment",
+  description: "Never a dull moment with these taskers."
+)
+
+cleaning = Category.create(
+  name: "Cleaning",
+  description: "We'll leave your home spotless."
+)
+
+Task.create(
+  category: cleaning,
+  name: "Gardening",
+  description: "Our teeth are great for slicing all manner of plants."
+)
+
 b = User.create(fname: "Breakfast", lname: "Frey", email: "breakfast@catmail.com",
   password: "password")
 Tasker.create(user_id: b.id, blurbs: {})

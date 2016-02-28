@@ -1,7 +1,11 @@
 <% if signed_in? %>
 <div id="app"/>
 <% else %>
-looks like you're not signed in
-<%= current_user %>
+<div class="hero-container">
+<div class="hero">
+  <h1 class="hero-header">We lounge around.</h1>
+  <h1 class="hero-header">You feed us.</h1>
+</div>
+</div>
 <%= session[:session_token] %>
 <% end %>

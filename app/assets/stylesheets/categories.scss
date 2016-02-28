@@ -9,7 +9,7 @@
 
   margin: auto;
   width: auto;
-  max-width: 960px;
+  max-width: 1236px;
 }
 
 .category-index-item {
@@ -43,9 +43,14 @@
 }
 
 .category-img {
-  background-color: green;
   height: 100%;
   position: relative;
+  width: auto;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
 
   &:before {
     transition: 0.2s;
@@ -58,6 +63,8 @@
     right: 0;
     background: rgba(0,0,0, 0.2);
   }
+
+
 }
 
 .category-tile:hover {
