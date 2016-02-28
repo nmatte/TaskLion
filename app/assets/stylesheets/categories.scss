@@ -1,21 +1,40 @@
 .category-container {
   list-style: none;
-  padding: 0px;// 36px 0px 36px;
-  display: table;
+  padding: 0px 36px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+
   margin: auto;
-  width: 100%;
+  width: auto;
+  max-width: 960px;
 }
 
 .category-index-item {
-  float: left;
   padding-left: 36px;
   height: 311px;
-  width: 30%;
+  width: 33%;
+  box-sizing: border-box;
+  float: left;
+}
+
+
+@media screen and (max-width: 720px) {
+  .category-index-item {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .category-index-item {
+    width: 100%;
+  }
 }
 
 .category-tile {
   height: 275px;
-
   position: relative;
 
   :hover .category-title {
@@ -23,38 +42,33 @@
   }
 }
 
-.category-title {
-  max-width: 85%;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-weight: 400;
-  text-align: center;
-  padding: 0px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1.25rem;
-  color: #158AA2;
-  transition: 0.2s;
-}
-//
-// .category-tile:hover .category-title {
-//   color: #004C5A;
-// }
+.category-img {
+  background-color: green;
+  height: 100%;
+  position: relative;
 
-.category-title:visited {
-  color: #158AA2;
-}
-
-.category-subtitle {
-  font-size: 0.875rem;
-  color: #757D7E;
-
-  :visited {
-    color: #757D7E;
+  &:before {
+    transition: 0.2s;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0, 0.2);
   }
 }
-// .category-subtitle:visited {
-// }
+
+.category-tile:hover {
+  .category-title {
+    color: #004C5A;
+  }
+
+  .category-img:before {
+    background: none;
+  }
+}
 
 
 .title-bar {
@@ -68,8 +82,30 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 50;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.category-title {
+  max-width: 85%;
+  margin: 0px auto;
+  font-weight: 400;
+  padding: 0px;
+  font-size: 1.25rem;
+  color: #158AA2;
+  transition: 0.2s;
+
+  &:visited {
+    color: #158AA2;
+  }
+}
+
+.category-subtitle {
+  font-size: 0.875rem;
+  color: #757D7E;
+
+  :visited {
+    color: #757D7E;
+  }
 }

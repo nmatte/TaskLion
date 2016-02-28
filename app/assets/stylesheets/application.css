@@ -38,3 +38,50 @@ ul {
   -moz-box-shadow:    0px 1px 1px 1px #ccc;  /* Firefox 3.5 - 3.6 */
   box-shadow:         0px 1px 1px 1px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
+
+
+.dark-blue-button {
+  color: white;
+  border: 1px solid #23B4D2;
+  background-color: #23B4D2;
+
+
+
+
+  margin: 16px 0px 16px 0px;
+  padding: 8px 22.08px 8px 22.08px;
+  border-radius: 4px;
+  font-weight: 300;
+  font-size: 16px;
+  transition: 0.16s;
+}
+
+.dark-blue-button:hover {
+  cursor: pointer;
+  border: 1px solid #0D7488;
+  background-color: #0D7488;
+}
+
+.dark-blue-button:focus {
+  outline: none;
+}
+
+.input {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #CFD2D3;
+  line-height: 1.4rem;
+  padding: 10px 16px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: 0.10s;
+}
+
+.input:focus {
+  outline: none;
+  border: 2px solid #46C0D9;
+}
+
+textarea {
+  resize: none;
+}

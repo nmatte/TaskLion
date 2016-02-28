@@ -34,6 +34,23 @@ body {
 
  line-height: 40px;
  color: #828A8B;
+
+ input {
+   color: #828A8B;
+   outline: none;
+   border: none;
+   background-color: white;
+   line-height: 40px;
+   font-size: 14px;
+   text-align: left;
+   font-weight: 300;
+   padding: 0px;
+   width: 100%;
+
+   &:hover {
+     background-color: #EEF9FB;
+   }
+ }
 }
 
 .accountContainer {

@@ -6,7 +6,7 @@ module.exports = React.createClass({
       <li className="shadow tasker-index-item">
         <div className="tasker-select-box">
           <div className="tasker-img"></div>
-          <button className="tasker-select-button">Select & Continue</button>
+          <button className="tasker-select-button dark-blue-button">Select & Continue</button>
         </div>
         <div className="tasker-index-item-content">
           <div className="tasker-index-item-top">

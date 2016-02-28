@@ -21,14 +21,13 @@ window.ApiUtil = ApiUtil;
 
 var routes = (
   <Route component={App} path="/">
-    <Route component={Account} path="/account/">
+    <Route component={Account} path="account">
       <IndexRoute component={AccountDetail} />
-      <Route component={PasswordDetail} path="/account/password"/>
+      <Route component={PasswordDetail} path="password"/>
     </Route>
 
-
-    <Route component={Dashboard} path="/dashboard/">
-    </Route>
+    <IndexRedirect to="dashboard"/>
+    <Route component={Dashboard} path="dashboard"/>
 
     <Route component={TaskIndex} path="/category/:category_id">
     </Route>
@@ -48,8 +47,10 @@ var routes = (
 );
 
 document.addEventListener("DOMContentLoaded", function functionName() {
-  ReactDom.render(
-    <Router>{routes}</Router>,
-    document.getElementById('app')
-  );
+  var app = document.getElementById('app');
+  if (app) {
+    ReactDom.render(
+      <Router>{routes}</Router>,
+      app);
+  }
 });

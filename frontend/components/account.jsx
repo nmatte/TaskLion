@@ -59,6 +59,13 @@ module.exports = React.createClass({
       accLink = " selected";
     }
 
+    var logout = (
+      <form method="post" action="/session" className="account-link" >
+        <input type="hidden" name="_method" value="delete"/>
+        <input type="submit" value="Log Out"/>
+      </form>
+    );
+
     return (
       <div className="accountContainer">
         <h1 className="accountHeader">Your Account</h1>
@@ -80,6 +87,9 @@ module.exports = React.createClass({
           </li>
           <li>
             <Link to={"/"} className="account-link">Log Out</Link>
+          </li>
+          <li>
+            {logout}
           </li>
         </ul>
         <div className="accountDetail">{this.props.children}</div>

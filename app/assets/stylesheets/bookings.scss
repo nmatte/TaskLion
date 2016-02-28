@@ -1,0 +1,66 @@
+// Place all the styles related to the Api::Bookings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.col-container {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 1000px;
+}
+h5 {
+  color: #828a8b;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.tasker-col {
+}
+
+.detail-container {
+  max-width: 1200px;
+  width: auto;
+
+  margin: auto;
+}
+
+.detail-item {
+  padding: 22px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4px;
+  transition: 0.5s;
+}
+
+.booking-description {
+
+}
+
+.booking-detail-content {
+  flex-direction: column;
+  display: none;
+}
+
+.is-focused .booking-detail-content{
+  display: flex;
+}
+
+.is-focused {
+  margin: 16px -6px;
+}
+
+.detail-content-wrapper {
+  padding: 16px 0px;
+  width: 100%;
+  margin: auto;
+}
+
+
+.booking-button.dark-blue-button{
+  margin: auto;
+  display: block;
+  width: 100px;
+  padding: 10px 27.6px;
+}

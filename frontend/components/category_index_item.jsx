@@ -27,6 +27,9 @@ module.exports = React.createClass({
       <li className="category-index-item">
         <Link onClick={this.navTo} to={"/category/" + this.props.category.id}>
           <div className="category-tile shadow">
+            <div className="category-img">
+
+            </div>
             <div className="title-bar">
               <h4 className="category-title">{this.props.category.name}</h4>
               <text className="category-subtitle">{descr}</text>

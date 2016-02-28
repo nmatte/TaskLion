@@ -8,21 +8,22 @@
   padding-right: 48px;
   padding-left: 0px;
   margin: 0px;
-  display: block;
+  display: flex;
+  flex-direction: column;
   float: left;
 }
 
 .task-link {
   position: relative;
   color: #323A3B;
-}
 
-.task-link:visited {
-  color: #323A3B;
-}
+  :visited {
+    color: #323A3B;
+  }
 
-.task-link:hover {
-  color: #626A6B;
+  :hover {
+    color: #626A6B;
+  }
 }
 
 .task-image {
@@ -38,19 +39,19 @@
 }
 
 .task-content-container {
-  float: right;
+  float: left;
   position: relative;
 }
 
 .task-item {
   background-color: white;
   padding: 28px 48px 32px 32px;
-  display: inline-block;
+  display: flex;
   width: 100%;
-}
 
-.task-item:not(:first-child) {
-  margin-top: 16px;
+  &:not(:first-child) {
+    margin-top: 16px;
+  }
 }
 
 .task-description {
@@ -84,10 +85,7 @@
   background-color: white;
   display: table-cell;
   vertical-align: bottom;
-  padding-bottom: 8px;
-  padding-left: 22.08px;
-  padding-right: 22.08px;
-  padding-top: 8px;
+  padding: 8px 22.08px;
   border-radius: 4px;
   font-weight: 300;
   font-size: 16px;

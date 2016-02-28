@@ -1,1 +1,7 @@
+<% if signed_in? %>
 <div id="app"/>
+<% else %>
+looks like you're not signed in
+<%= current_user %>
+<%= session[:session_token] %>
+<% end %>

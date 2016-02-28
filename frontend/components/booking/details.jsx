@@ -9,13 +9,21 @@ module.exports = React.createClass({
 
   getInitialState: function () {
     return {
-      booking: BookingStore.current()
+      booking: BookingStore.current(),
+      focused: "location"
     };
   },
 
   _proceedClick: function (event) {
     event.preventDefault();
     this.history.push("book/" + this.props.params.task_id+ "/taskers");
+  },
+
+  _locationClick: function (event) {
+    event.preventDefault();
+    this.setState ({
+      focused: "description"
+    });
   },
 
   componentWillMount: function() {
@@ -48,22 +56,68 @@ module.exports = React.createClass({
   },
 
   render: function () {
+    var locationClass = "detail-item shadow ";
+    var descriptionClass = "detail-item shadow ";
+
+    if (this.state.focused === "location") {
+      locationClass += "is-focused";
+    } else {
+      descriptionClass += "is-focused";
+    }
+
+    var locationForm = (
+      <div className={locationClass}>
+        <label htmlFor="location_input">
+          <h5>Your Task Location</h5>
+        </label>
+        <div className="booking-detail-content">
+          <div className="detail-content-wrapper">
+            <input id="location_input"
+              className="input"
+              type="text"
+              onChange={this._locationChange} value={this.state.booking.location}>
+            </input>
+          </div>
+
+          <div className="detail-content-wrapper">
+            <button
+              className="dark-blue-button booking-button"
+              onClick={this._locationClick}>
+              Save
+            </button>
+          </div>
+        </div>
+
+      </div>
+    );
+
+    var descriptionForm = (
+      <div className={descriptionClass}>
+        <label htmlFor="description_input">
+          <h5>Tell Us About Your Task</h5>
+        </label>
+        <div className="booking-detail-content">
+          <div className="detail-content-wrapper">
+            <textarea id="description_input"
+              className="input booking-description"
+              onChange={this._descriptionChange}
+              value={this.state.booking.description}/>
+          </div>
+
+          <div className="detail-content-wrapper">
+            <button className="dark-blue-button booking-button" onClick={this._proceedClick}>Save</button>
+          </div>
+        </div>
+      </div>
+    );
+
     return (
-      <div>
-        <label>
-          Location
-          <input
-            type="text"
-            onChange={this._locationChange} value={this.state.booking.location}>
-          </input>
-        </label>
-        <label>
-          Tell Us About Your Task
-          <textarea
-            onChange={this._descriptionChange}
-            value={this.state.booking.description}></textarea>
-        </label>
-        <button onClick={this._proceedClick}>Submit</button>
+      <div className="detail-container">
+        {locationForm}
+
+        {descriptionForm}
+
+
       </div>
     );
   }
