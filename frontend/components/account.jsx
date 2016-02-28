@@ -86,9 +86,6 @@ module.exports = React.createClass({
               onClick={this._pushPass}>Password</Link>
           </li>
           <li>
-            <Link to={"/"} className="account-link">Log Out</Link>
-          </li>
-          <li>
             {logout}
           </li>
         </ul>
