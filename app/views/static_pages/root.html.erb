@@ -1,11 +1,32 @@
 <% if signed_in? %>
 <div id="app"/>
 <% else %>
-<div class="hero-container">
-<div class="hero">
-  <h1 class="hero-header">We lounge around.</h1>
-  <h1 class="hero-header">You feed us.</h1>
+<div class="thingy">
+  <div class="nav-bar clear-nav-bar">
+    <div class="nav-bar-thin">
+      <%= link_to root_url do %>
+        <img class="white-logo" src="assets/logo-white.png"/>
+      <% end %>
+      <div class="nav-bar-link-container">
+        <%= link_to 'Log in', new_session_url, class: "nav-bar-link white-link" %>
+        <%= link_to 'How it works', root_url, class: "nav-bar-link white-link" %>
+        <%= link_to 'Sign up', new_user_url, class: "nav-bar-link white-link" %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="hero-container">
+    <div class="hero">
+      <h1 class="hero-header">We lounge around.</h1>
+      <h1 class="hero-header">You feed us.</h1>
+    </div>
+  </div>
+
 </div>
+<div class="category-index-wrapper">
+  <h2>Popular Tasks</h2>
+  <div id="cat-index">
+  </div>
 </div>
-<%= session[:session_token] %>
 <% end %>

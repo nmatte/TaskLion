@@ -61,10 +61,7 @@ module.exports = React.createClass({
               <text className="category-subtitle">{descr}</text>
             </div>
           </div>
-
         </Link>
-
-
       </li>
     );
   }

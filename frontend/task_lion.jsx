@@ -11,13 +11,15 @@ var React = require('react'),
     BookingForm = require('./components/booking/form'),
     BookingTaskers = require('./components/booking/taskers'),
     BookingDetails = require('./components/booking/details'),
-
+    BookingConfirmation = require('./components/booking/confirmation'),
+    CategoryIndex = require('./components/category_index'),
     Router = require('react-router').Router,
     Route = require('react-router').Route,
     IndexRoute = require('react-router').IndexRoute,
     IndexRedirect = require('react-router').IndexRedirect;
 
 window.ApiUtil = ApiUtil;
+window.DateFormat = require('dateformat');
 
 var routes = (
   <Route component={App} path="/">
@@ -37,9 +39,9 @@ var routes = (
 
     <Route component={BookingForm} path="/book/:task_id">
       <IndexRedirect to="/book/:task_id/details"/>
-      <Route component={BookingDetails} path="/book/:task_id/details">
-      </Route>
-      <Route component={BookingTaskers} path="/book/:task_id/taskers">
+      <Route component={BookingDetails} path="/book/:task_id/details"/>
+      <Route component={BookingTaskers} path="/book/:task_id/taskers"/>
+      <Route component={BookingConfirmation} path="/book/:task_id/confirm">
 
       </Route>
     </Route>
@@ -48,9 +50,14 @@ var routes = (
 
 document.addEventListener("DOMContentLoaded", function functionName() {
   var app = document.getElementById('app');
+  var catIndex = document.getElementById('cat-index');
   if (app) {
     ReactDom.render(
       <Router>{routes}</Router>,
       app);
+  } else if (catIndex) {
+    ReactDom.render(
+      <CategoryIndex/>, catIndex
+    );
   }
 });

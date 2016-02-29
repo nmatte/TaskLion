@@ -16,7 +16,7 @@ module.exports = React.createClass({
 
   _proceedClick: function (event) {
     event.preventDefault();
-    this.history.push("book/" + this.props.params.task_id+ "/taskers");
+    this.history.push("book/" + this.props.params.task_id + "/taskers");
   },
 
   _locationClick: function (event) {
@@ -26,8 +26,9 @@ module.exports = React.createClass({
     });
   },
 
-  componentWillMount: function() {
+  componentDidMount: function() {
     this.bookingListener = BookingStore.addListener(this._onBookingChange);
+    BookingActions.fetchBooking();
   },
 
   componentWillUnmount: function() {
@@ -43,16 +44,12 @@ module.exports = React.createClass({
 
   _locationChange: function (event) {
     event.preventDefault();
-    var newBooking = this.state.booking;
-    newBooking.location = event.target.value;
-    BookingActions.updateBooking(newBooking);
+    BookingActions.updateBooking({address: event.target.value});
   },
 
   _descriptionChange: function (event) {
     event.preventDefault();
-    var newBooking = this.state.booking;
-    newBooking.description = event.target.value;
-    BookingActions.updateBooking(newBooking);
+    BookingActions.updateBooking({description: event.target.value});
   },
 
   render: function () {
@@ -64,7 +61,8 @@ module.exports = React.createClass({
     } else {
       descriptionClass += "is-focused";
     }
-
+    console.log("state booking",this.state.booking);
+    console.log("booking store",BookingStore.current());
     var locationForm = (
       <div className={locationClass}>
         <label htmlFor="location_input">
@@ -75,7 +73,7 @@ module.exports = React.createClass({
             <input id="location_input"
               className="input"
               type="text"
-              onChange={this._locationChange} value={this.state.booking.location}>
+              onChange={this._locationChange} value={this.state.booking.address}>
             </input>
           </div>
 
@@ -87,7 +85,6 @@ module.exports = React.createClass({
             </button>
           </div>
         </div>
-
       </div>
     );
 
@@ -114,10 +111,7 @@ module.exports = React.createClass({
     return (
       <div className="detail-container">
         {locationForm}
-
         {descriptionForm}
-
-
       </div>
     );
   }

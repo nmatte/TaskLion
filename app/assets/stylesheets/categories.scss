@@ -43,7 +43,9 @@
 }
 
 .category-img {
-  height: 100%;
+  max-height: 320px;
+  height: 275px;
+  width: auto;
   position: relative;
   width: auto;
   overflow: hidden;
@@ -114,5 +116,18 @@
 
   :visited {
     color: #757D7E;
+  }
+}
+
+
+.category-index-container {
+  max-width: 960px;
+  margin: auto;
+  h2 {
+    margin: 0px 0px 40px 0px;
+    padding: 0px 0px 0px 36px;
+    font-size: 30px;
+    font-weight: 300;
+    text-align: left;
   }
 }

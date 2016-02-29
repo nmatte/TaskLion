@@ -7,7 +7,7 @@ var booking = {};
 var BookingStore = new Store(Dispatcher);
 
 BookingStore.current = function () {
-  return booking;
+  return booking || {};
 };
 
 BookingStore.__onDispatch = function (payload) {
@@ -15,6 +15,11 @@ BookingStore.__onDispatch = function (payload) {
     case BookingConstants.UPDATE_BOOKING:
       booking = payload.booking;
       BookingStore.__emitChange();
+      break;
+    case BookingConstants.RECEIVE_BOOKING:
+      booking = payload.booking;
+      BookingStore.__emitChange();
+      break;
   }
 };
 

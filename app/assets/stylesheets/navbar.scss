@@ -1,14 +1,28 @@
 .nav-bar {
   padding: 12px 0px 12px 0px;
   display: block;
-  background-color: white;
+  background: white;
   height: 36px;
   border-bottom: 1px solid #EBECEC;
+
 }
 
-.navBarThin {
+.clear-nav-bar {
+  background: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  border: none;
+  max-width: 1200px;
+  margin: auto;
+  height: 40px;
+  padding: 24px 0px;
+}
+.nav-bar-thin {
   padding: 0px 36px 0px 36px;
   height: 36px;
+  max-width: 1200px;
+  margin: auto;
   display: block;
   position: relative;
 }
@@ -27,12 +41,21 @@
   vertical-align: middle;
   box-sizing: border-box;
   color: #626A6B;
+
+
 }
 
+.white-link {
+  color: white;
+  font-size: 14px;
+}
 .nav-bar-link:visited {
   color: #626A6B;
 }
 
+.white-link:visited {
+  color: white;
+}
 .nav-bar-link:not(:last-child):before {
   position: relative;;
   content: "";
@@ -41,9 +64,21 @@
   border-left: 1px solid #cfd2d3;
   left: -16.8px;
   transform: translateY(25%);
+
 }
 
+.white-link:not(:last-child):before {
+  border-left: 1px solid white;
+}
 .color-logo {
+  height: 24px;
+  width: auto;
+  position: absolute;
+  top: 20%;
+  // transform: translateY(50%);
+}
+
+.white-logo {
   height: 24px;
   width: auto;
   position: absolute;

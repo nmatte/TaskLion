@@ -4,9 +4,12 @@ var React = require('react'),
 module.exports = React.createClass({
   render: function () {
     return (
-      <div>
-        
-        <CategoryIndex />
+      <div className="dashboard-main">
+        <div className="category-index-container">
+          <h2>Top Categories in Your Area</h2>
+          <CategoryIndex />
+
+        </div>
       </div>
 
     );

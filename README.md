@@ -83,7 +83,6 @@ progress. Put an x between the brackets for a checkmark: [x] -->
   - [x] `TaskIndexItem`
   - [x] `TaskerIndex`
   - [x] `TaskerIndexItem`
-  <!-- - [ ] `TaskerQuickOverview` -->
 
 ### Phase 5: Further Styling (1 day)
 **Objective:** Components will look good.
@@ -97,7 +96,8 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [x] create `Booking` model
 - build out API, Flux loop, and components for:
-  - [ ] Booking CRUD
+  - [x] Booking CRUD
+  <!-- TODO -->
   - [ ] Booking form with specialized options (e.g. some tasks ask if they need a car)
 - [ ] Use CSS to style new views
 

@@ -18,7 +18,7 @@ module.exports = React.createClass({
 
     return (
       <div className="nav-bar">
-        <div className="navBarThin">
+        <div className="nav-bar-thin">
           <Link to={"/dashboard/"} onClick={this._pushDash}>
             <img className="color-logo" src="assets/logo.png"/>
           </Link>
