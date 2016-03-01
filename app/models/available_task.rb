@@ -15,6 +15,8 @@
 class AvailableTask < ActiveRecord::Base
   belongs_to :tasker
   belongs_to :task
+  has_many :bookings, through: :task
+  has_many :reviews, through: :bookings
 
   validates :tasker, :task, presence: true
 end

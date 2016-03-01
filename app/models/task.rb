@@ -15,5 +15,6 @@
 class Task < ActiveRecord::Base
   belongs_to :category
   has_many :available_tasks
+  has_many :bookings
   has_many :taskers, through: :available_tasks
 end

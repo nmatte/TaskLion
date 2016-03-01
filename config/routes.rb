@@ -13,9 +13,10 @@ Rails.application.routes.draw do
     resources :bookings, only: [:show, :create, :destroy, :update] do
       resources :reviews, only: [:show]
     end
-    
+
     resources :taskers, only: [:show] do
       resources :reviews, only: [:index]
+      resources :available_tasks, only: [:index]
     end
 
     match 'current_user', to: 'users#current', via: [:get]

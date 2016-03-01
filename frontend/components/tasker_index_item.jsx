@@ -11,10 +11,20 @@ module.exports = React.createClass({
   },
 
   render: function () {
+    var style;
+    if (this.props.tasker.img_url_sm) {
+      style = {
+        backgroundImage: 'url('+this.props.tasker.img_url_sm+')'
+      };
+    } else {
+      style = {};
+    }
+
+
     return (
       <li className="shadow tasker-index-item">
         <div className="tasker-select-box">
-          <div className="tasker-img"></div>
+          <div className="tasker-img" style={style}></div>
           <button
             className="tasker-select-button dark-blue-button"
             onClick={this._taskerClick}

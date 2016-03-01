@@ -14,5 +14,12 @@ module.exports = {
       actionType: TaskerConstants.RECEIVE_TASK,
       task: task
     });
+  },
+
+  receiveTaskerUpdate: function (tasker) {
+    Dispatcher.dispatch({
+      actionType: TaskerConstants.RECEIVE_TASKER_UPDATE,
+      tasker: tasker
+    });
   }
 };

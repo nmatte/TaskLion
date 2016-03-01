@@ -99,16 +99,16 @@ progress. Put an x between the brackets for a checkmark: [x] -->
   - [x] Booking CRUD
   <!-- TODO -->
   <!-- - [ ] Booking form with specialized options (e.g. some tasks ask if they need a car) -->
-- [ ] Use CSS to style new views
+- [x] Use CSS to style new views
 
 ### Phase 6: Tasker reviews (0.5 days)
 
 **Objective:** Taskers can have reviews on their profile.
 
 - build out API, Flux loop, and components for:
-  - [ ] fetching tasker's reviews
+  - [x] fetching tasker's reviews
   - [ ] getting review highlights
-  - [ ] aggregating review data (e.g. "97% positive")
+  - [x] aggregating review data (e.g. "97% positive")
 - [ ] Style new elements
 
 ### Phase 6: Tasker profiles (1 day)

@@ -13,6 +13,10 @@
   height: 201px;
   background-color: black;
   border-radius: 4px;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .tasker-select-box {

@@ -19,6 +19,12 @@ class Api::ReviewsController < ApplicationController
         taskers.id = ?
     SQL
 
-    render json: @reviews.first
+    thumbs = @reviews.map(&:thumbs_up)
+    thumbs_up_ct = thumbs.count(true)
+    thumbs_down_ct = thumbs.count(false)
+    avg = (100.0 * thumbs_up_ct) / (thumbs_up_ct + thumbs_down_ct)
+    render json: {reviews: @reviews, avg: avg}
   end
+
+
 end

@@ -28,6 +28,10 @@ TaskerStore.__onDispatch = function (payload) {
       this.setTaskers(payload.taskers);
       TaskerStore.__emitChange();
       break;
+    case TaskerConstants.RECEIVE_TASKER_UPDATE:
+      this.updateTasker(payload.tasker);
+      TaskerStore.__emitChange();
+      break;
   }
 };
 
@@ -37,6 +41,18 @@ TaskerStore.setTaskers = function (taskers) {
     var cat = taskers[i];
 
     _taskers[cat.id] = cat;
+  }
+};
+
+TaskerStore.updateTasker = function (tasker) {
+  if (_taskers[tasker.id] === undefined) {
+    _taskers[tasker.id] = {};
+  }
+
+  var keys = Object.keys(tasker);
+
+  for (var i = 0; i < keys.length; i++) {
+    _taskers[tasker.id][keys[i]] = tasker[keys[i]];
   }
 };
 

@@ -13,6 +13,7 @@ var React = require('react'),
     BookingDetails = require('./components/booking/details'),
     BookingConfirmation = require('./components/booking/confirmation'),
     CategoryIndex = require('./components/category_index'),
+    TaskerProfile = require('./components/tasker_profile'),
     Router = require('react-router').Router,
     Route = require('react-router').Route,
     IndexRoute = require('react-router').IndexRoute,
@@ -20,7 +21,8 @@ var React = require('react'),
 
 window.ApiUtil = ApiUtil;
 window.DateFormat = require('dateformat');
-
+window.TaskerApiUtil = require('./util/tasker_api_util');
+window.TaskerStore = require('./stores/tasker');
 var routes = (
   <Route component={App} path="/">
     <Route component={Account} path="account">
@@ -42,8 +44,11 @@ var routes = (
       <Route component={BookingDetails} path="/book/:task_id/details"/>
       <Route component={BookingTaskers} path="/book/:task_id/taskers"/>
       <Route component={BookingConfirmation} path="/book/:task_id/confirm">
-
       </Route>
+    </Route>
+
+    <Route component={TaskerProfile} path="/profile/:tasker_id">
+
     </Route>
   </Route>
 );

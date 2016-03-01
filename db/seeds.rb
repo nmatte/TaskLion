@@ -116,31 +116,31 @@ Task.create(
 
 b = User.create(fname: "Breakfast", lname: "Frey", email: "breakfast@catmail.com",
   password: "password")
-Tasker.create(user_id: b.id, blurbs: {})
+Tasker.create(user_id: b.id, blurbs: {}, img_url_sm: 'http://res.cloudinary.com/duwqltu7o/image/upload/v1456853763/prof_windowsill_2_p2vfby.jpg')
 
 m = User.create(fname: "Markov", lname: "Stark", email: "markov@catmail.com",
   password: "password")
-Tasker.create(user_id: m.id, is_elite: true,  blurbs: {})
+Tasker.create(user_id: m.id, is_elite: true,  blurbs: {}, img_url_sm: 'http://res.cloudinary.com/duwqltu7o/image/upload/v1456853761/prof_catstronaut_z1nt3q.jpg')
 
 c = User.create(fname: "Curie", lname: "Stark", email: "curie@catmail.com",
   password: "password")
-Tasker.create(user_id: c.id, is_elite: true,  blurbs: {})
+Tasker.create(user_id: c.id, is_elite: true,  blurbs: {}, img_url_sm: 'http://res.cloudinary.com/duwqltu7o/image/upload/v1456853761/prof_closeup_mainecoon_zo1hi1.jpg')
 
 g = User.create(fname: "Gizmo", lname: "Tully", email: "gizmo@catmail.com",
   password: "password")
-Tasker.create(user_id: g.id, blurbs: {})
+Tasker.create(user_id: g.id, blurbs: {}, img_url_sm: 'http://res.cloudinary.com/duwqltu7o/image/upload/v1456853762/prof_sleeping_pctdle.jpg')
 
 a = User.create(fname: "Aslan", lname: "Lewis", email: "aslan@catmail.com",
   password: "password")
-Tasker.create(user_id: a.id, is_elite: true,  blurbs: {})
+Tasker.create(user_id: a.id, is_elite: true,  blurbs: {}, img_url_sm: 'http://res.cloudinary.com/duwqltu7o/image/upload/v1456853762/prof_lion_agdria.jpg')
 
 gu = User.create(fname: "Guenhywar", lname: "Salvatore", email: "guen@catmail.com",
   password: "password")
-Tasker.create(user_id: gu.id, blurbs: {})
+Tasker.create(user_id: gu.id, blurbs: {}, img_url_sm: 'http://res.cloudinary.com/duwqltu7o/image/upload/v1456853763/prof_tiger_jfvyts.jpg')
 
 k = User.create(fname: "Kasha", lname: "Pendragon", email: "kasha@catmail.com",
   password: "password")
-Tasker.create(user_id: k.id, is_elite: true,  blurbs: {})
+Tasker.create(user_id: k.id, is_elite: true,  blurbs: {}, img_url_sm: 'http://res.cloudinary.com/duwqltu7o/image/upload/v1456854037/prof_panther_fzk0ax.jpg')
 
 mrs = User.create(fname: "Mrs", lname: "Bojangles", email: "bojangles@catmail.com", password: "password")
 Tasker.create(user_id: mrs.id, is_elite: true, blurbs: {})
@@ -148,6 +148,8 @@ Tasker.create(user_id: mrs.id, is_elite: true, blurbs: {})
 sarah = User.create(fname: "Sara", lname: "Cat", email: "sara@catmail.com", password: "password")
 Tasker.create(user_id: sarah.id, blurbs: {})
 
+larry = User.create(fname: "Larry", lname: "Chief Mouser", email: "larry@catmail.com", password: "password")
+Tasker.create(user_id: larry.id, blurbs: {}, img_url_sm: 'http://res.cloudinary.com/duwqltu7o/image/upload/v1456853760/prof_chief_mouser_vmofqf.jpg')
 def random_rate
   ((rand * 50) + 20).floor
 end

@@ -18,6 +18,15 @@ module.exports = {
         TaskerApiActions.receiveTask(response);
       }
     });
+  },
+
+  fetchReviews: function (id) {
+    $.ajax({
+      url: '/api/taskers/' + id + "/reviews",
+      success: function (response) {
+        TaskerApiActions.receiveTaskerUpdate({id: id, reviews: response});
+      }
+    });
   }
 
 };
