@@ -39,10 +39,9 @@ class Api::BookingsController < ApplicationController
   end
 
   def create
-    date = Time.at(booking_params[:epoch_date]).to_datetime
 
     @booking = Booking.new(
-      date: date,
+      date: booking_params[:date],
       task_id: booking_params[:task_id],
       tasker_id: booking_params[:tasker_id],
       client_id: booking_params[:client_id],
@@ -62,6 +61,6 @@ class Api::BookingsController < ApplicationController
   def booking_params
     params
       .require(:booking)
-      .permit(:tasker_id, :client_id, :task_id, :details, :address, :description, :epoch_date)
+      .permit(:tasker_id, :client_id, :task_id, :details, :address, :description, :date)
   end
 end

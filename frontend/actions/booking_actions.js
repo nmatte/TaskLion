@@ -18,5 +18,12 @@ module.exports = {
       actionType: BookingConstants.RECEIVE_BOOKING,
       booking: booking
     });
+  },
+
+  clearBooking: function () {
+    StorageUtil.clearBooking();
+    Dispatcher.dispatch({
+      actionType: BookingConstants.CLEAR_BOOKING
+    });
   }
 };

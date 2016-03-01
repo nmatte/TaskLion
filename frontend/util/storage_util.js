@@ -37,7 +37,7 @@ module.exports = {
     return booking;
   },
 
-  clear: function () {
+  clearBooking: function () {
       localStorage.setItem('booking_date', "");
       localStorage.setItem('booking_task_id', "");
       localStorage.setItem('booking_tasker_id', "");

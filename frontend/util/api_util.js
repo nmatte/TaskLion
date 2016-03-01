@@ -38,5 +38,17 @@ module.exports = {
         ApiActions.receiveCurrentUser(response);
       }
     });
+  },
+
+  postBooking: function (booking) {
+    $.ajax({
+      url: '/api/bookings/',
+      method: 'POST',
+      data: {booking: booking},
+      dataType: 'json',
+      success: function (response) {
+        console.log(response);
+      }
+    });
   }
 };

@@ -94,7 +94,7 @@ Task.create(
 
 protection = Category.create(
   name: "Protection",
-  description: "Sleep tight knowing we're by your side."
+  description: "Sleep tight knowing we're by your side.",
   img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/c_fit,h_500,w_1920/v1456717708/6984608-cat-watching-outside_t849tf.jpg"
 )
 

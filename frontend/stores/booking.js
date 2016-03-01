@@ -20,6 +20,10 @@ BookingStore.__onDispatch = function (payload) {
       booking = payload.booking;
       BookingStore.__emitChange();
       break;
+    case BookingConstants.CLEAR_BOOKING:
+      booking = {};
+      BookingStore.__emitChange();
+      break;
   }
 };
 

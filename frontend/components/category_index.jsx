@@ -28,7 +28,7 @@ module.exports = React.createClass({
 
 
   render: function () {
-    var catLis = this.state.categories.map(
+    var catLis = this.state.categories.slice(0,6).map(
       function (category, index) {
         return <CategoryIndexItem key={index} category={category}/>;
       }
