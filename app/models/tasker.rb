@@ -11,6 +11,7 @@
 #  created_at                            :datetime         not null
 #  updated_at                            :datetime         not null
 #  {:index=>true, :foreign_key=>true}_id :integer
+#  img_url_sm                            :string
 #
 
 class Tasker < ActiveRecord::Base

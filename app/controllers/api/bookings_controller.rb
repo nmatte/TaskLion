@@ -14,7 +14,7 @@ class Api::BookingsController < ApplicationController
     date = Time.at(booking_params[:epoch_date]).to_datetime
     success =  @booking.update(
           date: date,
-          task_id: booking_params[:task_id],
+          available_task_id: booking_params[:available_task_id],
           tasker_id: booking_params[:tasker_id],
           client_id: booking_params[:client_id],
           details: params[:booking][:details],
@@ -42,7 +42,7 @@ class Api::BookingsController < ApplicationController
 
     @booking = Booking.new(
       date: booking_params[:date],
-      task_id: booking_params[:task_id],
+      available_task_id: booking_params[:available_task_id],
       tasker_id: booking_params[:tasker_id],
       client_id: booking_params[:client_id],
       details: params[:booking][:details],
@@ -61,6 +61,6 @@ class Api::BookingsController < ApplicationController
   def booking_params
     params
       .require(:booking)
-      .permit(:tasker_id, :client_id, :task_id, :details, :address, :description, :date)
+      .permit(:tasker_id, :client_id, :available_task_id, :details, :address, :description, :date)
   end
 end

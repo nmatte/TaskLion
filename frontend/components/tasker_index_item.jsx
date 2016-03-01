@@ -7,7 +7,10 @@ module.exports = React.createClass({
 
   _taskerClick: function (event) {
     event.preventDefault();
-    BookingActions.updateBooking({tasker_id: this.props.tasker.id});
+    BookingActions.updateBooking({
+      tasker_id: this.props.tasker.id,
+      available_task_id: this.props.tasker.available_task_id
+    });
   },
 
   render: function () {

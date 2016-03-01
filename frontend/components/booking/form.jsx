@@ -12,7 +12,6 @@ module.exports = React.createClass({
   componentDidMount: function() {
     this.userListener = SessionStore.addListener(this._onUserChange);
     ApiUtil.fetchCurrentUser();
-    BookingActions.updateBooking({task_id: this.props.params.task_id});
   },
 
   _onUserChange: function () {

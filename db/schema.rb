@@ -11,23 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301034133) do
+ActiveRecord::Schema.define(version: 20160301185814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "available_tasks", force: :cascade do |t|
-    t.integer  "tasker_id",  null: false
-    t.integer  "task_id",    null: false
-    t.text     "blurb",      null: false
-    t.integer  "rate",       null: false
-    t.json     "schedule",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "tasker_id",                             null: false
+    t.integer  "task_id",                               null: false
+    t.text     "blurb",                                 null: false
+    t.integer  "rate",                                  null: false
+    t.json     "schedule",                              null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "{:index=>true, :foreign_key=>true}_id"
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.integer  "task_id",                                               null: false
     t.integer  "client_id",                                             null: false
     t.integer  "tasker_id",                                             null: false
     t.string   "address",                                               null: false
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160301034133) do
     t.datetime "created_at",                                            null: false
     t.datetime "updated_at",                                            null: false
     t.integer  "{:index=>true, :foreign_key=>true}_id"
+    t.integer  "available_task_id",                                     null: false
   end
 
   add_index "bookings", ["client_id"], name: "index_bookings_on_client_id", using: :btree

@@ -2,8 +2,8 @@ module.exports = {
   storeCurrentBooking: function (booking) {
     if (booking.date)
       localStorage.setItem('booking_date', booking.date);
-    if (booking.task_id)
-      localStorage.setItem('booking_task_id', booking.task_id);
+    if (booking.available_task_id)
+      localStorage.setItem('booking_task_id', booking.available_task_id);
     if (booking.tasker_id)
       localStorage.setItem('booking_tasker_id', booking.tasker_id);
     if (booking.client_id)
@@ -17,7 +17,7 @@ module.exports = {
   },
 
   // date: date,
-  // task_id: booking_params[:task_id],
+  // available_task_id: booking_params[:available_task_id],
   // tasker_id: booking_params[:tasker_id],
   // client_id: booking_params[:client_id],
   // details: params[:booking][:details],
@@ -27,7 +27,7 @@ module.exports = {
   getCurrentBooking: function () {
     var booking = {};
     booking.date = localStorage.getItem('booking_date');
-    booking.task_id = localStorage.getItem('booking_task_id');
+    booking.available_task_id = localStorage.getItem('booking_task_id');
     booking.tasker_id = localStorage.getItem('booking_tasker_id');
     booking.client_id = localStorage.getItem('booking_client_id');
     booking.details = localStorage.getItem('booking_details');
