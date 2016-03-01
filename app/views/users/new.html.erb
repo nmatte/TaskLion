@@ -1,25 +1,28 @@
 <form action="<%= users_url %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
+<div class="signup-container">
   <label>
     First Name
-    <input type="text" name="user[fname]">
+    <input class="input" type="text" name="user[fname]">
   </label>
 
   <label>
     Last Name
-    <input type="text" name="user[lname]">
+    <input class="input" type="text" name="user[lname]">
   </label>
 
   <label>
     Email
-    <input type="text" name="user[email]">
+    <input class="input" type="text" name="user[email]">
   </label>
 
   <label>
     Password
-    <input type="password" name="user[password]">
+    <input class="input" type="password" name="user[password]">
   </label>
+    <input class="blue-button" type="submit" value="Sign up">
 
-    <input type="submit" value="Sign up">
+    <p>(demo user: 'demo@tasklion.tech', password: 'demo_password')</p>
+    <p>(interactive demo user login incoming)</p>
+  </div>
 </form>

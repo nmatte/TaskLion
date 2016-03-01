@@ -1,23 +1,23 @@
 .category-container {
   list-style: none;
   padding: 0px 0px 0px 0px;
-  margin-right: -36px;
+  margin-left: -36px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
-
   margin: auto;
   width: auto;
-  max-width: 1236px;
+  transform: translateX(-36px);
+  width: 105%;
 }
 
 .category-index-item {
-  padding-right: 36px;
+  padding-left: 36px;
   height: 311px;
   width: 33%;
-  box-sizing: border-box;;
+  box-sizing: border-box;
   float: left;
 }
 

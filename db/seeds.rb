@@ -184,3 +184,5 @@ Tasker.all.each do |cat|
   AvailableTask.create!(tasker_id: cat.id, task_id: (task_start + 1 ) % Task.count + 1, blurb: random_blurb, rate: random_rate, schedule: {})
   AvailableTask.create!(tasker_id: cat.id, task_id: (task_start + 2) % Task.count + 1, blurb: random_blurb, rate: random_rate, schedule: {})
 end
+
+User.create(fname: "Demo", lname: "User", email: "demo@tasklion.tech", password: "demo_password")
