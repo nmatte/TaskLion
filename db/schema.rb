@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229193202) do
+ActiveRecord::Schema.define(version: 20160301004753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,16 +27,17 @@ ActiveRecord::Schema.define(version: 20160229193202) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.integer  "task_id",                     null: false
-    t.integer  "client_id",                   null: false
-    t.integer  "tasker_id",                   null: false
-    t.string   "address",                     null: false
+    t.integer  "task_id",                                               null: false
+    t.integer  "client_id",                                             null: false
+    t.integer  "tasker_id",                                             null: false
+    t.string   "address",                                               null: false
     t.json     "details"
-    t.text     "description",                 null: false
-    t.date     "date",                        null: false
-    t.boolean  "is_complete", default: false, null: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.text     "description",                                           null: false
+    t.date     "date",                                                  null: false
+    t.boolean  "is_complete",                           default: false, null: false
+    t.datetime "created_at",                                            null: false
+    t.datetime "updated_at",                                            null: false
+    t.integer  "{:index=>true, :foreign_key=>true}_id"
   end
 
   add_index "bookings", ["client_id"], name: "index_bookings_on_client_id", using: :btree
@@ -50,6 +51,14 @@ ActiveRecord::Schema.define(version: 20160229193202) do
     t.integer  "{:index=>true, :foreign_key=>true}_id"
     t.string   "img_url_big"
     t.string   "img_url_sm"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "booking_id",                null: false
+    t.boolean  "thumbs_up",  default: true, null: false
+    t.text     "body",                      null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "taskers", force: :cascade do |t|

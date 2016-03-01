@@ -3,6 +3,7 @@ var React = require('react'),
     TaskApiUtil = require('../../util/tasker_api_util'),
     ApiUtil = require('../../util/api_util'),
     TaskStore = require('../../stores/task'),
+    BookingActions = require('../../actions/booking_actions'),
     History = require('react-router').History;
 
 module.exports = React.createClass({
@@ -31,6 +32,7 @@ module.exports = React.createClass({
 
   _submit: function (event) {
     ApiUtil.postBooking(BookingStore.current());
+    BookingActions.clearBooking();
     this.history.push("/dashboard");
   },
 
