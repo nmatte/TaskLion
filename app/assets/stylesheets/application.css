@@ -45,9 +45,6 @@ ul {
   border: 1px solid #23B4D2;
   background-color: #23B4D2;
 
-
-
-
   margin: 16px 0px 16px 0px;
   padding: 8px 22.08px 8px 22.08px;
   border-radius: 4px;
@@ -64,6 +61,25 @@ ul {
 
 .dark-blue-button:focus {
   outline: none;
+}
+
+.blue-button {
+  color: #23B4D2;
+  border: 1px solid #23B4D2;
+  background-color: white;
+  display: table-cell;
+  vertical-align: bottom;
+  padding: 8px 22.08px;
+  border-radius: 4px;
+  font-weight: 300;
+  font-size: 16px;
+  transition: 0.16s;
+}
+
+.blue-button:hover {
+  color: white;
+  cursor: pointer;
+  background-color: #23B4D2;
 }
 
 .input {

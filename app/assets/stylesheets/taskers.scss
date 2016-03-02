@@ -19,6 +19,8 @@
   background-position: 50% 50%;
 }
 
+
+
 .tasker-select-box {
   width: 201px;
   height: auto;
@@ -54,4 +56,90 @@
 .tasker-index-item-top {
   height: 44px;
   margin-bottom: 8px;
+}
+
+
+.tasker-img-circ {
+  width: 172px;
+  height: 172px;
+  background-color: black;
+  margin: auto;
+  border-radius: 50%;
+  border: 4px solid white;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.profile-banner {
+  height: 345px;
+  padding: 32px 0px;
+  background-image: url('http://res.cloudinary.com/duwqltu7o/image/upload/v1456878164/profile_banner_bg_kioy0b.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profile-banner-content {
+  max-width: 960px;
+  width: 100%;
+  margin: auto;
+}
+
+.profile-title {
+  color: white;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 300;
+  margin: 32px 0px 0px 0px;
+
+  strong {
+    font-weight: 400;
+  }
+}
+
+.task-title {
+  font-size: 28px;
+  height: 40px;
+  margin: 0px 0px 10px 0px;
+}
+
+.task-blurb {
+  font-size: 14px;
+  margin: 0px 0px 18px 0px;
+}
+
+.tasker-task-info {
+  padding: 0px 8px;
+  float: left;
+
+}
+
+.tasker-task-row {
+  display: block;
+  margin: auto;
+  width: 100%;
+
+  .blue-button {
+    max-height: 50px;
+    line-height: 28px;
+    float: right;
+  }
+}
+
+
+.tasker-task-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  padding: 32px 0px;
+  max-width: 960px;
+}
+
+.available-task-container {
+  background-color: white;
+}
+
+.profile-main-container {
+  margin-bottom: 85px;
 }

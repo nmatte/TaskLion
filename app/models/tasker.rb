@@ -18,6 +18,6 @@ class Tasker < ActiveRecord::Base
   belongs_to :user
   has_many :available_tasks
   has_many :tasks, through: :available_tasks
-
+  has_many :reviews, through: :available_tasks
   validates :user, presence: true
 end

@@ -155,15 +155,20 @@ def random_rate
 end
 
 def random_blurb
-  blurbs = ["Prrrrt meow.",
-  "Meow meow reow.",
-  "Meeeeeeeeeeeeeeeeeeooooow.",
-  "Zzzzzzzzzzzzzzzzzz",
+  blurbs = ["Prrrrt meow. (I strive for only the best in what I do. You'll never find a better match for this task.)",
+  "Meow meow reow. (I'm quick and efficient. Service with a purr.)",
+  "Meeeeeeeeeeeeeeeeeeooooow. (Whatever you need, I don't get it done. But I'll definitely get something done.)",
+  "Zzzzzzzzzzzzzzzzzz. (Come back when it's not naptime.)",
   "(Is it naptime yet?)",
   "PrrrrrrrrrrrRrrrrRrrrrrr.",
-  "*roar*",
-  "*yawn*",
-  "*hiss*"]
+  "*roar* (I wish I was out hunting.)",
+  "(Can someone take this noisy thing off my collar?!)",
+  "(It's been way too long since I licked myself.)",
+  "*yawn* (It's nap o'clock, I think.)",
+  "*hiss* (Don't scratch me there.)",
+  "(Let me into the house so that I can immediately leave it.)",
+  "(Let's play, go ahead and rub my belly--STOP RUBBING MY BELLY)",
+  "Prrrt? (Not at all dedicated or caring. Very hungry though.)"]
 
   blurbs.sample
 end

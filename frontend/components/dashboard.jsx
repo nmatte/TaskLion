@@ -17,13 +17,13 @@ module.exports = React.createClass({
           <div>
             <h3>Select a date and time</h3>
             <p>
-              Let us know when you need your task done. We'll find the best Taskers who fit your schedule. 
+              Let us know when you need your task done. We'll find the best Taskers who fit your schedule.
             </p>
           </div>
           <div>
             <h3>Choose a Cat</h3>
             <p>
-              Our highly qualified Taskers have all been to the bet, so whomever you choose, you can rest assured they they'll get the job done right.
+              Our highly qualified Taskers have all been to the vet, so whomever you choose, you can rest assured they they'll get the job done right.
             </p>
           </div>
         </div>

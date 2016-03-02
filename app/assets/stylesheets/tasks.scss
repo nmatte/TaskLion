@@ -78,22 +78,3 @@
 
   float: left;
 }
-
-.blue-button {
-  color: #23B4D2;
-  border: 1px solid #23B4D2;
-  background-color: white;
-  display: table-cell;
-  vertical-align: bottom;
-  padding: 8px 22.08px;
-  border-radius: 4px;
-  font-weight: 300;
-  font-size: 16px;
-  transition: 0.16s;
-
-  &:hover {
-    color: white;
-    cursor: pointer;
-    background-color: #23B4D2;
-  }
-}

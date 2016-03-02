@@ -11,6 +11,15 @@ module.exports = {
 
   },
 
+  fetchTasker: function (id) {
+    $.ajax({
+      url: '/api/taskers/' + id,
+      success: function (response) {
+        TaskerApiActions.receiveTaskerUpdate(response);
+      }
+    });
+  },
+
   fetchTask: function (id) {
     $.ajax({
       url: '/api/tasks/' + id,

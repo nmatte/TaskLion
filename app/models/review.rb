@@ -17,4 +17,19 @@ class Review < ActiveRecord::Base
   has_one :task, through: :booking
 
   validates :booking, :body, presence: true
+
+  def self.reviews_for_tasker(id)
+    Review.find_by_sql([<<-SQL, id])
+      SELECT
+        reviews.id, reviews.thumbs_up, reviews.body
+      FROM
+        reviews
+      JOIN
+        bookings ON reviews.booking_id = bookings.id
+      JOIN
+        taskers ON taskers.id = bookings.tasker_id
+      WHERE
+        taskers.id = ?
+    SQL
+  end
 end

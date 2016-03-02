@@ -24,12 +24,12 @@ module.exports = React.createClass({
           </Link>
 
           <div className="nav-bar-link-container">
-          <Link to={"/dashboard/"}
-            onClick={this._pushDash}
-            className="nav-bar-link">Home</Link>
-          <Link to={"/account/" }
-            onClick={this._pushAcct}
-            className="nav-bar-link">Account</Link>
+            <Link to={"/account/" }
+              onClick={this._pushAcct}
+              className="nav-bar-link">Account</Link>
+            <Link to={"/dashboard/"}
+              onClick={this._pushDash}
+              className="nav-bar-link">Home</Link>
         </div>
         </div>
       </div>
