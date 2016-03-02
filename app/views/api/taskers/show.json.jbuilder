@@ -5,3 +5,4 @@ json.available_tasks do
   end
 end
 json.reviews @tasker.reviews
+json.review_avg @review_avg

@@ -28,16 +28,20 @@ module.exports = React.createClass({
   },
 
   render: function () {
-    var items = this.state.tasker.available_tasks.map(function (task, index) {
-      return <AvailableTaskIndexItem task={task} key={index}/>;
-    });
+    if (this.state.tasker && this.state.tasker.available_tasks) {
+      var items = this.state.tasker.available_tasks.map(function (task, index) {
+        return <AvailableTaskIndexItem task={task} key={index}/>;
+      });
 
-    return (
-      <div className="available-task-container">
-        <ul className="tasker-task-list">
-          {items}
-        </ul>
-      </div>
-    );
+      return (
+        <div className="available-task-container">
+          <ul className="tasker-task-list">
+            {items}
+          </ul>
+        </div>
+      );
+    } else {
+      return <div className="loader">Loading...</div>;
+    }
   }
 });

@@ -1,6 +1,7 @@
 var React = require('react'),
     BookingStore = require('../stores/booking'),
-    BookingActions = require('../actions/booking_actions');
+    BookingActions = require('../actions/booking_actions'),
+    Link = require('react-router').Link;
 
 
 module.exports = React.createClass({
@@ -30,8 +31,10 @@ module.exports = React.createClass({
           <div className="tasker-img" style={style}></div>
           <button
             className="tasker-select-button dark-blue-button"
-            onClick={this._taskerClick}
-              >Select & Continue</button>
+            onClick={this._taskerClick}>
+            Select & Continue
+          </button>
+          <Link to={"/profile/" + this.props.tasker.id + "/tasks"}>Profile</Link>
         </div>
         <div className="tasker-index-item-content">
           <div className="tasker-index-item-top">

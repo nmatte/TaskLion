@@ -15,6 +15,7 @@ var React = require('react'),
     CategoryIndex = require('./components/category_index'),
     TaskerProfile = require('./components/tasker_profile'),
     AvailableTaskIndex = require('./components/available_task_index'),
+    ProfileReviewIndex = require('./components/profile_review_index'),
     Router = require('react-router').Router,
     Route = require('react-router').Route,
     IndexRoute = require('react-router').IndexRoute,
@@ -52,6 +53,11 @@ var routes = (
     <Route component={TaskerProfile} path="/profile/:tasker_id">
       <IndexRedirect to="tasks"/>
       <Route path="tasks" component={AvailableTaskIndex}/>
+      <Route path="reviews">
+        <IndexRedirect to="1"/>
+        <Route path=":page_num" component={ProfileReviewIndex}>
+        </Route>
+      </Route>
     </Route>
   </Route>
 );

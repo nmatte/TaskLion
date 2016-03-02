@@ -2,6 +2,7 @@ class Api::TaskersController < ApplicationController
   def show
     @tasker = Tasker.find(params[:id])
     @tasker.reviews = Review.reviews_for_tasker(@tasker.id)
+    @review_avg = Review.review_avg(@tasker.reviews)
   end
 
   def index
