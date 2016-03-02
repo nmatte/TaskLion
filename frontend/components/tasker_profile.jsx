@@ -33,6 +33,7 @@ module.exports = React.createClass({
     var tasker = this.state.tasker;
     if (tasker) {
       var style = (tasker !== undefined) ? {backgroundImage: 'url('+tasker.img_url_sm+')'} : {};
+      var child = <div>Nothing to see here</div>;
 
         var content = (
           <div className="profile-main-container">
@@ -42,9 +43,7 @@ module.exports = React.createClass({
                 <h2 className="profile-title"><strong>Hello, </strong>I'm {this.state.tasker.fname} {this.state.tasker.lname.slice(0,1)}.</h2>
               </div>
             </div>
-            <div className="available-task-container">
-              <AvailableTaskIndex availableTasks={tasker.available_tasks}/>
-            </div>
+            {this.props.children}
           </div>
         );
 
@@ -54,7 +53,7 @@ module.exports = React.createClass({
         </div>
       );
     } else {
-      return <p>Loading Tasker Profile...</p>;
+      return <div className="loader">Loading...</div>;
     }
   }
 });

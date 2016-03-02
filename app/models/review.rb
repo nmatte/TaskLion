@@ -21,13 +21,19 @@ class Review < ActiveRecord::Base
   def self.reviews_for_tasker(id)
     Review.find_by_sql([<<-SQL, id])
       SELECT
-        reviews.id, reviews.thumbs_up, reviews.body
+        reviews.id,
+        reviews.thumbs_up,
+        reviews.body,
+        users.fname AS client_fname,
+        users.lname AS client_lname
       FROM
         reviews
       JOIN
         bookings ON reviews.booking_id = bookings.id
       JOIN
         taskers ON taskers.id = bookings.tasker_id
+      JOIN
+        users ON users.id = bookings.client_id
       WHERE
         taskers.id = ?
     SQL

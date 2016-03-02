@@ -14,6 +14,7 @@ var React = require('react'),
     BookingConfirmation = require('./components/booking/confirmation'),
     CategoryIndex = require('./components/category_index'),
     TaskerProfile = require('./components/tasker_profile'),
+    AvailableTaskIndex = require('./components/available_task_index'),
     Router = require('react-router').Router,
     Route = require('react-router').Route,
     IndexRoute = require('react-router').IndexRoute,
@@ -49,7 +50,8 @@ var routes = (
     </Route>
 
     <Route component={TaskerProfile} path="/profile/:tasker_id">
-
+      <IndexRedirect to="tasks"/>
+      <Route path="tasks" component={AvailableTaskIndex}/>
     </Route>
   </Route>
 );

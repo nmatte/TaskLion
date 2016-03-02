@@ -16,58 +16,32 @@ deco = Category.create(
   description: "Let us help with all your decoration needs."
 )
 
-Task.create(
-  category: deco,
-  name: "Couch Shredding",
-  description: "For that shaggy look on your sofa."
-)
+decos = [
+  {name: "Couch Shredding", description: "For that shaggy look on your sofa."},
+  {name: "Fragance Distribution", description: "Make your home smell wild with our expert scent distributors."},
+  {name: "Blind Warping", description: "Tired of your blinds lining up perfectly? Our taskers can solve that within minutes."},
+  {name: "Furniture Stress Testing", description: "You never know when your home decor is positioned precariously. We'll bring those weaknesses to your attention."}
+]
 
-Task.create(
-  category: deco,
-  name: "Fragance Distribution",
-  description: "Make your home smell wild with our expert scent distributors."
-)
-
-Task.create(
-  category: deco,
-  name: "Blind Warping",
-  description: "Tired of your blinds lining up perfectly? Our taskers can solve that within minutes."
-)
-
-Task.create(
-  category: deco,
-  name: "Furniture Stress Testing",
-  description: "You never know when your home decor is positioned precariously. We'll bring those weaknesses to your attention."
-)
+decos.each do |d|
+  Task.create(category: deco, name: d[:name], description: d[:description])
+end
 
 therapy = Category.create(
   name: "Therapy",
-  description: "We'll make you feel refreshed and happy with these laid-back taskers."
+  description: "You'll feel refreshed and happy with these laid-back taskers."
 )
 
-Task.create(
-  category: therapy,
-  name: "Purring",
-  description: "We'll soothe you to sleep with our cuddliest taskers."
-)
+therapies = [
+  {name: "Purring", description: "We'll soothe you to sleep with our cuddliest taskers."},
+  {name: "Lap Sitting", description: "Keep yourself warm and your pants covered in cat hair."},
+  {name: "Leg Rubbing", description: "Our expert taskers might even beg for treats."},
+  {name: "Ignoring", description: "..."}
+]
 
-Task.create(
-  category: therapy,
-  name: "Lap Sitting",
-  description: "Keep yourself warm and your pants covered in cat hair."
-)
-
-Task.create(
-  category: therapy,
-  name: "Leg Rubbing",
-  description: "Our expert taskers might even beg for treats."
-)
-
-Task.create(
-  category: therapy,
-  name: "Ignoring",
-  description: "..."
-)
+therapies.each do |t|
+  Task.create(category: therapy, name: t[:name], description: t[:description])
+end
 
 hunting = Category.create(
   name: "Hunting",
