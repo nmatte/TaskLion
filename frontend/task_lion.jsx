@@ -23,6 +23,7 @@ window.ApiUtil = ApiUtil;
 window.DateFormat = require('dateformat');
 window.TaskerApiUtil = require('./util/tasker_api_util');
 window.TaskerStore = require('./stores/tasker');
+window.ReactDom = ReactDom;
 var routes = (
   <Route component={App} path="/">
     <Route component={Account} path="account">

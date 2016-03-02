@@ -6,7 +6,8 @@
   display: flex;
   flex-direction: row;
   margin: auto;
-  width: 1000px;
+  justify-content: space-between;
+  max-width: 1200px;
 }
 h5 {
   color: #828a8b;
@@ -55,6 +56,20 @@ h5 {
   padding: 16px 0px;
   width: 100%;
   margin: auto;
+}
+
+.booking-date {
+  width: 400px;
+}
+
+.booking-date-container {
+  width: 400px;
+}
+
+.booking-date-container.fixed {
+  position: fixed;
+  top: 0px;
+  left: 120px;
 }
 
 

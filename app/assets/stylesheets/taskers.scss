@@ -1,7 +1,12 @@
+.tasker-index {
+  max-width: 800px;
+}
+
 .tasker-index-item {
   background-color: white;
   margin-bottom: 32px;
-  width: 736px;
+  width: 100%;
+  box-sizing: border-box;
   min-height: 201px;
   display: flex;
   flex-direction: row;
@@ -101,6 +106,7 @@
 .task-title {
   font-size: 28px;
   height: 40px;
+  font-weight: 400;
   margin: 0px 0px 10px 0px;
 }
 

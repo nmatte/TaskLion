@@ -116,7 +116,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 **Objective:** Taskers have a full profile you can view.
 
 - build out API, Flux loop, and components for:
-  - [ ] fetching tasker's blurb
+  - [x] fetching tasker's blurb
   - [ ] fetching associated reviews
 - [ ] Style new elements
 

@@ -1,4 +1,5 @@
 var React = require('react'),
+    ReactDom = require('react-dom'),
     BookingStore = require('../../stores/booking'),
     TaskerStore = require('../../stores/tasker'),
     TaskStore = require('../../stores/task'),
@@ -13,7 +14,9 @@ module.exports = React.createClass({
   getInitialState: function() {
     return {
       taskers: TaskerStore.all(),
-      task: TaskStore.find(this.props.params.task_id)
+      task: TaskStore.find(this.props.params.task_id),
+      dateContainerAtTop: false,
+      alreadyRendered: false
     };
   },
 
@@ -32,18 +35,52 @@ module.exports = React.createClass({
     BookingActions.updateBooking({date: event.target.value});
   },
 
-  componentWillUnmount: function() {
-    this.taskerListener.remove();
-    this.taskerListener = null;
-    this.bookingListener.remove();
-    this.bookingListener = null;
+  _onScroll: function () {
+    // if (this.dateContainer === undefined
+    //  && document.getElementsByClassName('booking-date-container').length > 0) {
+    //   this.dateContainer = document.getElementsByClassName('booking-date-container')[0];
+    //   this.dateContainerTop = this.dateContainer.offsetHeight;
+    // }
+
+    if (document.getElementsByClassName('booking-date-container').length > 0) {
+      if (this.dateContainer === undefined) {
+        this.dateContainer = document.getElementsByClassName('booking-date-container')[0];
+        this.dateContainerLeft = this.dateContainer.offsetLeft;
+        this.dateContainerTop = this.dateContainer.offsetTop;
+      }
+    }
+
+    this._scrolledPastDateContainer();
   },
+
+  _scrolledPastDateContainer: function () {
+    if(!this.state.dateContainerAtTop && window.scrollY > this.dateContainerTop) {
+      console.log("fixedDateContainer");
+      this.setState({dateContainerAtTop: true});
+    }
+    if (this.state.dateContainerAtTop && window.scrollY < this.dateContainerTop) {
+      console.log("not-fixed");
+      this.setState({dateContainerAtTop: false});
+    }
+  },
+
 
   componentDidMount: function() {
     this.taskerListener = TaskerStore.addListener(this._onTaskersChange);
     this.bookingListener = BookingStore.addListener(this._onBookingChange);
     TaskApiUtil.fetchTaskers(this.props.params.task_id);
     TaskApiUtil.fetchTask(this.props.params.task_id);
+
+    this.dateContainerTop = 61;
+    window.addEventListener("scroll",this._onScroll);
+  },
+  componentWillUnmount: function() {
+    this.taskerListener.remove();
+    this.taskerListener = null;
+    this.bookingListener.remove();
+    this.bookingListener = null;
+
+    window.removeEventListener("scroll", this._onScroll);
   },
 
   componentWillReceiveProps: function(nextProps) {
@@ -51,15 +88,30 @@ module.exports = React.createClass({
     TaskApiUtil.fetchTask(nextProps.params.task_id);
   },
 
+
+
   render: function () {
+    var bookingContainerClass =
+      this.state.dateContainerAtTop
+      ? "fixed "
+      : "";
+    var bookingContainerStyle =
+      this.state.dateContainerAtTop
+      ? {left: this.dateContainerLeft}
+      : {};
+    bookingContainerClass += "booking-date-container";
     var today = DateFormat(Date.now(), "yyyy-mm-dd");
     return (
       <div className="col-container">
-        <div>{this.state.task.name}</div>
-        <br></br>
-        <div><input
+        
+
+        <div
+          className={bookingContainerClass}>
+          <input
           type="date"
           onChange={this._dateChange}
+          className="booking-date"
+          onscroll={this._onScroll}
           min={today}
           value={today}
           />

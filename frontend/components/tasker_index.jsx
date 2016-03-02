@@ -11,7 +11,7 @@ module.exports = React.createClass({
       }
     );
     return (
-      <div>
+      <div className="tasker-index">
         <ul>
           {content}
         </ul>

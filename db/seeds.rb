@@ -183,11 +183,43 @@ def random_task_id
   ids.shift
 end
 
+non_taskers = []
+
+20.times do
+  u = User.create(fname: Faker::Name.first_name, lname: Faker::Name.last_name, email: Faker::Internet.email, password: "password")
+  non_taskers << u
+end
+
 Tasker.all.each do |cat|
   task_start = (rand * Task.count).floor
-  AvailableTask.create!(tasker_id: cat.id, task_id: task_start % Task.count + 1, blurb: random_blurb, rate: random_rate, schedule: {})
-  AvailableTask.create!(tasker_id: cat.id, task_id: (task_start + 1 ) % Task.count + 1, blurb: random_blurb, rate: random_rate, schedule: {})
-  AvailableTask.create!(tasker_id: cat.id, task_id: (task_start + 2) % Task.count + 1, blurb: random_blurb, rate: random_rate, schedule: {})
+  9.times do |n|
+    a = AvailableTask.create!(tasker_id: cat.id, task_id: (task_start + n) % Task.count + 1, blurb: random_blurb, rate: random_rate, schedule: {})
+    booking_num = ((rand * 10).floor + 10)
+
+    booking_num.times do |bk|
+      b = Booking.create!(
+        client_id: non_taskers.sample.id,
+        tasker_id: cat.id,
+        available_task_id: a.id,
+        address: "placeholder st.",
+        description: "you should never see this",
+        date: Date.current.to_s
+      )
+      thumbs_up_down = rand < 0.97
+      Review.create!(booking_id: b.id, thumbs_up: thumbs_up_down, body: "What a lovely cat")
+    end
+  end
 end
+
+
+#  id                :integer          not null, primary key
+#  client_id         :integer          not null
+#  tasker_id         :integer          not null
+#  address           :string           not null
+#  details           :json
+#  description       :text             not null
+#  date              :date             not null
+#  is_complete       :boolean          default(FALSE), not null
+#  available_task_id :integer          not null
 
 User.create(fname: "Demo", lname: "User", email: "demo@tasklion.tech", password: "demo_password")
