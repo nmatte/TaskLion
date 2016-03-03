@@ -15,6 +15,6 @@ class AddCorrectForeignKeyReferencesPart2 < ActiveRecord::Migration
     # change_column :taskers, :user_id, index: true
 
     add_foreign_key :tasks, :categories
-    change_column :tasks, :category_id, index: true
+    # change_column :tasks, :category_id, index: true
   end
 end
