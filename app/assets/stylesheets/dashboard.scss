@@ -21,6 +21,7 @@
     margin-top: 0px;
     font-size: 16px;
     // font-family: 'Roboto', sans-serif;
+    font-family: 'Oxygen', sans-serif;
   }
 
   h3 {
@@ -33,7 +34,7 @@
     text-align: left;
     width: 100%;
     color: #00944A;
-
+    font-family: 'Oxygen', sans-serif;
   }
 
 .get-started-step {
@@ -46,7 +47,7 @@
     border-radius: 50%;
     background: #00944A;
     color: white;
-    width: 40px;
+    min-width: 40px;
     height: 40px;
     font-size: 18px;
     text-align: center;
