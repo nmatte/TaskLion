@@ -52,19 +52,39 @@ module.exports = React.createClass({
     BookingActions.updateBooking({description: event.target.value});
   },
 
+  makeDetailItem: function (title, inputComponent, button, isFocused) {
+    var collapseTag = isFocused ? "" : " is-collapsed";
+    var shadowTag = isFocused ? " shadow" : "";
+    return (
+      <div className={"detail-item shadow" + shadowTag}>
+        <label htmlFor="location_input">
+          <h5>{title}</h5>
+        </label>
+        <div className="booking-detail-content">
+          <div className={"detail-content-wrapper " + collapseTag}>
+            {inputComponent}
+          </div>
+
+          <div className={"detail-content-wrapper " + collapseTag}>
+            {button}
+          </div>
+      </div>
+    </div>
+    );
+  },
+
   render: function () {
-    var locationClass = "detail-item shadow ";
-    var descriptionClass = "detail-item shadow ";
+    var collapseLocation = "";
+    var collapseDescription = "";
 
     if (this.state.focused === "location") {
-      locationClass += "is-focused";
+      collapseLocation = " is-focused";
     } else {
-      descriptionClass += "is-focused";
+      collapseDescription = " is-focused";
     }
-    console.log("state booking",this.state.booking);
-    console.log("booking store",BookingStore.current());
+
     var locationForm = (
-      <div className={locationClass}>
+      <div className="detail-item shadow">
         <label htmlFor="location_input">
           <h5>Your Task Location</h5>
         </label>
@@ -89,7 +109,7 @@ module.exports = React.createClass({
     );
 
     var descriptionForm = (
-      <div className={descriptionClass}>
+      <div className="detail-item shadow">
         <label htmlFor="description_input">
           <h5>Tell Us About Your Task</h5>
         </label>

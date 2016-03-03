@@ -14,6 +14,7 @@ h5 {
   text-transform: uppercase;
   font-weight: 300;
   font-size: 14px;
+  margin: 0px 0px 0.754ex 0px;
 }
 
 .detail-container {
@@ -29,24 +30,24 @@ h5 {
   display: flex;
   flex-direction: column;
   margin-top: 4px;
-  overflow: hidden;
-  height: 30px;
-  transition: height 0.3s;
 }
 
 .booking-detail-content {
   flex-direction: column;
 }
 
-.is-focused {
-  height: 200px;
-  margin: 16px -6px;
-}
 
 .detail-content-wrapper {
   padding: 16px 0px;
   width: 100%;
   margin: auto;
+  transition: height 0.3s;
+  overflow: hidden;
+
+  &.is-collapsed {
+    height: 0px;
+    margin: 16px -6px;
+  }
 }
 
 .booking-date {
