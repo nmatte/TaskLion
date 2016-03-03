@@ -39,25 +39,67 @@ module.exports = React.createClass({
   render: function () {
     var content;
     if (this.state.task === undefined) {
-      content = "Loading...";
+      return <div className="loader">Loading...</div>;
     } else {
-      content = (<div>
-        <h1>
-          {this.state.task.name}
-        </h1>
-        <p>Date: {BookingStore.current().date}</p>
-        <p>Address: {BookingStore.current().address}</p>
-        <p>Description: {BookingStore.current().description}</p>
-        <p>Tasker: {BookingStore.current().tasker_id}</p>
-        <p>User: {BookingStore.current().client_id}</p>
-        <button onClick={this._submit}>Submit</button>
-      </div>);
-    }
-    return (
-      <div>
-        {content}
+      // var dateInfo = BookingStore.current().date
+      var dateInfo = "Placeholder";
+      // BookingStore.current().tasker_id
+
+      var taskerName = "Curie T.";
+      // BookingStore.current().address
+      // BookingStore.current().description
+      content = (
+        <div className="confirmation-container">
+          <div className="confirmation-panel shadow">
+            <div className="confirmation-header-strip">
+              <h2>
+                {this.state.task.name}
+              </h2>
+              <span>
+                <strong>$40</strong>/hr
+              </span>
+            </div>
+            <div className="confirmation-section">
+              <div className="confirmation-gutter">
+                <div className="confirmation-col">
+                  <label>Date & Time</label>
+                  <div className="confirmation-section-value">
+                    {dateInfo}
+                  </div>
+                </div>
+
+                <div className="confirmation-tasker-info">
+                    <div className="avatar-wrapper">
+                      <div className="avatar-mini"/>
+                    </div>
+                    <div>
+                      <label>Tasker</label>
+                      <div className="confirmation-section-value">
+                        {taskerName}
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div className="confirmation-gutter">
+              <label>Task Location</label>
+              <div className="confirmation-section-value">160 Spear St., San Francisco, California</div>
+            </div>
+            <div className="confirmation-gutter">
+              <label>Description</label>
+              <div className="confirmation-section-value">Please smother me in cute cats.</div>
+            </div>
+            <section className="confirmation-section">
+              <div className="confirmation-button-container">
+                <button className="dark-blue-button confirmation-button" onClick={this._submit}>Confirm & Book</button>
+              </div>
+            </section>
+          </div>
       </div>
     );
+
+      return content;
+    }
   }
 
 

@@ -16,9 +16,6 @@ h5 {
   font-size: 14px;
 }
 
-.tasker-col {
-}
-
 .detail-container {
   max-width: 1200px;
   width: auto;
@@ -32,23 +29,17 @@ h5 {
   display: flex;
   flex-direction: column;
   margin-top: 4px;
-  transition: 0.5s;
-}
-
-.booking-description {
-
+  overflow: hidden;
+  height: 30px;
+  transition: height 0.3s;
 }
 
 .booking-detail-content {
   flex-direction: column;
-  display: none;
-}
-
-.is-focused .booking-detail-content{
-  display: flex;
 }
 
 .is-focused {
+  height: 200px;
   margin: 16px -6px;
 }
 
@@ -69,13 +60,130 @@ h5 {
 .booking-date-container.fixed {
   position: fixed;
   top: 0px;
-  left: 120px;
 }
-
 
 .booking-button.dark-blue-button{
   margin: auto;
   display: block;
   width: 100px;
   padding: 10px 27.6px;
+}
+
+.confirmation-panel {
+  margin: 4px -6px 16px -6px;
+  padding: 0px 40px;
+  background-color: white;
+}
+
+.confirmation-header {
+  width: 100%;
+}
+
+.confirmation-header-strip {
+  padding: 24px 0px 20px 0px;
+  display: flex;
+  justify-content: space-between;
+
+  h2 {
+    font-weight: 400;
+    font-size: 32px;
+    margin: 0px;
+    margin-bottom: 0.754ex;
+  }
+
+  & > span {
+    font-weight: 300;
+    line-height: 37px;
+    height: 37px;
+    font-size: 24px;
+    border: 1px solid #828A8B;
+    border-radius: 2rem;
+    padding: 0 1.25rem;
+  }
+
+  strong {
+    font-weight: 400;
+  }
+}
+// border-top: 1px solid #828a8b;
+
+.confirmation-section {
+  padding-top: 24px;
+  border-top: 1px solid #828a8b;
+}
+
+.confirmation-container {
+  width: 760px;
+  padding-top: 32px;
+  margin: auto;
+}
+
+
+.confirmation-gutter {
+  display: block;
+  width: 100%;
+  height: 68px;
+
+  label {
+    color: #757d7e;
+    font-size: 14px;
+    font-weight: 300;
+    width: 100%;
+    display: inline-block;
+  }
+
+  .confirmation-section-value {
+    color: #323A3B;
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .confirmation-col {
+    width: 50%;
+    float: left;
+    display: inline-block;
+  }
+
+}
+
+.avatar-wrapper {
+  padding-right: 24px;
+  display: inline-block;
+}
+
+.avatar-mini {
+  background-color: #323A3B;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  margin: 0px;
+  position: relative;
+  // top: 50%;
+  transform: translateY(20%);
+}
+
+.confirmation-tasker-info {
+    padding-left: 48px;
+    border-left: 1px solid #cfd2d3;
+    box-sizing: border-box;
+    width: 50%;
+    float: right;
+    height: 49px;
+    display: flex;
+    flex-direction: row;
+}
+
+.confirmation-button-container {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-bottom: 32px;
+
+  .confirmation-button {
+    font-size: 20px;
+    margin: auto;
+    padding: 10px 28px;
+  }
 }

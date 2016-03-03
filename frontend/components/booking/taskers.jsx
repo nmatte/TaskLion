@@ -36,12 +36,6 @@ module.exports = React.createClass({
   },
 
   _onScroll: function () {
-    // if (this.dateContainer === undefined
-    //  && document.getElementsByClassName('booking-date-container').length > 0) {
-    //   this.dateContainer = document.getElementsByClassName('booking-date-container')[0];
-    //   this.dateContainerTop = this.dateContainer.offsetHeight;
-    // }
-
     if (document.getElementsByClassName('booking-date-container').length > 0) {
       if (this.dateContainer === undefined) {
         this.dateContainer = document.getElementsByClassName('booking-date-container')[0];
@@ -55,11 +49,9 @@ module.exports = React.createClass({
 
   _scrolledPastDateContainer: function () {
     if(!this.state.dateContainerAtTop && window.scrollY > this.dateContainerTop) {
-      console.log("fixedDateContainer");
       this.setState({dateContainerAtTop: true});
     }
     if (this.state.dateContainerAtTop && window.scrollY < this.dateContainerTop) {
-      console.log("not-fixed");
       this.setState({dateContainerAtTop: false});
     }
   },
@@ -70,8 +62,6 @@ module.exports = React.createClass({
     this.bookingListener = BookingStore.addListener(this._onBookingChange);
     TaskApiUtil.fetchTaskers(this.props.params.task_id);
     TaskApiUtil.fetchTask(this.props.params.task_id);
-
-    this.dateContainerTop = 61;
     window.addEventListener("scroll",this._onScroll);
   },
   componentWillUnmount: function() {
@@ -88,8 +78,6 @@ module.exports = React.createClass({
     TaskApiUtil.fetchTask(nextProps.params.task_id);
   },
 
-
-
   render: function () {
     var bookingContainerClass =
       this.state.dateContainerAtTop
@@ -103,8 +91,6 @@ module.exports = React.createClass({
     var today = DateFormat(Date.now(), "yyyy-mm-dd");
     return (
       <div className="col-container">
-        
-
         <div
           className={bookingContainerClass}>
           <input

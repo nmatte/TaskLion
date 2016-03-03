@@ -33,8 +33,12 @@ ul {
   list-style: none;
 }
 
+.main-container {
+  padding-bottom: 85px;
+}
+
 .content-container {
-  max-width: 920px;
+  max-width: 960px;
   margin: auto;
 }
 
