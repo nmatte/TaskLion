@@ -42,7 +42,7 @@ module.exports = React.createClass({
     }
     var reviewLis = currentReviews.map(
       function (review, index) {
-        return <li key={index}>{review.id}{review.thumbs_up ? "true" : "false"} {review.body}</li>;
+        return <li key={index}>{review.task_name}{review.id}{review.thumbs_up ? "true" : "false"} {review.body}</li>;
       }
     );
     return (

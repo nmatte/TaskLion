@@ -23,8 +23,6 @@ module.exports = React.createClass({
       dateContainerAtTop: false,
       alreadyRendered: false
     };
-
-
   },
 
   _onTaskersChange: function () {

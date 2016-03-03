@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :categories, only: [:index, :show]
 
+    match 'tasks/search', to: 'tasks#search', via: [:get]
     resources :tasks, only: [:show] do
       resources :taskers, only: [:index]
     end
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
     end
 
     resources :available_tasks, only: [:show]
-    
+
     match 'current_user', to: 'users#current', via: [:get]
   end
 

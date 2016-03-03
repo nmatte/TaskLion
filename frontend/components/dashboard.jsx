@@ -1,10 +1,13 @@
 var React = require('react'),
-    CategoryIndex = require('./category_index');
+    CategoryIndex = require('./category_index'),
+    SearchBar = require('./search_bar');
 
 module.exports = React.createClass({
   render: function () {
     return (
       <div className="dashboard-main">
+        <SearchBar/>
+
         <div className="get-started-container">
           <h2>How to Get Started</h2>
           <p>We're excited to help! Here's how it works:</p>

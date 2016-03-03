@@ -173,7 +173,6 @@ Tasker.all.each do |cat|
     booking_num.times do |bk|
       b = Booking.create!(
         client_id: non_taskers.sample.id,
-        tasker_id: cat.id,
         available_task_id: a.id,
         address: "placeholder st.",
         description: "you should never see this",

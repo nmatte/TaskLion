@@ -3,6 +3,14 @@ class Api::TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
-  def index
+
+  def search
+    if params[:query].present?
+      @tasks = Task.where("name ~ ?", "^#{params[:query].capitalize}")
+    else
+      @tasks = Task.none
+    end
+
+    render :index
   end
 end
