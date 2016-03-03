@@ -17,9 +17,9 @@ deco = Category.create(
 )
 
 decos = [
-  {name: "Couch Shredding", description: "For that shaggy look on your sofa."},
-  {name: "Fragance Distribution", description: "Make your home smell wild with our expert scent distributors."},
-  {name: "Blind Warping", description: "Tired of your blinds lining up perfectly? Our taskers can solve that within minutes."},
+  {name: "Couch Shredding", description: "For that shaggy look on your sofa.", img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1456890667/couch_la7nvw.jpg"},
+  {name: "Fragance Distribution", description: "Make your home smell wild with our expert scent distributors.", img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1456891041/fragrance_distribution_ls2zrg.jpg"},
+  {name: "Blind Warping", description: "Tired of your blinds lining up perfectly? Our taskers can solve that within minutes.", img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1456890819/blinds_wznnfz.jpg"},
   {name: "Furniture Stress Testing", description: "You never know when your home decor is positioned precariously. We'll bring those weaknesses to your attention."}
 ]
 
@@ -48,23 +48,16 @@ hunting = Category.create(
   description: "Need a mouser? We've got some of the best hunters you'll find."
 )
 
-Task.create(
-  category: hunting,
-  name: "Mouse Removal",
-  description: "We'll take care of those pesky critters!"
-)
+hunts = [
+  {name: "Mouse Removal", description: "We'll take care of those pesky critters!"},
+  {name: "Bird Removal", description: "The bells come off for this one. That songbird outside your window won't pose a problem anymore.", img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1456891242/bird_hunting_un3yul.jpg"},
+  {name: "Miscellaneous", description: "We can't guarantee we'll catch it, but we'll careen around your house as necessary."},
+  {name: "Fishing", description: "No aquarium is safe from our taskers.", img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1456891239/fishing_c356kw.jpg"}
+]
 
-Task.create(
-  category: hunting,
-  name: "Bird Removal",
-  description: "The bells come off for this one. That songbird outside your window won't pose a problem anymore."
-)
-
-Task.create(
-  category: hunting,
-  name: "Miscellaneous",
-  description: "We can't guarantee we'll catch it, but we'll careen around your house as necessary."
-)
+hunts.each do |h|
+  Task.create(category: hunting, name: h[:name], description: h[:description])
+end
 
 protection = Category.create(
   name: "Protection",
@@ -117,10 +110,10 @@ k = User.create(fname: "Kasha", lname: "Pendragon", email: "kasha@catmail.com",
 Tasker.create(user_id: k.id, is_elite: true,  blurbs: {}, img_url_sm: 'http://res.cloudinary.com/duwqltu7o/image/upload/v1456854037/prof_panther_fzk0ax.jpg')
 
 mrs = User.create(fname: "Mrs", lname: "Bojangles", email: "bojangles@catmail.com", password: "password")
-Tasker.create(user_id: mrs.id, is_elite: true, blurbs: {})
+Tasker.create(user_id: mrs.id, is_elite: true, blurbs: {}, img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1456853760/prof_blinds_capogx.jpg")
 
 sarah = User.create(fname: "Sara", lname: "Cat", email: "sara@catmail.com", password: "password")
-Tasker.create(user_id: sarah.id, blurbs: {})
+Tasker.create(user_id: sarah.id, blurbs: {}, img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1456853764/prof_leaves_bxdwue.jpg")
 
 larry = User.create(fname: "Larry", lname: "Chief Mouser", email: "larry@catmail.com", password: "password")
 Tasker.create(user_id: larry.id, blurbs: {}, img_url_sm: 'http://res.cloudinary.com/duwqltu7o/image/upload/v1456853760/prof_chief_mouser_vmofqf.jpg')
@@ -129,21 +122,26 @@ def random_rate
 end
 
 def random_blurb
-  blurbs = ["Prrrrt meow. (I strive for only the best in what I do. You'll never find a better match for this task.)",
-  "Meow meow reow. (I'm quick and efficient. Service with a purr.)",
-  "Meeeeeeeeeeeeeeeeeeooooow. (Whatever you need, I don't get it done. But I'll definitely get something done.)",
-  "Zzzzzzzzzzzzzzzzzz. (Come back when it's not naptime.)",
-  "(Is it naptime yet?)",
+  blurbs = ["Prrrrt meow. I strive for only the best in what I do. You'll never find a better match for this task.",
+  "Meow meow reow. I'm quick and efficient. Service with a purr.",
+  "Meeeeeeeeeeeeeeeeeeooooow. Whatever you need, I probably won't get it done. But I'll definitely get something done.",
+  "Zzzzzzzzzzzzzzzzzz. Come back when it's not naptime.",
+  "Is it naptime yet?",
   "PrrrrrrrrrrrRrrrrRrrrrrr.",
-  "*roar* (I wish I was out hunting.)",
-  "(Can someone take this noisy thing off my collar?!)",
-  "(It's been way too long since I licked myself.)",
-  "*yawn* (It's nap o'clock, I think.)",
-  "*hiss* (Don't scratch me there.)",
-  "(Let me into the house so that I can immediately leave it.)",
-  "(Let's play, go ahead and rub my belly--STOP RUBBING MY BELLY)",
-  "Prrrt? (Not at all dedicated or caring. Very hungry though.)"]
-
+  "*roar* I wish I was out hunting.",
+  "Can someone take this noisy thing off my collar?!",
+  "It's been way too long since I licked myself.",
+  "*yawn* It's nap o'clock, I think.",
+  "*hiss* Don't scratch me there.",
+  "Let me into the house so that I can immediately leave it.",
+  "Let's play, go ahead and rub my belly--STOP RUBBING MY BELLY",
+  "Prrrt? Not at all dedicated or caring. Very hungry though.",
+  "...Do I hear a can opening?",
+  "Mreeeow reow meeeeeeeeeow. I know the trees in this area very well.",
+  "... ... ... prrrrrrrrrrrr",
+  "What the heck is that red dot thing?",
+  "I am the night.",
+  ]
   blurbs.sample
 end
 
@@ -184,15 +182,5 @@ Tasker.all.each do |cat|
   end
 end
 
-
-#  id                :integer          not null, primary key
-#  client_id         :integer          not null
-#  tasker_id         :integer          not null
-#  address           :string           not null
-#  details           :json
-#  description       :text             not null
-#  date              :date             not null
-#  is_complete       :boolean          default(FALSE), not null
-#  available_task_id :integer          not null
 
 User.create(fname: "Demo", lname: "User", email: "demo@tasklion.tech", password: "demo_password")

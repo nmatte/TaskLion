@@ -29,6 +29,17 @@ body {
   }
 }*/
 
+.footer {
+  background: #B4B9B9;
+  padding: 40px 0px;
+
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
 a {
    text-decoration: none;
 }

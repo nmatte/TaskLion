@@ -10,6 +10,16 @@ module.exports = React.createClass({
       <div>
         <div><Navbar/></div>
         {this.props.children}
+        <div className="footer">
+          <div className="footer-container">
+            Footer!!<br/>
+            Footer!!<br/>
+            Footer!!<br/>
+            Footer!!<br/>
+            Footer!!<br/>
+            Footer!!<br/>
+          </div>
+        </div>
       </div>
     );
   }

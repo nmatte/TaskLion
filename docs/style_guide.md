@@ -6,3 +6,4 @@
 * h4 \#00964B
 * button \#23B4D2
 * background \#F5F6F6
+* footer background \#B4B9B9
