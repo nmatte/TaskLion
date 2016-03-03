@@ -4,7 +4,6 @@
 #
 #  id                :integer          not null, primary key
 #  client_id         :integer          not null
-#  tasker_id         :integer          not null
 #  address           :string           not null
 #  details           :json
 #  description       :text             not null
@@ -16,11 +15,12 @@
 #
 
 class Booking < ActiveRecord::Base
-  belongs_to :tasker
-  belongs_to :task
+  belongs_to :available_task
   belongs_to :client, class_name: :User
   has_one :review, class_name: :Review, foreign_key: :booking_id
-  validates :available_task_id, :client_id, :tasker_id, :address, :description, :date, presence: true
+  has_one :tasker, through: :available_task
+  has_one :task, through: :available_task
+  validates :available_task_id, :client_id, :address, :description, :date, presence: true
 
 
 end

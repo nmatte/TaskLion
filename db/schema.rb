@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302020302) do
+ActiveRecord::Schema.define(version: 20160303052707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20160302020302) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "client_id",                         null: false
-    t.integer  "tasker_id",                         null: false
     t.string   "address",                           null: false
     t.json     "details"
     t.text     "description",                       null: false
@@ -40,7 +39,6 @@ ActiveRecord::Schema.define(version: 20160302020302) do
   end
 
   add_index "bookings", ["client_id"], name: "index_bookings_on_client_id", using: :btree
-  add_index "bookings", ["tasker_id"], name: "index_bookings_on_tasker_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",        null: false
@@ -94,7 +92,6 @@ ActiveRecord::Schema.define(version: 20160302020302) do
   add_foreign_key "available_tasks", "taskers"
   add_foreign_key "available_tasks", "tasks"
   add_foreign_key "bookings", "available_tasks"
-  add_foreign_key "bookings", "taskers"
   add_foreign_key "bookings", "users", column: "client_id"
   add_foreign_key "taskers", "users"
 end

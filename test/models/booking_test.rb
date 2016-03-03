@@ -4,7 +4,6 @@
 #
 #  id                :integer          not null, primary key
 #  client_id         :integer          not null
-#  tasker_id         :integer          not null
 #  address           :string           not null
 #  details           :json
 #  description       :text             not null

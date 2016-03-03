@@ -11,12 +11,20 @@ var React = require('react'),
 module.exports = React.createClass({
 
   getInitialState: function() {
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    var tomorrowString = DateFormat(tomorrow, "yyyy-mm-dd");
+
+    BookingActions.updateBooking({date: tomorrow});
+
     return {
       taskers: TaskerStore.all(),
       task: TaskStore.find(this.props.params.task_id),
       dateContainerAtTop: false,
       alreadyRendered: false
     };
+
+
   },
 
   _onTaskersChange: function () {
@@ -81,6 +89,9 @@ module.exports = React.createClass({
       : {};
     bookingContainerClass += "booking-date-container";
     var today = DateFormat(Date.now(), "yyyy-mm-dd");
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    var tomorrowString = DateFormat(tomorrow, "yyyy-mm-dd");
     return (
       <div className="col-container">
         <div
@@ -90,8 +101,8 @@ module.exports = React.createClass({
           onChange={this._dateChange}
           className="booking-date"
           onscroll={this._onScroll}
-          min={today}
-          value={today}
+          min={tomorrowString}
+          value={tomorrowString}
           />
 
         </div>

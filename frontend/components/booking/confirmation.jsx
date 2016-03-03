@@ -1,5 +1,6 @@
 var React = require('react'),
     BookingStore = require('../../stores/booking'),
+    SessionStore = require('../../stores/session'),
     TaskApiUtil = require('../../util/tasker_api_util'),
     ApiUtil = require('../../util/api_util'),
     TaskStore = require('../../stores/task'),
@@ -49,7 +50,9 @@ module.exports = React.createClass({
   },
 
   _submit: function (event) {
-    ApiUtil.postBooking(BookingStore.current());
+    var bk = BookingStore.current();
+    bk.client_id = SessionStore.user().id;
+    ApiUtil.postBooking(bk);
     BookingActions.clearBooking();
     this.history.push("/dashboard");
   },
@@ -62,50 +65,68 @@ module.exports = React.createClass({
       // var dateInfo = BookingStore.current().date
       var dateInfo = "Placeholder";
       // BookingStore.current().tasker_id
-
       var taskerName = this.state.availableTask.fname || "Curie T.";
+
+
+      var header = (
+        <div className="confirmation-header-strip">
+          <h2>
+            {this.state.availableTask.task_name}
+          </h2>
+          <span>
+            <strong>$40</strong>/hr
+          </span>
+        </div>
+      );
+
+      var dateInfos = (
+        <div className="confirmation-col">
+          <label>Date & Time</label>
+          <div className="confirmation-section-value">
+            {dateInfo}
+          </div>
+        </div>);
+
+      var taskerInfos = (
+        <div className="confirmation-tasker-info">
+          <div className="avatar-wrapper">
+            <div className="avatar-mini"/>
+          </div>
+          <div>
+            <label>Tasker</label>
+            <div className="confirmation-section-value">
+              {taskerName}
+            </div>
+          </div>
+        </div>
+      );
+
+      var location = (
+        <div className="confirmation-gutter">
+          <label>Task Location</label>
+          <div className="confirmation-section-value">160 Spear St., San Francisco, California</div>
+        </div>
+      );
+
+      var description = (
+        <div className="confirmation-gutter">
+          <label>Description</label>
+          <div className="confirmation-section-value">Please smother me in cute cats.</div>
+        </div>
+      );
       // BookingStore.current().address
       // BookingStore.current().description
       content = (
         <div className="confirmation-container">
           <div className="confirmation-panel shadow">
-            <div className="confirmation-header-strip">
-              <h2>
-                {this.state.availableTask.task_name}
-              </h2>
-              <span>
-                <strong>$40</strong>/hr
-              </span>
-            </div>
+            {header}
             <div className="confirmation-section">
               <div className="confirmation-gutter">
-                <div className="confirmation-col">
-                  <label>Date & Time</label>
-                  <div className="confirmation-section-value">
-                    {dateInfo}
-                  </div>
-                </div>
-
-                <div className="confirmation-tasker-info">
-                    <div className="avatar-wrapper">
-                      <div className="avatar-mini"/>
-                    </div>
-                    <div>
-                      <label>Tasker</label>
-                      <div className="confirmation-section-value">
-                        {taskerName}
-                      </div>
-                    </div>
-                  </div>
+                {dateInfos}
+                {taskerInfos}
               </div>
-            </div>
-            <div className="confirmation-gutter">
-              <label>Task Location</label>
-              <div className="confirmation-section-value">160 Spear St., San Francisco, California</div>
-            </div>
-            <div className="confirmation-gutter">
-              <label>Description</label>
-              <div className="confirmation-section-value">Please smother me in cute cats.</div>
+              {location}
+              {description}
             </div>
             <section className="confirmation-section">
               <div className="confirmation-button-container">
