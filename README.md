@@ -125,8 +125,8 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 **Objective:** Tasks can be searched.
 
 - build out API, Flux loop, and components for:
-  - [ ] searching for tasks
-- [ ] Style new elements
+  - [x] searching for tasks
+- [x] Style new elements
 
 
 ### Phase 8: Styling Cleanup and Seeding (1 day)
