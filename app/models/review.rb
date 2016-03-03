@@ -41,11 +41,11 @@ class Review < ActiveRecord::Base
       JOIN
         bookings ON reviews.booking_id = bookings.id
       JOIN
-        taskers ON taskers.id = bookings.tasker_id
+        available_tasks ON available_tasks.id = bookings.available_task_id
+      JOIN
+        taskers ON taskers.id = available_tasks.tasker_id
       JOIN
         users ON users.id = bookings.client_id
-      JOIN
-        available_tasks ON available_tasks.id = bookings.available_task_id
       JOIN
         tasks ON tasks.id = available_tasks.task_id
       WHERE
