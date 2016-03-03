@@ -10,12 +10,9 @@ module.exports = React.createClass({
     );
 
     return (
-      <div>
-        SearchBarResults
-        <ul>
-          {taskLis}
-        </ul>
-      </div>
+      <ul className="search-bar-result-list">
+        {taskLis}
+      </ul>
     );
   }
 });

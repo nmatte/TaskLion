@@ -3,12 +3,12 @@ var React = require('react'),
 module.exports = React.createClass({
   render: function () {
     return (
-        <li>
           <Link to={'/book/' + this.props.task.id}>
+            <li className="search-bar-result-item">
             {this.props.task.name}
 
+          </li>
           </Link>
-        </li>
     );
   }
 });

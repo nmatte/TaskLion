@@ -2,6 +2,7 @@
 
 .results-dropdown {
   display: flex;
+  flex-direction: column;
   position: absolute;
   background: white;
   overflow: hidden;
@@ -22,4 +23,29 @@
 
 .search-bar {
   position: relative;
+}
+
+.search-bar-result-item {
+  width: 100%;
+  color: #158AA2;
+  padding: 0.75em 1.4em;
+  font-size: 15px;
+  height: 60px;
+  line-height: 60px;
+
+  &:hover {
+    background: #F5F6F6;
+    color: #004C5A;
+  }
+
+  &:visited {
+    color: #158AA2;
+  }
+}
+
+
+.search-bar-result-list {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
 }
