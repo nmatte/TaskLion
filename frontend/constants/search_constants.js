@@ -1,0 +1,3 @@
+module.exports = {
+  RECEIVE_SEARCH_RESULTS: "RECEIVE_SEARCH_RESULTS"
+};
