@@ -20,6 +20,8 @@ Rails.application.routes.draw do
       resources :available_tasks, only: [:index]
     end
 
+    resources :available_tasks, only: [:show]
+    
     match 'current_user', to: 'users#current', via: [:get]
   end
 

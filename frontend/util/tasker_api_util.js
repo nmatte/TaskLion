@@ -29,6 +29,15 @@ module.exports = {
     });
   },
 
+  fetchAvailableTask: function (id) {
+    $.ajax({
+      url: '/api/available_tasks/' + id,
+      success: function (response) {
+        TaskerApiActions.receiveAvailableTask(response);
+      }
+    });
+  },
+
   fetchReviews: function (id) {
     $.ajax({
       url: '/api/taskers/' + id + "/reviews",

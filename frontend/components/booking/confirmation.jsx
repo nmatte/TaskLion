@@ -3,6 +3,8 @@ var React = require('react'),
     TaskApiUtil = require('../../util/tasker_api_util'),
     ApiUtil = require('../../util/api_util'),
     TaskStore = require('../../stores/task'),
+    TaskerStore = require('../../stores/tasker'),
+    AvailableTaskStore = require('../../stores/available_task'),
     BookingActions = require('../../actions/booking_actions'),
     History = require('react-router').History;
 
@@ -11,23 +13,39 @@ module.exports = React.createClass({
 
   getInitialState: function () {
     return {
-      task: TaskStore.find(this.props.params.task_id)
+      availableTask: AvailableTaskStore.find(this.props.location.query.available_task_id),
+      booking: BookingStore.current()
     };
   },
 
-  componentWillMount: function() {
-    this.taskListener = TaskStore.addListener(this._onTaskChange);
-    TaskApiUtil.fetchTask(this.props.params.task_id);
+  componentDidMount: function() {
+    this.bookingListener = BookingStore.addListener(this._onBookingChange);
+    this.availableTaskListener = AvailableTaskStore.addListener(this._onAvailableTaskChange);
+
+    var id = this.props.location.query.available_task_id;
+    BookingActions.fetchBooking();
+    TaskApiUtil.fetchAvailableTask(id);
+
   },
 
-  _onTaskChange: function () {
+  _onBookingChange: function () {
+    var bk = BookingStore.current();
+    var taskerId = parseInt(bk.tasker_id);
     this.setState({
-      task: TaskStore.find(this.props.params.task_id)
+      booking: bk,
+      tasker: TaskerStore.find(taskerId)
+    });
+  },
+
+  _onAvailableTaskChange: function () {
+    this.setState({
+      availableTask: AvailableTaskStore.find(this.props.location.query.available_task_id)
     });
   },
 
   componentWillUnmount: function() {
-    this.taskListener.remove();
+    this.availableTaskListener.remove();
+    this.bookingListener.remove();
   },
 
   _submit: function (event) {
@@ -38,14 +56,14 @@ module.exports = React.createClass({
 
   render: function () {
     var content;
-    if (this.state.task === undefined) {
+    if (this.state.availableTask === undefined) {
       return <div className="loader">Loading...</div>;
     } else {
       // var dateInfo = BookingStore.current().date
       var dateInfo = "Placeholder";
       // BookingStore.current().tasker_id
 
-      var taskerName = "Curie T.";
+      var taskerName = this.state.availableTask.fname || "Curie T.";
       // BookingStore.current().address
       // BookingStore.current().description
       content = (
@@ -53,7 +71,7 @@ module.exports = React.createClass({
           <div className="confirmation-panel shadow">
             <div className="confirmation-header-strip">
               <h2>
-                {this.state.task.name}
+                {this.state.availableTask.task_name}
               </h2>
               <span>
                 <strong>$40</strong>/hr

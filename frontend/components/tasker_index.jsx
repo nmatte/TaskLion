@@ -7,8 +7,12 @@ module.exports = React.createClass({
   render: function () {
     var content = this.props.taskers.map(
       function (tasker, index) {
-        return <TaskerIndexItem key={index} tasker={tasker} />;
-      }
+        return (
+          <TaskerIndexItem
+          key={index}
+          tasker={tasker}
+          taskId={this.props.taskId} />);
+      }.bind(this)
     );
     return (
       <div className="tasker-index">

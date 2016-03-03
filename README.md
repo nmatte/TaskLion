@@ -117,8 +117,8 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 - build out API, Flux loop, and components for:
   - [x] fetching tasker's blurb
-  - [ ] fetching associated reviews
-- [ ] Style new elements
+  - [x] fetching associated reviews
+- [x] Style new elements
 
 ### Phase 7: Search (1 day)
 

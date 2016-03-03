@@ -7,9 +7,8 @@ var React = require('react'),
     DateFormat = require('dateformat'),
     BookingActions = require('../../actions/booking_actions'),
     TaskApiUtil = require('../../util/tasker_api_util');
-  var History = require('react-router').History;
+
 module.exports = React.createClass({
-  mixins: [History],
 
   getInitialState: function() {
     return {
@@ -25,10 +24,6 @@ module.exports = React.createClass({
       taskers: TaskerStore.all(),
       task: TaskStore.find(this.props.params.task_id)
     });
-  },
-
-  _onBookingChange: function () {
-    this.history.push("book/" + this.props.params.task_id + "/confirm");
   },
 
   _dateChange: function (event) {
@@ -56,19 +51,16 @@ module.exports = React.createClass({
     }
   },
 
-
   componentDidMount: function() {
     this.taskerListener = TaskerStore.addListener(this._onTaskersChange);
-    this.bookingListener = BookingStore.addListener(this._onBookingChange);
     TaskApiUtil.fetchTaskers(this.props.params.task_id);
     TaskApiUtil.fetchTask(this.props.params.task_id);
     window.addEventListener("scroll",this._onScroll);
   },
+
   componentWillUnmount: function() {
     this.taskerListener.remove();
     this.taskerListener = null;
-    this.bookingListener.remove();
-    this.bookingListener = null;
 
     window.removeEventListener("scroll", this._onScroll);
   },
@@ -104,7 +96,7 @@ module.exports = React.createClass({
 
         </div>
         <br></br>
-        <TaskerIndex taskers={this.state.taskers}/>
+        <TaskerIndex taskers={this.state.taskers} taskId={this.props.params.task_id}/>
       </div>
     );
   }

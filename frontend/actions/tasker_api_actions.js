@@ -21,5 +21,12 @@ module.exports = {
       actionType: TaskerConstants.RECEIVE_TASKER_UPDATE,
       tasker: tasker
     });
+  },
+
+  receiveAvailableTask: function (avTask) {
+    Dispatcher.dispatch({
+      actionType: TaskerConstants.RECEIVE_AVAILABLE_TASK,
+      availableTask: avTask
+    });
   }
 };
