@@ -1,6 +1,6 @@
 # TaskLion
 
-[Heroku link][heroku] **NB:** This should be a link to your production site
+[Heroku link][tasklion.tech] **NB:** This should be a link to your production site
 
 [heroku]: http://www.herokuapp.com
 
