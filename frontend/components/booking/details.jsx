@@ -56,16 +56,17 @@ module.exports = React.createClass({
     var collapseTag = isFocused ? "" : " is-collapsed";
     var shadowTag = isFocused ? " shadow" : "";
     return (
-      <div className={"detail-item shadow" + shadowTag}>
+      <div className={"detail-item" + shadowTag + collapseTag}>
         <label htmlFor="location_input">
           <h5>{title}</h5>
         </label>
-        <div className="booking-detail-content">
-          <div className={"detail-content-wrapper " + collapseTag}>
+        <div className={"completed-info" + collapseTag}>plaaaaaaaaceholder</div>
+        <div className={"booking-detail-content" + collapseTag} >
+          <div className={"detail-content-wrapper"}>
             {inputComponent}
           </div>
 
-          <div className={"detail-content-wrapper " + collapseTag}>
+          <div className={"detail-content-wrapper"}>
             {button}
           </div>
       </div>
@@ -83,30 +84,25 @@ module.exports = React.createClass({
       collapseDescription = " is-focused";
     }
 
-    var locationForm = (
-      <div className="detail-item shadow">
-        <label htmlFor="location_input">
-          <h5>Your Task Location</h5>
-        </label>
-        <div className="booking-detail-content">
-          <div className="detail-content-wrapper">
-            <input id="location_input"
-              className="input"
-              type="text"
-              onChange={this._locationChange} value={this.state.booking.address}>
-            </input>
-          </div>
+    var locationTitle = "Your Task Location";
 
-          <div className="detail-content-wrapper">
-            <button
-              className="dark-blue-button booking-button"
-              onClick={this._locationClick}>
-              Save
-            </button>
-          </div>
-        </div>
-      </div>
+    var locationInput = (
+      <input id="location_input"
+        className="input"
+        type="text"
+        onChange={this._locationChange} value={this.state.booking.address}>
+      </input>
     );
+
+    var locationButton = (
+      <button
+        className="dark-blue-button booking-button"
+        onClick={this._locationClick}>
+        Save
+      </button>
+    );
+
+    var locationForm = this.makeDetailItem(locationTitle, locationInput, locationButton, this.state.focused === "location");
 
     var descriptionForm = (
       <div className="detail-item shadow">
