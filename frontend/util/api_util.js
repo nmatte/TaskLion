@@ -11,6 +11,9 @@ module.exports = {
   },
 
   fetchSingleCategory: function (id) {
+    if (id === 1) {
+      id = "featured";
+    }
     $.ajax({
       url: '/api/categories/' + id,
       success: function (response) {

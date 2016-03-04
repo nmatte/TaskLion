@@ -3,10 +3,14 @@ var React = require('react'),
 
 module.exports = React.createClass({
   render: function () {
+    var img = this.props.task.img_url_sm;
+    var imgStyle = img
+      ? {backgroundImage: 'url('+ img+ ')'}
+      : {background: "gray"};
     return (
       <li className="shadow task-item">
         <div className="task-image-container">
-          <div className="task-image">
+          <div className="task-image" style={imgStyle}>
           </div>
         </div>
         <div className="task-content-container">

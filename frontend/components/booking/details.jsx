@@ -10,7 +10,9 @@ module.exports = React.createClass({
   getInitialState: function () {
     return {
       booking: BookingStore.current(),
-      focused: "location"
+      focused: "location",
+      location: BookingStore.current().location,
+      description: BookingStore.current().description
     };
   },
 
@@ -45,22 +47,29 @@ module.exports = React.createClass({
   _locationChange: function (event) {
     event.preventDefault();
     BookingActions.updateBooking({address: event.target.value});
+    this.setState({
+      location: event.target.value
+    });
   },
 
   _descriptionChange: function (event) {
     event.preventDefault();
     BookingActions.updateBooking({description: event.target.value});
+    this.setState({
+      description: event.target.value
+    });
   },
 
-  makeDetailItem: function (title, inputComponent, button, isFocused) {
+  makeDetailItem: function (title, inputComponent, button, isFocused, infoVal, contentHeight) {
     var collapseTag = isFocused ? "" : " is-collapsed";
     var shadowTag = isFocused ? " shadow" : "";
+    // var detailItemHeight = isFocused ? {height: contentHeight} : {height: 60};
     return (
       <div className={"detail-item" + shadowTag + collapseTag}>
         <label htmlFor="location_input">
           <h5>{title}</h5>
         </label>
-        <div className={"completed-info" + collapseTag}>plaaaaaaaaceholder</div>
+        <div className={"completed-info" + collapseTag}>{infoVal}</div>
         <div className={"booking-detail-content" + collapseTag} >
           <div className={"detail-content-wrapper"}>
             {inputComponent}
@@ -102,27 +111,20 @@ module.exports = React.createClass({
       </button>
     );
 
-    var locationForm = this.makeDetailItem(locationTitle, locationInput, locationButton, this.state.focused === "location");
+    var locationForm = this.makeDetailItem(locationTitle, locationInput, locationButton, this.state.focused === "location",this.state.location);
 
-    var descriptionForm = (
-      <div className="detail-item shadow">
-        <label htmlFor="description_input">
-          <h5>Tell Us About Your Task</h5>
-        </label>
-        <div className="booking-detail-content">
-          <div className="detail-content-wrapper">
-            <textarea id="description_input"
-              className="input booking-description"
-              onChange={this._descriptionChange}
-              value={this.state.booking.description}/>
-          </div>
-
-          <div className="detail-content-wrapper">
-            <button className="dark-blue-button booking-button" onClick={this._proceedClick}>Save</button>
-          </div>
-        </div>
-      </div>
+    var descriptionTitle = "Tell Us About Your Task";
+    var descriptionInput = (
+        <textarea
+          id="description_input"
+          className="input booking-description"
+          onChange={this._descriptionChange}
+          value={this.state.booking.description}/>
     );
+    var descriptionButton = <button className="dark-blue-button booking-button" onClick={this._proceedClick}>Save</button>;
+
+
+    var descriptionForm = this.makeDetailItem(descriptionTitle, descriptionInput, descriptionButton, this.state.focused === "description", this.state.description);
 
     return (
       <div className="detail-container">

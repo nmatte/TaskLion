@@ -88,3 +88,45 @@
 
 // CFD2D3 link divider
 // EBECEC
+
+
+.cat-hero-container {
+  height: 420px;
+}
+
+.cat-hero {
+  height: 100%;
+  // background:#626A6B;
+  overflow: hidden;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.cat-hero-header {
+  line-height: 72px;
+  margin: 0px;
+  font-size: 64px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;
+}
+
+.cat-hero-subtitle {
+  font-size: 1.5rem;
+    font-weight: 600;
+    max-width: 32em;
+    text-shadow: 0 1px 7px rgba(0,0,0,0.4);
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+}
+
+.hero-text {
+  padding: 0 1em;
+    position: relative;
+    top: 60%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

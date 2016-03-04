@@ -1,26 +1,102 @@
 var React = require('react'),
     Account = require('./account'),
     Navbar = require('./nav_bar'),
+    CategoryStore = require('../stores/category'),
+    TaskStore = require('../stores/task'),
+    ApiUtil = require('../util/api_util'),
+    TaskApiUtil = require('../util/tasker_api_util'),
     Link = require('react-router').Link;
 
 module.exports = React.createClass({
-  render: function () {
+  getInitialState: function() {
+    return {
+      headerContent: {}
+    };
+  },
 
-    return(
-      <div>
-        <div><Navbar/></div>
-        {this.props.children}
-        <div className="footer">
-          <div className="footer-container">
-            Footer!!<br/>
-            Footer!!<br/>
-            Footer!!<br/>
-            Footer!!<br/>
-            Footer!!<br/>
-            Footer!!<br/>
-          </div>
+  _onTaskChange: function () {
+    this.setHeaderToTask();
+  },
+
+  setHeaderToTask: function () {
+    this.setState({headerContent: TaskStore.find(this.props.params.task_id)});
+  },
+
+  _onCategoryChange: function () {
+    this.setHeaderToCategory();
+  },
+
+  setHeaderToCategory: function () {
+    this.setState({headerContent: CategoryStore.find(this.props.params.category_id)});
+  },
+
+  componentDidMount: function() {
+    this.taskListener = TaskStore.addListener(this._onTaskChange);
+    this.categoryListener = CategoryStore.addListener(this._onCategoryChange);
+    this.fetchHeaderContent(this.props);
+  },
+
+  fetchHeaderContent: function (propsToUse) {
+    if (propsToUse.params.hasOwnProperty("task_id")) {
+      TaskApiUtil.fetchTask(propsToUse.params.task_id);
+    } else if (propsToUse.params.hasOwnProperty("category_id")) {
+      ApiUtil.fetchSingleCategory(propsToUse.params.category_id);
+    }
+  },
+
+  componentWillUnmount: function() {
+    this.taskListener.remove();
+    this.categoryListener.remove();
+  },
+
+  componentWillReceiveProps: function(nextProps) {
+    this.fetchHeaderContent(nextProps);
+  },
+
+  render: function () {
+    var path = this.props.location.pathname;
+    var footer = (
+      <div className="footer">
+        <div className="footer-container">
+          Footer!!<br/>
+          Footer!!<br/>
+          Footer!!<br/>
+          Footer!!<br/>
+          Footer!!<br/>
+          Footer!!<br/>
         </div>
       </div>
     );
+    var showFooter = (path.indexOf("book") === -1 && path.indexOf("account") === -1);
+    var clearNavbar = showFooter && (path.indexOf("dashboard") === -1);
+    if (clearNavbar) {
+      return(
+        <div>
+          <div><Navbar
+            mode={"clear"}
+            title={this.state.headerContent.name}
+            subtitle={this.state.headerContent.description}
+            imgUrl={this.state.headerContent.img_url_big}/>
+
+          </div>
+          {this.props.children}
+          {footer}
+        </div>
+      );
+
+    } else {
+      return(
+        <div>
+          <div>
+            <Navbar mode={"opaque"}/>
+
+          </div>
+          {this.props.children}
+          {showFooter ? footer : <div></div>}
+        </div>
+      );
+
+    }
+
   }
 });

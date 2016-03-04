@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :categories, only: [:index, :show]
+    match 'categories/featured', to: 'categories#featured', via: [:get]
 
     match 'tasks/search', to: 'tasks#search', via: [:get]
     resources :tasks, only: [:show] do
