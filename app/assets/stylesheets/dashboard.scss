@@ -1,6 +1,35 @@
 .dashboard-main {
   max-width: 960px;
+  padding-top: 32px;
   margin: auto;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  // position: relative;
+}
+
+.welcome-title {
+  width: 100%;
+  h1 {
+    margin-top: 0px;
+  }
+}
+
+.profile-avatar {
+  min-width: 86px;
+  min-height: 86px;
+  max-width: 86px;
+  max-height: 86px;
+  border-radius: 50%;
+  background-size: cover;
+  position: relative;
+  transform: translateY(20%);
+  margin-right: 24px;
+  background-repeat: no-repeat;
+  background-image: url('http://res.cloudinary.com/duwqltu7o/image/upload/v1457114206/happy_cat_eewmsv.jpg');
 }
 
 .get-started-container {

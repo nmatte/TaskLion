@@ -1,12 +1,45 @@
 var React = require('react'),
     CategoryIndex = require('./category_index'),
-    SearchBar = require('./search_bar');
+    SearchBar = require('./search_bar'),
+    SessionStore = require('../stores/session'),
+    ApiUtil = require('../util/api_util');
 
 module.exports = React.createClass({
+  getInitialState: function() {
+    return {
+      user: SessionStore.user()
+    };
+  },
+
+  _sessionListener: function () {
+    this.setState({user: SessionStore.user()});
+  },
+
+  componentDidMount: function() {
+    this.sessionListener = SessionStore.addListener(this._sessionListener);
+    ApiUtil.fetchCurrentUser();
+  },
+
+  componentWillUnmount: function() {
+    this.sessionListener.remove();
+  },
+
   render: function () {
+    var welcome = "";
+    if (this.state.user) {
+      welcome = <h1>Welcome to TaskLion, {this.state.user.fname}!</h1>;
+    }
     return (
       <div className="dashboard-main">
-        <SearchBar/>
+        <div className="welcome-container">
+          <div className="profile-avatar">
+
+          </div>
+          <div className="welcome-title">
+            {welcome}
+            <SearchBar/>
+          </div>
+        </div>
 
         <div className="get-started-container">
           <h2>How to Get Started</h2>

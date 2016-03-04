@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :new, :update]
   match 'account', to: 'users#edit', via: [:get]
 
-  resource :session, only: [:new, :create, :destroy]
+  resource :session, only: [:new, :create, :destroy] do
+    match 'demo', to: 'sessions#demo', via: [:post]
+  end
 
   namespace :api, defaults: {format: :json} do
     resources :categories, only: [:index, :show]

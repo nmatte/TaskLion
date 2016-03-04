@@ -58,16 +58,16 @@ module.exports = React.createClass({
     var footer = (
       <div className="footer">
         <div className="footer-container">
-          Footer!!<br/>
-          Footer!!<br/>
-          Footer!!<br/>
-          Footer!!<br/>
-          Footer!!<br/>
-          Footer!!<br/>
+          Thanks for visiting my site.<br/>
+          I hope you've enjoyed all the cat pictures!<br/>
+          <br/>
+          <a href="https://github.com/nmatte">Check out my GitHub.</a><br/>
+          More footer stuff.<br/>
+          Yeah. Placeholders. Yay.<br/>
         </div>
       </div>
     );
-    var showFooter = (path.indexOf("book") === -1 && path.indexOf("account") === -1);
+    var showFooter = (path.indexOf("book") === -1 && path.indexOf("account") === -1 && path.indexOf("profile") === -1);
     var clearNavbar = showFooter && (path.indexOf("dashboard") === -1);
     if (clearNavbar) {
       return(

@@ -20,6 +20,17 @@ class SessionsController < ApplicationController
   def new
   end
 
+  def demo
+    user = User.find_by_credentials("demo@tasklion.tech", "demo_password")
+
+    if user
+      if user.save
+        log_in_user(user)
+        redirect_to :root
+      end
+    end
+  end
+
   def destroy
     log_out!
     redirect_to root_url
