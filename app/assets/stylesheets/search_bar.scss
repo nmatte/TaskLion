@@ -84,6 +84,8 @@
   font-size: 15px;
   height: 60px;
   line-height: 60px;
+  display: flex;
+  flex-direction: row;
 
   &:hover {
     background: #F5F6F6;
@@ -92,6 +94,18 @@
 
   &:visited {
     color: #158AA2;
+  }
+
+  img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-right: 24px;
+  }
+  span {
+    height: 100%;
+    line-height: 60px;
+    display: inline-block;
   }
 }
 

@@ -44,11 +44,11 @@ module.exports = React.createClass({
           <div className="nav-bar clear-nav-bar">
             <div className="nav-bar-thin">
               <Link to="/">
-                <img className="white-logo" src="assets/logo-white.png"/>
+                <img className="white-logo" src="http://res.cloudinary.com/duwqltu7o/image/upload/v1457117270/logo-white_i7ui3x.png"/>
               </Link>
               <div className="nav-bar-link-container">
-                <Link to={"/dashboard/"} className="nav-bar-link white-link">Home</Link>
                 <Link to={"/account/"} className="nav-bar-link white-link">Account</Link>
+                <Link to={"/dashboard/"} className="nav-bar-link white-link">Home</Link>
               </div>
             </div>
           </div>
