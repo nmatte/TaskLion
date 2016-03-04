@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.trust-banner {
+  text-align: center;
+  background: #EBECEC;
+  height: 45px;
+  line-height: 45px;
+  padding: 12px 0px;
+}
+
 .col-container {
   display: flex;
   flex-direction: row;
@@ -9,6 +17,7 @@
   justify-content: space-between;
   max-width: 1200px;
 }
+
 h5 {
   color: #828a8b;
   text-transform: uppercase;
