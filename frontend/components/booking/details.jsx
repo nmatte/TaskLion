@@ -1,19 +1,28 @@
 var React = require('react'),
     BookingActions = require('../../actions/booking_actions'),
+    LocationForm = require('./location_form'),
     History = require('react-router').History,
-    BookingStore = require('../../stores/booking');
+    BookingStore = require('../../stores/booking'),
+    LinkedStateMixin = require('react-addons-linked-state-mixin');
 
 
 module.exports = React.createClass({
-  mixins: [History],
+  mixins: [History, LinkedStateMixin],
 
   getInitialState: function () {
     return {
-      booking: BookingStore.current(),
-      focused: "location",
-      location: BookingStore.current().location,
-      description: BookingStore.current().description
+      address: this.getAddressFromStore(),
+      description: this.getDescriptionFromStore(),
+      errors: [],
+      focused: "location"
     };
+  },
+
+  getAddressFromStore: function () {
+    return BookingStore.current().address;
+  },
+  getDescriptionFromStore: function () {
+    return BookingStore.current().description;
   },
 
   _proceedClick: function (event) {
@@ -23,14 +32,26 @@ module.exports = React.createClass({
 
   _locationClick: function (event) {
     event.preventDefault();
-    this.setState ({
-      focused: "description"
-    });
+    var place = this.autocomplete.getPlace();
+    if(!place.geometry) {
+      this.setState({error: "Please enter a valid address."});
+    } else {
+      this.setState ({focused: "description"});
+      BookingActions.updateBooking({address: place.formatted_address});
+    }
+
+
   },
 
   componentDidMount: function() {
     this.bookingListener = BookingStore.addListener(this._onBookingChange);
     BookingActions.fetchBooking();
+    this.autocomplete = new google.maps.places.Autocomplete(document.getElementById('location_input'));
+    this.autocomplete.addListener('place_changed', this._placeChange);
+  },
+
+  _placeChange: function () {
+    var place = this.autocomplete.getPlace();
   },
 
   componentWillUnmount: function() {
@@ -44,14 +65,6 @@ module.exports = React.createClass({
     });
   },
 
-  _locationChange: function (event) {
-    event.preventDefault();
-    BookingActions.updateBooking({address: event.target.value});
-    this.setState({
-      location: event.target.value
-    });
-  },
-
   _descriptionChange: function (event) {
     event.preventDefault();
     BookingActions.updateBooking({description: event.target.value});
@@ -60,10 +73,9 @@ module.exports = React.createClass({
     });
   },
 
-  makeDetailItem: function (title, inputComponent, button, isFocused, infoVal, contentHeight) {
+  makeDetailItem: function (title, inputComponent, button, isFocused, infoVal) {
     var collapseTag = isFocused ? "" : " is-collapsed";
     var shadowTag = isFocused ? " shadow" : "";
-    // var detailItemHeight = isFocused ? {height: contentHeight} : {height: 60};
     return (
       <div className={"detail-item" + shadowTag + collapseTag}>
         <label htmlFor="location_input">
@@ -99,10 +111,9 @@ module.exports = React.createClass({
       <input id="location_input"
         className="input"
         type="text"
-        onChange={this._locationChange} value={this.state.booking.address}>
+        onChange={this._locationChange} value={this.state.address}>
       </input>
     );
-
     var locationButton = (
       <button
         className="dark-blue-button booking-button"
@@ -110,25 +121,30 @@ module.exports = React.createClass({
         Save
       </button>
     );
-
-    var locationForm = this.makeDetailItem(locationTitle, locationInput, locationButton, this.state.focused === "location",this.state.location);
+    var locationForm = this.makeDetailItem(
+      locationTitle,
+      locationInput,
+      locationButton,
+      this.state.focused === "location",
+      this.state.location);
 
     var descriptionTitle = "Tell Us About Your Task";
     var descriptionInput = (
         <textarea
           id="description_input"
           className="input booking-description"
-          onChange={this._descriptionChange}
-          value={this.state.booking.description}/>
+          value={this.state.description}/>
     );
     var descriptionButton = <button className="dark-blue-button booking-button" onClick={this._proceedClick}>Save</button>;
-
-
-    var descriptionForm = this.makeDetailItem(descriptionTitle, descriptionInput, descriptionButton, this.state.focused === "description", this.state.description);
+    var descriptionForm = this.makeDetailItem(
+      descriptionTitle,
+      descriptionInput,
+      descriptionButton,
+      this.state.focused === "description", this.state.description);
 
     return (
       <div className="detail-container">
-        {locationForm}
+        <LocationForm/>
         {descriptionForm}
       </div>
     );

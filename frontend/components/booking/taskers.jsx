@@ -7,7 +7,7 @@ var React = require('react'),
     DateFormat = require('dateformat'),
     BookingActions = require('../../actions/booking_actions'),
     TaskApiUtil = require('../../util/tasker_api_util');
-
+    
 module.exports = React.createClass({
 
   getInitialState: function() {

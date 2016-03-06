@@ -53,6 +53,7 @@ module.exports = React.createClass({
     this.fetchHeaderContent(nextProps);
   },
 
+
   render: function () {
     var path = this.props.location.pathname;
     var footer = (
