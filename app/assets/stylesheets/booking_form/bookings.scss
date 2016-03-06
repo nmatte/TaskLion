@@ -211,3 +211,13 @@ h5 {
     padding: 10px 28px;
   }
 }
+
+
+.error-info {
+  color: red;
+  // height: auto;
+
+  &.is-collapsed {
+
+  }
+}

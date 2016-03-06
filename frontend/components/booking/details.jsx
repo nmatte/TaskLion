@@ -30,28 +30,14 @@ module.exports = React.createClass({
     this.history.push("book/" + this.props.params.task_id + "/taskers");
   },
 
-  _locationClick: function (event) {
-    event.preventDefault();
-    var place = this.autocomplete.getPlace();
-    if(!place.geometry) {
-      this.setState({error: "Please enter a valid address."});
-    } else {
-      this.setState ({focused: "description"});
-      BookingActions.updateBooking({address: place.formatted_address});
-    }
-
-
+  _locationClick: function (value) {
+    this.setState({focused: "description"});
+    BookingActions.updateBooking({address: value});
   },
 
   componentDidMount: function() {
     this.bookingListener = BookingStore.addListener(this._onBookingChange);
     BookingActions.fetchBooking();
-    this.autocomplete = new google.maps.places.Autocomplete(document.getElementById('location_input'));
-    this.autocomplete.addListener('place_changed', this._placeChange);
-  },
-
-  _placeChange: function () {
-    var place = this.autocomplete.getPlace();
   },
 
   componentWillUnmount: function() {
@@ -96,7 +82,6 @@ module.exports = React.createClass({
   },
 
   render: function () {
-    var collapseLocation = "";
     var collapseDescription = "";
 
     if (this.state.focused === "location") {
@@ -144,7 +129,7 @@ module.exports = React.createClass({
 
     return (
       <div className="detail-container">
-        <LocationForm/>
+        <LocationForm isFocused={this.state.focused === "location"} onComplete={this._locationClick}/>
         {descriptionForm}
       </div>
     );

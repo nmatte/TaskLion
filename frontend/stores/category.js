@@ -19,7 +19,7 @@ CategoryStore.all = function () {
 };
 
 CategoryStore.find = function (id) {
-  return _categories[id];
+  return _categories[id] || {};
 };
 
 CategoryStore.__onDispatch = function (payload) {
