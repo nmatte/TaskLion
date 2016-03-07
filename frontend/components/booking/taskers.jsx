@@ -90,18 +90,18 @@ module.exports = React.createClass({
     var tomorrowString = DateFormat(tomorrow, "yyyy-mm-dd");
     return (
       <div className="col-container">
-        <div
-          className={bookingContainerClass}>
-          <input
-          type="date"
-          valueLink={this.linkState('date')}
-          className="booking-date"
-          onscroll={this._onScroll}
-          min={tomorrowString}
-          />
-
+        <div className="date-placeholder">
+          <div
+            className={bookingContainerClass}>
+            <input
+              type="date"
+              valueLink={this.linkState('date')}
+              className="booking-date"
+              onscroll={this._onScroll}
+              min={tomorrowString}
+              />
+          </div>
         </div>
-        <br></br>
         <TaskerIndex taskers={this.state.taskers} taskId={this.props.params.task_id}/>
       </div>
     );

@@ -13,7 +13,6 @@ SearchResultsStore.all = function () {
 SearchResultsStore.__onDispatch = function (payload) {
   switch(payload.actionType){
     case SearchConstants.RECEIVE_SEARCH_RESULTS:
-      console.log(payload.results);
       _results = payload.results;
       SearchResultsStore.__emitChange();
       break;

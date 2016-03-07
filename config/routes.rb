@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     resources :available_tasks, only: [:show]
 
     match 'current_user', to: 'users#current', via: [:get]
+    match 'current_bookings', to: 'users#current_bookings', via: [:get]
   end
 
   root to: "static_pages#root"

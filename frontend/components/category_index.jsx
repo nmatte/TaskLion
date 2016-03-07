@@ -30,8 +30,8 @@ module.exports = React.createClass({
   render: function () {
     var catLis = this.state.categories.slice(0,6).map(
       function (category, index) {
-        return <CategoryIndexItem key={index} category={category}/>;
-      }
+        return <CategoryIndexItem key={index} static={this.props.static} category={category}/>;
+      }.bind(this)
     );
     return (
       <ul className="category-container">

@@ -28,7 +28,6 @@ module.exports = React.createClass({
   },
 
   render: function () {
-    // debugger;
     var pageNum = parseInt(this.props.params.page_num);
     var sliceStart = (pageNum -1) * 10;
     var currentReviews = this.state.tasker.reviews.slice(sliceStart, sliceStart + 10);

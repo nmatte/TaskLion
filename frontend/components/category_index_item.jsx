@@ -30,7 +30,7 @@ module.exports = React.createClass({
       });
     }
 
-    if (this.props.params) {
+    if (!this.props.static) {
       return (
         <li className="category-index-item">
           <Link onClick={this.navTo} to={"/category/" + this.props.category.id}>

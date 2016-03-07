@@ -20,7 +20,7 @@ module.exports = React.createClass({
         <div className="nav-bar">
           <div className="nav-bar-thin">
             <Link to={"/dashboard/"} onClick={this._pushDash}>
-              <img className="color-logo" src="assets/logo.png"/>
+              <img className="color-logo" src="https://res.cloudinary.com/duwqltu7o/image/upload/v1457116384/logo_lzzapk.png"/>
             </Link>
 
             <div className="nav-bar-link-container">

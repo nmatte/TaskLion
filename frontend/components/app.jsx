@@ -59,12 +59,8 @@ module.exports = React.createClass({
     var footer = (
       <div className="footer">
         <div className="footer-container">
-          Thanks for visiting my site.<br/>
-          I hope you've enjoyed all the cat pictures!<br/>
-          <br/>
-          <a href="https://github.com/nmatte">Check out my GitHub.</a><br/>
-          More footer stuff.<br/>
-          Yeah. Placeholders. Yay.<br/>
+          <a className="footer-link" href="https://github.com/nmatte">GitHub</a><br/>
+          <a className="footer-link" href="https://www.linkedin.com/in/nmatte">LinkedIn</a>
         </div>
       </div>
     );

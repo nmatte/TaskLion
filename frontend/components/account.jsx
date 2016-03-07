@@ -41,7 +41,6 @@ module.exports = React.createClass({
   _pushPass: function () {
     var url = "/account/password/";
     this.history.push({pathname: url});
-    // debugger;
   },
 
 
@@ -52,7 +51,6 @@ module.exports = React.createClass({
 
     var passLink = "";
     var accLink = "";
-    // debugger;
     if (pathWords.indexOf("password") !== -1) {
       passLink = " selected";
     } else {

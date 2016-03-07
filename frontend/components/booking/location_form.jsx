@@ -25,7 +25,6 @@ module.exports = React.createClass({
 
   _placeChange: function () {
     var place = this.autocomplete.getPlace();
-    // debugger;
     if (place.geometry) {
       this.setState({location: place.formatted_address, errorMessage: ""});
       this.props.onComplete(place.formatted_address);
@@ -39,7 +38,6 @@ module.exports = React.createClass({
     if (this.state.location === "") {
       this.setState({errorMessage: "Please enter an address."});
     }
-    debugger;
     var place = this.autocomplete.getPlace();
     if (place && place.geometry) {
       this.setState({location: place.formatted_address, errorMessage: ""});
@@ -67,8 +65,6 @@ module.exports = React.createClass({
     } else {
       collapse = " is-collapsed";
       dis = "disabled";
-      // debugger;
-
     }
 
     var errorMessage = <div className={"error-info" + collapse}>{this.state.errorMessage}</div>;

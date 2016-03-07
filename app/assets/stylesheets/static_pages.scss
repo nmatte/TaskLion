@@ -5,7 +5,22 @@
 .hero-container {
   height: 320px;
 
+
 }
+
+#search-bar-splash {
+  max-width: 480px;
+  margin: 36px auto;
+  position: relative;
+  // z-index: 50;
+}
+
+// .mktg-intermediate {
+//     max-width: 960px;
+//     height: 400px;
+//     margin: auto;
+//     background-color: white;
+// }
 
 .hero {
   height: 100%;
@@ -35,6 +50,8 @@
 .category-index-wrapper {
   padding: 54px 0px;
   max-width: 1236px;
+  // position: absolute;
+  // z-index: 1;
   margin: auto;
   h2 {
     margin: 0px 0px 40px 0px;
@@ -100,4 +117,10 @@
   height: 54px;
   margin: auto;
   background-image: url('http://res.cloudinary.com/duwqltu7o/image/upload/v1457326524/full-color-logo_jqeqf0.png');
+}
+
+
+.footer-link {
+  color: white;
+  padding-left: 24px;
 }

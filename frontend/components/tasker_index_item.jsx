@@ -30,7 +30,6 @@ module.exports = React.createClass({
       style = {};
     }
 
-
     return (
       <li className="shadow tasker-index-item">
         <div className="tasker-select-box">
@@ -40,14 +39,16 @@ module.exports = React.createClass({
             onClick={this._taskerClick}>
             Select & Continue
           </button>
-          <Link to={"/profile/" + this.props.tasker.id + "/tasks"}>Profile</Link>
+          <Link className="blue-button" to={"/profile/" + this.props.tasker.id + "/tasks"}>Profile</Link>
         </div>
         <div className="tasker-index-item-content">
           <div className="tasker-index-item-top">
             <h3 className="tasker-name">{this.props.tasker.fname +" "+ this.props.tasker.lname}</h3>
             <div className="rate-badge"><strong>${this.props.tasker.rate}</strong>/hr</div>
           </div>
-          {this.props.tasker.blurb}
+          <div>
+            {this.props.tasker.blurb}
+          </div>
         </div>
       </li>
     );

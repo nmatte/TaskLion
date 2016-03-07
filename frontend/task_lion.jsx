@@ -14,6 +14,7 @@ var React = require('react'),
     BookingConfirmation = require('./components/booking/confirmation'),
     CategoryIndex = require('./components/category_index'),
     TaskerProfile = require('./components/tasker_profile'),
+    SearchBar = require('./components/search_bar'),
     AvailableTaskIndex = require('./components/available_task_index'),
     ProfileReviewIndex = require('./components/profile_review_index'),
     Router = require('react-router').Router,
@@ -66,13 +67,20 @@ var routes = (
 document.addEventListener("DOMContentLoaded", function functionName() {
   var app = document.getElementById('app');
   var catIndex = document.getElementById('cat-index');
+  var search = document.getElementById('search-bar-splash');
   if (app) {
     ReactDom.render(
       <Router>{routes}</Router>,
       app);
   } else if (catIndex) {
     ReactDom.render(
-      <CategoryIndex/>, catIndex
+      <CategoryIndex static={true}/>, catIndex
+    );
+  }
+
+  if (search) {
+    ReactDom.render(
+      <SearchBar />, search
     );
   }
 });

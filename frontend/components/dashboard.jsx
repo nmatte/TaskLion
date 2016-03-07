@@ -2,6 +2,8 @@ var React = require('react'),
     CategoryIndex = require('./category_index'),
     SearchBar = require('./search_bar'),
     SessionStore = require('../stores/session'),
+    AvailableTaskStore = require('../stores/available_task'),
+    TaskerApiUtil = require('../util/tasker_api_util'),
     ApiUtil = require('../util/api_util');
 
 module.exports = React.createClass({
@@ -80,7 +82,7 @@ module.exports = React.createClass({
         </div>
         <div className="category-index-container">
           <h2>Top Categories in Your Area</h2>
-          <CategoryIndex />
+          <CategoryIndex static={false} />
 
         </div>
       </div>
