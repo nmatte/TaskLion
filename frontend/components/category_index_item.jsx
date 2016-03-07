@@ -30,20 +30,39 @@ module.exports = React.createClass({
       });
     }
 
-    return (
-      <li className="category-index-item">
-        <Link onClick={this.navTo} to={"/category/" + this.props.category.id}>
-          <div className="category-tile shadow">
-            <div className="category-img" style={style}>
+    if (this.props.params) {
+      return (
+        <li className="category-index-item">
+          <Link onClick={this.navTo} to={"/category/" + this.props.category.id}>
+            <div className="category-tile shadow">
+              <div className="category-img" style={style}>
 
+              </div>
+              <div className="title-bar">
+                <h4 className="category-title">{this.props.category.name}</h4>
+                <text className="category-subtitle">{descr}</text>
+              </div>
             </div>
-            <div className="title-bar">
-              <h4 className="category-title">{this.props.category.name}</h4>
-              <text className="category-subtitle">{descr}</text>
+          </Link>
+        </li>
+      );
+    } else {
+      return (
+        <li className="category-index-item">
+          <a href="session/new">
+            <div className="category-tile shadow">
+              <div className="category-img" style={style}>
+
+              </div>
+              <div className="title-bar">
+                <h4 className="category-title">{this.props.category.name}</h4>
+                <text className="category-subtitle">{descr}</text>
+              </div>
             </div>
-          </div>
-        </Link>
-      </li>
-    );
+          </a>
+        </li>
+      );
+    }
+
   }
 });

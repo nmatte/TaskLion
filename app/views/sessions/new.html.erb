@@ -32,6 +32,9 @@
         </div>
       </form>
 
-      <%= button_to "Guest session", demo_session_url, class: "dark-blue-button" %>
+      <div class="credentials-field">
+        <%= button_to "Guest session", demo_session_url, class: "dark-blue-button" %>
+      </div>
+      <%= link_to "Not a user? Sign up", new_user_url, class: "blue-button" %>
     </div>
 </div>

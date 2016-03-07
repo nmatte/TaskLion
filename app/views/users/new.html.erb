@@ -34,6 +34,14 @@
       </label>
     </div>
 
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <div class="error-info">
+          <%= error %>
+        </div>
+      <% end %>
+    <% end %>
+
     <div class="credentials-field">
       <input class="dark-blue-button" type="submit" value="Sign up">
     </div>
@@ -43,5 +51,7 @@
   <div class="credentials-field">
     <%= button_to "Guest session", demo_session_url, class: "dark-blue-button" %>
   </div>
+
+  <%= link_to "Already a user? Sign in", new_session_url, class: "blue-button" %>
 </div>
 </div>

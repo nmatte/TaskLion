@@ -8,22 +8,22 @@
 
 Category.create!(
   name: "Featured", description: "View our most popular tasks.",
-  img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457070311/couch_sm_leudib.jpg",
-  img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1456890667/couch_la7nvw.jpg",
+  img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457070311/couch_sm_leudib.jpg",
+  img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1456890667/couch_la7nvw.jpg",
 )
 decos = [
   {name: "Couch Shredding", description: "For that shaggy look on your sofa.",
-    img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457070311/couch_sm_leudib.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1456890667/couch_la7nvw.jpg", featured: true},
+    img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457070311/couch_sm_leudib.jpg",
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1456890667/couch_la7nvw.jpg", featured: true},
   {name: "Fragance Distribution", description: "Make your home smell wild with our expert scent distributors.",
-    img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457070311/fragrance_distribution_gpa10z.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1456891041/fragrance_distribution_ls2zrg.jpg", featured: false},
+    img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457070311/fragrance_distribution_gpa10z.jpg",
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1456891041/fragrance_distribution_ls2zrg.jpg", featured: false},
   {name: "Blind Warping", description: "Tired of your blinds lining up perfectly? Our taskers can solve that within minutes.",
-    img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457070311/blinds_sm_h20jxo.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1456890819/blinds_wznnfz.jpg", featured: false},
+    img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457070311/blinds_sm_h20jxo.jpg",
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1456890819/blinds_wznnfz.jpg", featured: false},
   {name: "Furniture Stress Testing", description: "You never know when your home decor is positioned precariously. We'll bring those weaknesses to your attention.", featured: false,
-    img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457070313/furniture_testing_sm_a3ga4r.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457057097/furniture_testing_bqlfrc.jpg"}
+    img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457070313/furniture_testing_sm_a3ga4r.jpg",
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457057097/furniture_testing_bqlfrc.jpg"}
 ]
 
 deco = Category.create!(
@@ -43,20 +43,20 @@ end
 
 therapies = [
   {name: "Purring", description: "We'll soothe you to sleep with our cuddliest taskers.", featured: true,
-    img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457070318/purr_sm_ityiva.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457062955/purr_btpmfi.jpg"},
+    img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457070318/purr_sm_ityiva.jpg",
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457062955/purr_btpmfi.jpg"},
   {name: "Lap Sitting", description: "Keep yourself warm and your pants covered in cat hair.", featured: false,
-    img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/c_scale,w_300/v1457070318/lap_sitting_sm_o1s9ur.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457057268/lap_sitting_oirzg6.jpg"},
+    img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/c_scale,w_300/v1457070318/lap_sitting_sm_o1s9ur.jpg",
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457057268/lap_sitting_oirzg6.jpg"},
   {name: "Leg Rubbing", description: "Our expert taskers might even beg for treats.", featured: true,
-    img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457070317/leg_rubbing_sm_lcqgoa.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457062948/leg_rubbing_jeoti4.jpg"},
+    img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457070317/leg_rubbing_sm_lcqgoa.jpg",
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457062948/leg_rubbing_jeoti4.jpg"},
   {name: "Hugging", description: "We actually don't like hugs much but we'll put up with it, just for you.",
-    img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457070312/cat_with_girl_ux5xhh.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457057455/hugging_u32hp0.jpg"},
+    img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457070312/cat_with_girl_ux5xhh.jpg",
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457057455/hugging_u32hp0.jpg"},
   {name: "Ignoring", description: "...", featured: false,
-    img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457070313/bored_cat_sm_txr7qc.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457062929/bored-cat_au4per.jpg"}
+    img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457070313/bored_cat_sm_txr7qc.jpg",
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457062929/bored-cat_au4per.jpg"}
 ]
 therapy = Category.create!(
   name: "Therapy",
@@ -74,17 +74,17 @@ end
 
 hunts = [
   {name: "Mouse Removal", description: "We'll take care of those pesky critters!",
-    img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457070317/mouse_sm_kup5jr.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457062948/mouse_kihr1v.jpg"},
+    img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457070317/mouse_sm_kup5jr.jpg",
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457062948/mouse_kihr1v.jpg"},
   {name: "Bird Removal", description: "The bells come off for this one. That songbird outside your window won't pose a problem anymore.",
-    img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457074016/bird_sm_iecxrv.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457074017/bird_rbq5vi.jpg"},
+    img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457074016/bird_sm_iecxrv.jpg",
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457074017/bird_rbq5vi.jpg"},
   {name: "Miscellaneous", description: "We can't guarantee we'll catch it, but we'll careen around your house as necessary.",
-    img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457070314/hunting_klpmd1.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457063109/hunting_o9xsft.jpg"},
+    img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457070314/hunting_klpmd1.jpg",
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457063109/hunting_o9xsft.jpg"},
   {name: "Fishing", description: "No aquarium is safe from our taskers.",
-    img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457075031/fishing_sm_iv78bo.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1456891239/fishing_c356kw.jpg"}
+    img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457075031/fishing_sm_iv78bo.jpg",
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1456891239/fishing_c356kw.jpg"}
 ]
 hunting = Category.create!(
   name: "Hunting",
@@ -102,14 +102,14 @@ end
 
 entertainments = [
   {name: "Parties", description: "Who needs clowns when you have cats?",
-    img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457070316/parties_sm_ssyzse.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457063262/parties_vwuyky.jpg"}, #have pic
+    img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457070316/parties_sm_ssyzse.jpg",
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457063262/parties_vwuyky.jpg"}, #have pic
   {name: "Playing", description: "Get out your feathers and laser pointers!",
-    img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457070318/playing_sm_wulecz.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457063346/playing_jdpdkk.jpg"},#have pic
+    img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457070318/playing_sm_wulecz.jpg",
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457063346/playing_jdpdkk.jpg"},#have pic
   {name: "Bothering Other Cats", description: "What we do best.",
-    img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457070311/cat_on_cat_sm_krqy7u.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457062932/cat_on_cat_usyden.jpg"} #have
+    img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457070311/cat_on_cat_sm_krqy7u.jpg",
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457062932/cat_on_cat_usyden.jpg"} #have
 ]
 
 entertainment = Category.create!(
@@ -127,14 +127,14 @@ end
 
 protections = [
   {name: "Invisible Threats", description: "Did you hear that? Of course not, you're a human.",
-     img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457070313/invisible_threats_sm_mxlo9k.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457062937/invisible_threats_v6yipt.jpg"}, #have
+     img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457070313/invisible_threats_sm_mxlo9k.jpg",
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457062937/invisible_threats_v6yipt.jpg"}, #have
   {name: "Window Watching", description: "We see everything. Plus, there's sunlight.",
     img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457070319/window_watching_sm_a7oll7.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457063495/window_watching_fn0pcf.jpg"}, #have
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457063495/window_watching_fn0pcf.jpg"}, #have
   {name: "Loafing", description: "For when it's cold but we still need to watch for threats.",
-    img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457070316/loaf_sm_iilgc9.jpg",
-    img_url_big: "http://res.cloudinary.com/duwqltu7o/image/upload/v1457062949/loaf_yukoks.jpg"} #have
+    img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457070316/loaf_sm_iilgc9.jpg",
+    img_url_big: "https://res.cloudinary.com/duwqltu7o/image/upload/v1457062949/loaf_yukoks.jpg"} #have
 ]
 protection = Category.create!(
   name: "Protection",
@@ -163,40 +163,40 @@ end
 
 b = User.create!(fname: "Breakfast", lname: "Frey", email: "breakfast@catmail.com",
   password: "password")
-Tasker.create!(user_id: b.id, blurbs: {}, img_url_sm: 'http://res.cloudinary.com/duwqltu7o/image/upload/v1456853763/prof_windowsill_2_p2vfby.jpg')
+Tasker.create!(user_id: b.id, blurbs: {}, img_url_sm: 'https://res.cloudinary.com/duwqltu7o/image/upload/v1456853763/prof_windowsill_2_p2vfby.jpg')
 
 m = User.create!(fname: "Markov", lname: "Stark", email: "markov@catmail.com",
   password: "password")
-Tasker.create!(user_id: m.id, is_elite: true,  blurbs: {}, img_url_sm: 'http://res.cloudinary.com/duwqltu7o/image/upload/v1456853761/prof_catstronaut_z1nt3q.jpg')
+Tasker.create!(user_id: m.id, is_elite: true,  blurbs: {}, img_url_sm: 'https://res.cloudinary.com/duwqltu7o/image/upload/v1456853761/prof_catstronaut_z1nt3q.jpg')
 
 c = User.create!(fname: "Curie", lname: "Stark", email: "curie@catmail.com",
   password: "password")
-Tasker.create!(user_id: c.id, is_elite: true,  blurbs: {}, img_url_sm: 'http://res.cloudinary.com/duwqltu7o/image/upload/v1456853761/prof_closeup_mainecoon_zo1hi1.jpg')
+Tasker.create!(user_id: c.id, is_elite: true,  blurbs: {}, img_url_sm: 'https://res.cloudinary.com/duwqltu7o/image/upload/v1456853761/prof_closeup_mainecoon_zo1hi1.jpg')
 
 g = User.create!(fname: "Gizmo", lname: "Tully", email: "gizmo@catmail.com",
   password: "password")
-Tasker.create!(user_id: g.id, blurbs: {}, img_url_sm: 'http://res.cloudinary.com/duwqltu7o/image/upload/v1456853762/prof_sleeping_pctdle.jpg')
+Tasker.create!(user_id: g.id, blurbs: {}, img_url_sm: 'https://res.cloudinary.com/duwqltu7o/image/upload/v1456853762/prof_sleeping_pctdle.jpg')
 
 a = User.create!(fname: "Aslan", lname: "Lewis", email: "aslan@catmail.com",
   password: "password")
-Tasker.create!(user_id: a.id, is_elite: true,  blurbs: {}, img_url_sm: 'http://res.cloudinary.com/duwqltu7o/image/upload/v1456853762/prof_lion_agdria.jpg')
+Tasker.create!(user_id: a.id, is_elite: true,  blurbs: {}, img_url_sm: 'https://res.cloudinary.com/duwqltu7o/image/upload/v1456853762/prof_lion_agdria.jpg')
 
 gu = User.create!(fname: "Guenhywar", lname: "Salvatore", email: "guen@catmail.com",
   password: "password")
-Tasker.create!(user_id: gu.id, blurbs: {}, img_url_sm: 'http://res.cloudinary.com/duwqltu7o/image/upload/v1456853763/prof_tiger_jfvyts.jpg')
+Tasker.create!(user_id: gu.id, blurbs: {}, img_url_sm: 'https://res.cloudinary.com/duwqltu7o/image/upload/v1456853763/prof_tiger_jfvyts.jpg')
 
 k = User.create!(fname: "Kasha", lname: "Pendragon", email: "kasha@catmail.com",
   password: "password")
-Tasker.create!(user_id: k.id, is_elite: true,  blurbs: {}, img_url_sm: 'http://res.cloudinary.com/duwqltu7o/image/upload/v1456854037/prof_panther_fzk0ax.jpg')
+Tasker.create!(user_id: k.id, is_elite: true,  blurbs: {}, img_url_sm: 'https://res.cloudinary.com/duwqltu7o/image/upload/v1456854037/prof_panther_fzk0ax.jpg')
 
 mrs = User.create!(fname: "Mrs", lname: "Bojangles", email: "bojangles@catmail.com", password: "password")
-Tasker.create!(user_id: mrs.id, is_elite: true, blurbs: {}, img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1456853760/prof_blinds_capogx.jpg")
+Tasker.create!(user_id: mrs.id, is_elite: true, blurbs: {}, img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1456853760/prof_blinds_capogx.jpg")
 
 sarah = User.create!(fname: "Sara", lname: "Cat", email: "sara@catmail.com", password: "password")
-Tasker.create!(user_id: sarah.id, blurbs: {}, img_url_sm: "http://res.cloudinary.com/duwqltu7o/image/upload/v1456853764/prof_leaves_bxdwue.jpg")
+Tasker.create!(user_id: sarah.id, blurbs: {}, img_url_sm: "https://res.cloudinary.com/duwqltu7o/image/upload/v1456853764/prof_leaves_bxdwue.jpg")
 
 larry = User.create!(fname: "Larry", lname: "Chief Mouser", email: "larry@catmail.com", password: "password")
-Tasker.create!(user_id: larry.id, blurbs: {}, img_url_sm: 'http://res.cloudinary.com/duwqltu7o/image/upload/v1456853760/prof_chief_mouser_vmofqf.jpg')
+Tasker.create!(user_id: larry.id, blurbs: {}, img_url_sm: 'https://res.cloudinary.com/duwqltu7o/image/upload/v1456853760/prof_chief_mouser_vmofqf.jpg')
 def random_rate
   ((rand * 50) + 20).floor
 end

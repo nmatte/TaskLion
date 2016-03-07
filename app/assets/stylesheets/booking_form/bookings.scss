@@ -219,7 +219,7 @@ h5 {
 .error-info {
   color: red;
   // height: auto;
-  display: inline;
+  display: block;
 
   &.is-collapsed {
     display: none;
