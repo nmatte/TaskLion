@@ -50,6 +50,7 @@ h5 {
 
 .booking-detail-content {
   flex-direction: column;
+
 }
 
 .is-collapsed {
@@ -89,7 +90,7 @@ h5 {
 .booking-button.dark-blue-button{
   margin: auto;
   display: block;
-  width: 100px;
+  // width: 100px;
   padding: 10px 27.6px;
 }
 
@@ -183,6 +184,8 @@ h5 {
   border-radius: 4px;
   margin: 0px;
   position: relative;
+  background-repeat: no-repeat;
+  background-size: contain;
   // top: 50%;
   transform: translateY(20%);
 }
@@ -216,8 +219,9 @@ h5 {
 .error-info {
   color: red;
   // height: auto;
+  display: inline;
 
   &.is-collapsed {
-
+    display: none;
   }
 }

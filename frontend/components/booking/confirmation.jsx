@@ -63,9 +63,9 @@ module.exports = React.createClass({
       return <div className="loader">Loading...</div>;
     } else {
       // var dateInfo = BookingStore.current().date
-      var dateInfo = "Placeholder";
+      var dateInfo = this.state.booking.date;
       // BookingStore.current().tasker_id
-      var taskerName = this.state.availableTask.fname || "Curie T.";
+      var taskerName = this.state.availableTask.fname + " " + this.state.availableTask.lname.slice(0,1) + "."|| "Curie T.";
 
 
       var header = (
@@ -74,7 +74,7 @@ module.exports = React.createClass({
             {this.state.availableTask.task_name}
           </h2>
           <span>
-            <strong>$40</strong>/hr
+            <strong>${this.state.availableTask.rate}</strong>/hr
           </span>
         </div>
       );
@@ -87,10 +87,15 @@ module.exports = React.createClass({
           </div>
         </div>);
 
+      var avatar = <div className="loader white"/>;
+      var t = this.state.availableTask;
+      if (t.avatar) {
+        avatar = <div className="avatar-mini" style={{backgroundImage: 'url('+t.avatar+')'}}/>;
+      }
       var taskerInfos = (
         <div className="confirmation-tasker-info">
           <div className="avatar-wrapper">
-            <div className="avatar-mini"/>
+            {avatar}
           </div>
           <div>
             <label>Tasker</label>
@@ -104,14 +109,14 @@ module.exports = React.createClass({
       var location = (
         <div className="confirmation-gutter">
           <label>Task Location</label>
-          <div className="confirmation-section-value">160 Spear St., San Francisco, California</div>
+          <div className="confirmation-section-value">{this.state.booking.address}</div>
         </div>
       );
 
       var description = (
         <div className="confirmation-gutter">
           <label>Description</label>
-          <div className="confirmation-section-value">Please smother me in cute cats.</div>
+          <div className="confirmation-section-value">{this.state.booking.description}</div>
         </div>
       );
       // BookingStore.current().address

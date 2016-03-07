@@ -6,20 +6,21 @@ var React = require('react'),
     TaskerIndex = require('./../tasker_index'),
     DateFormat = require('dateformat'),
     BookingActions = require('../../actions/booking_actions'),
-    TaskApiUtil = require('../../util/tasker_api_util');
-    
+    TaskApiUtil = require('../../util/tasker_api_util'),
+    LinkedStateMixin = require('react-addons-linked-state-mixin');
+
 module.exports = React.createClass({
+  mixins: [LinkedStateMixin],
 
   getInitialState: function() {
     var tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
     var tomorrowString = DateFormat(tomorrow, "yyyy-mm-dd");
 
-    BookingActions.updateBooking({date: tomorrow});
-
     return {
       taskers: TaskerStore.all(),
       task: TaskStore.find(this.props.params.task_id),
+      date: tomorrowString,
       dateContainerAtTop: false,
       alreadyRendered: false
     };
@@ -30,10 +31,6 @@ module.exports = React.createClass({
       taskers: TaskerStore.all(),
       task: TaskStore.find(this.props.params.task_id)
     });
-  },
-
-  _dateChange: function (event) {
-    BookingActions.updateBooking({date: event.target.value});
   },
 
   _onScroll: function () {
@@ -68,6 +65,7 @@ module.exports = React.createClass({
     this.taskerListener.remove();
     this.taskerListener = null;
 
+    BookingActions.updateBooking({date: this.state.date});
     window.removeEventListener("scroll", this._onScroll);
   },
 
@@ -96,11 +94,10 @@ module.exports = React.createClass({
           className={bookingContainerClass}>
           <input
           type="date"
-          onChange={this._dateChange}
+          valueLink={this.linkState('date')}
           className="booking-date"
           onscroll={this._onScroll}
           min={tomorrowString}
-          value={tomorrowString}
           />
 
         </div>

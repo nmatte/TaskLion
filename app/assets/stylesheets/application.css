@@ -152,6 +152,14 @@ textarea {
   -ms-transform: translateZ(0);
   transform: translateZ(0);
 }
+
+.loader.white {
+  width: 4em;
+  height: 4em;
+  margin: 0px auto;
+}
+
+
 .loader:before {
   width: 50%;
   height: 50%;
@@ -174,6 +182,10 @@ textarea {
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.loader.white:after {
+  background: rgba(255,255,255,1.0);
 }
 @-webkit-keyframes load3 {
   0% {
