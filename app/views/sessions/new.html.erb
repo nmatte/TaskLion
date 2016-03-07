@@ -1,17 +1,37 @@
-<form action="<%= session_url %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<div class="new-user-bg">
+    <div class="signup-container shadow">
+      <form action="<%= session_url %>" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <div class="full-logo">
+        </div>
 
-  <label>
-    Email
-    <input type="text" name="user[email]">
-  </label>
+        <div class="credentials-field">
+          <label>
+            Email
+            <input class="input" type="text" name="user[email]">
+          </label>
+        </div>
 
-  <label>
-    Password
-    <input type="password" name="user[password]">
-  </label>
 
-    <input type="submit" value="Sign in">
-</form>
+        <div class="credentials-field">
+          <label>
+            Password
+            <input class="input" type="password" name="user[password]">
+          </label>
+        </div>
 
-<%= button_to "demo user", demo_session_url %>
+        <% if flash[:errors] %>
+          <% flash[:errors].each do |error| %>
+            <div class="error-info">
+              <%= error %>
+            </div>
+          <% end %>
+        <% end %>
+        <div class="credentials-field">
+          <input class="dark-blue-button" type="submit" value="Sign in">
+        </div>
+      </form>
+
+      <%= button_to "Guest session", demo_session_url, class: "dark-blue-button" %>
+    </div>
+</div>

@@ -1,31 +1,47 @@
-<form action="<%= users_url %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-<div class="signup-container">
-  <label>
-    First Name
-    <input class="input" type="text" name="user[fname]">
-  </label>
+<div class="new-user-bg">
+  <div class="signup-container shadow">
+  <form action="<%= users_url %>" method="post" class="signup-form">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <label>
-    Last Name
-    <input class="input" type="text" name="user[lname]">
-  </label>
+    <div class="full-logo">
+    </div>
 
-  <label>
-    Email
-    <input class="input" type="text" name="user[email]">
-  </label>
+    <div class="credentials-field">
+      <label>
+        First Name
+        <input class="input" type="text" name="user[fname]">
+      </label>
+    </div>
 
-  <label>
-    Password
-    <input class="input" type="password" name="user[password]">
-  </label>
-    <input class="blue-button" type="submit" value="Sign up">
+    <div class="credentials-field">
+      <label>
+        Last Name
+        <input class="input" type="text" name="user[lname]">
+      </label>
+    </div>
 
-    <p>(demo user: 'demo@tasklion.tech', password: 'demo_password')</p>
-    <p>(interactive demo user login incoming)</p>
+    <div class="credentials-field">
+      <label>
+        Email
+        <input class="input" type="text" name="user[email]">
+      </label>
+    </div>
+
+    <div class="credentials-field">
+      <label>
+        Password
+        <input class="input" type="password" name="user[password]">
+      </label>
+    </div>
+
+    <div class="credentials-field">
+      <input class="dark-blue-button" type="submit" value="Sign up">
+    </div>
+
+    <!-- <div id="login"/> -->
+  </form>
+  <div class="credentials-field">
+    <%= button_to "Guest session", demo_session_url, class: "dark-blue-button" %>
   </div>
-
-  <div id="login"/>
-</form>
-<%= button_to "demo user", demo_session_url %>
+</div>
+</div>
