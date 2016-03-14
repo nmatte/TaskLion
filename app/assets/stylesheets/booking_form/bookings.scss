@@ -239,6 +239,20 @@ h5 {
   padding: 18px 24px;
   background: white;
   margin-bottom: 32px;
+  display: flex;
+  flex-direction: row;
+
+  h2 {
+    margin: 0px;
+    line-height: 44px;
+    font-size: 32px;
+    display: inline-block;
+  }
+
+  p {
+    margin: 0px;
+    padding: 0px;
+  }
 }
 
 .booking-tasker-info {
@@ -263,4 +277,8 @@ h5 {
   &:visited {
     color: #004c5a
   }
+}
+
+.booking-item-details {
+  display: inline-block;
 }

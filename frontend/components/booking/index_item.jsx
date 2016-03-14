@@ -11,6 +11,10 @@ module.exports = React.createClass({
           <img src={bk.tasker_avatar} className="tasker-avatar"/>
           <div className="booking-tasker-name">{taskerName}</div>
         </Link>
+        <div className="booking-item-details">
+          <h2>{bk.task_name}</h2>
+          <p>Scheduled on {bk.booked_on}</p>
+        </div>
       </div>
     );
   }

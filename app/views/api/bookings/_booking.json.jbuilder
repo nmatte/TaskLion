@@ -6,4 +6,4 @@ json.tasker_avatar booking.tasker.img_url_sm
 json.address booking.address
 json.description booking.description
 json.date booking.date
-json.created_at booking.created_at
+json.booked_on booking.created_at.strftime("%A, %B %d, %Y")
