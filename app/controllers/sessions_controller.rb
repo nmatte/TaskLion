@@ -21,7 +21,13 @@ class SessionsController < ApplicationController
   end
 
   def demo
-    user = User.find_by_credentials("demo@tasklion.tech", "demo_password")
+    fname = "Guest#{(rand * 10000).floor}"
+    lname = "User"
+    user = User.new(
+      fname: fname,
+      lname: lname,
+      email: "#{fname.downcase}@tasklion.tech",
+      password: "password")
 
     if user
       if user.save

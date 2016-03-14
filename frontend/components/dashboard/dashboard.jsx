@@ -34,7 +34,7 @@ module.exports = React.createClass({
     if (this.state.user) {
       welcome = <h1>Welcome to TaskLion, {this.state.user.fname}!</h1>;
 
-      if (this.state.user.bookings) {
+      if (this.state.user.bookings && this.state.user.bookings.length > 0) {
         bookingsContent = <BookingIndex bookings={this.state.user.bookings}/>;
       }
     }
