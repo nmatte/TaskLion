@@ -1,4 +1,9 @@
-json.task booking.task
-json.tasker booking.tasker
-json.client booking.client
+json.task_name booking.task.name
+json.tasker_fname booking.tasker.user.fname
+json.tasker_lname booking.tasker.user.lname
+json.tasker_id booking.tasker.id
+json.tasker_avatar booking.tasker.img_url_sm
 json.address booking.address
+json.description booking.description
+json.date booking.date
+json.created_at booking.created_at

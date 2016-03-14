@@ -1,10 +1,16 @@
-var React = require('react');
+var React = require('react'),
+    Link = require('react-router').Link;
 
 module.exports = React.createClass({
   render: function () {
+    var bk = this.props.booking;
+    var taskerName = bk.tasker_fname + " " + bk.tasker_lname[0] + ".";
     return (
       <div className="booking-item shadow">
-        BookingIndexItem
+        <Link to={"/profile/" + bk.tasker_id} className="booking-tasker-info">
+          <img src={bk.tasker_avatar} className="tasker-avatar"/>
+          <div className="booking-tasker-name">{taskerName}</div>
+        </Link>
       </div>
     );
   }
