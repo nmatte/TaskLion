@@ -1,4 +1,10 @@
 class Api::BookingsController < ApplicationController
+  def index
+    @bookings = Booking.where(client_id: current_user.id)
+
+    render json: @bookings
+  end
+
   def show
     @booking = Booking.find_by(id: params[:id])
 
@@ -38,7 +44,6 @@ class Api::BookingsController < ApplicationController
   end
 
   def create
-
     @booking = Booking.new(
       date: booking_params[:date],
       available_task_id: booking_params[:available_task_id],

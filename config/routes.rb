@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       resources :taskers, only: [:index]
     end
 
-    resources :bookings, only: [:show, :create, :destroy, :update] do
+    resources :bookings, only: [:show, :create, :destroy, :update, :index] do
       resources :reviews, only: [:show]
     end
 

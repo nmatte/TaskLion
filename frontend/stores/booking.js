@@ -3,7 +3,7 @@ var Store = require('flux/utils').Store,
     BookingConstants = require('../constants/booking_constants');
 
 var booking = {};
-
+var _allBookings = [];
 var BookingStore = new Store(Dispatcher);
 
 BookingStore.current = function () {

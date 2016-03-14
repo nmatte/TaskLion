@@ -65,7 +65,7 @@ module.exports = React.createClass({
       // var dateInfo = BookingStore.current().date
       var dateInfo = this.state.booking.date;
       // BookingStore.current().tasker_id
-      var taskerName = this.state.availableTask.fname + " " + this.state.availableTask.lname.slice(0,1) + "."|| "Curie T.";
+      var taskerName = this.state.availableTask.fname + " " + this.state.availableTask.lname.slice(0,1) + ".";
 
 
       var header = (

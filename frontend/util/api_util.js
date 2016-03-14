@@ -50,8 +50,11 @@ module.exports = {
       data: {booking: booking},
       dataType: 'json',
       success: function (response) {
-        console.log(response);
       }
     });
+  },
+
+  getUserBookings: function () {
+
   }
 };
