@@ -3,13 +3,10 @@ class Api::CategoriesController < ApplicationController
     @categories = Category.all
   end
 
-  def show
-    @category = Category.find(params[:id])
-  end
 
   def featured
     f = Category.find_by(name: "Featured")
-    @featured ={
+    @featured = {
       id: f.id,
       name: f.name,
       description: f.description,
@@ -19,4 +16,9 @@ class Api::CategoriesController < ApplicationController
     }
     render :featured
   end
+
+
+    def show
+      @category = Category.find(params[:id])
+    end
 end

@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   end
 
   namespace :api, defaults: {format: :json} do
-    resources :categories, only: [:index, :show]
     match 'categories/featured', to: 'categories#featured', via: [:get]
+    resources :categories, only: [:index, :show]
 
     match 'tasks/search', to: 'tasks#search', via: [:get]
     resources :tasks, only: [:show] do
