@@ -11,11 +11,10 @@ module.exports = {
   },
 
   fetchSingleCategory: function (id) {
-    if (id === 1) {
-      id = "featured";
-    }
+    var url = id.toString() === "1" ? '/api/categories/featured' : '/api/categories/' + id;
+    
     $.ajax({
-      url: '/api/categories/' + id,
+      url: url,
       success: function (response) {
         ApiActions.receiveSingleCategory(response);
       }
