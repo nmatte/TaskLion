@@ -21,14 +21,14 @@
   float: left;
 }
 
+//
+// @media screen and (max-width: 720px) {
+//   .category-index-item {
+//     width: 50%;
+//   }
+// }
 
 @media screen and (max-width: 720px) {
-  .category-index-item {
-    width: 50%;
-  }
-}
-
-@media screen and (max-width: 480px) {
   .category-index-item {
     width: 100%;
   }

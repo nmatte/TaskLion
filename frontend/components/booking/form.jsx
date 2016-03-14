@@ -1,6 +1,7 @@
 var React = require('react'),
     SessionStore = require('../../stores/session'),
     BookingActions = require('../../actions/booking_actions'),
+    TaskApiUtil = require('../../util/tasker_api_util'),
     ApiUtil = require('../../util/api_util');
 
 module.exports = React.createClass({
@@ -11,6 +12,7 @@ module.exports = React.createClass({
   },
   componentDidMount: function() {
     this.userListener = SessionStore.addListener(this._onUserChange);
+    TaskApiUtil.fetchTask(this.props.params.task_id);
     ApiUtil.fetchCurrentUser();
   },
 

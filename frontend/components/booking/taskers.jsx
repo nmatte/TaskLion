@@ -4,6 +4,7 @@ var React = require('react'),
     TaskerStore = require('../../stores/tasker'),
     TaskStore = require('../../stores/task'),
     TaskerIndex = require('./../tasker_index'),
+    TaskBanner = require('./task_banner'),
     DateFormat = require('dateformat'),
     BookingActions = require('../../actions/booking_actions'),
     TaskApiUtil = require('../../util/tasker_api_util'),
@@ -89,20 +90,23 @@ module.exports = React.createClass({
     tomorrow.setDate(tomorrow.getDate() + 1);
     var tomorrowString = DateFormat(tomorrow, "yyyy-mm-dd");
     return (
-      <div className="col-container">
-        <div className="date-placeholder">
-          <div
-            className={bookingContainerClass}>
-            <input
-              type="date"
-              valueLink={this.linkState('date')}
-              className="booking-date"
-              onscroll={this._onScroll}
-              min={tomorrowString}
-              />
+      <div className="taskers-main">
+        <TaskBanner task={this.state.task}/>
+        <div className="col-container">
+          <div className="date-placeholder">
+            <div
+              className={bookingContainerClass}>
+              <input
+                type="date"
+                valueLink={this.linkState('date')}
+                className="booking-date"
+                onscroll={this._onScroll}
+                min={tomorrowString}
+                />
+            </div>
           </div>
+          <TaskerIndex taskers={this.state.taskers} taskId={this.props.params.task_id}/>
         </div>
-        <TaskerIndex taskers={this.state.taskers} taskId={this.props.params.task_id}/>
       </div>
     );
   }

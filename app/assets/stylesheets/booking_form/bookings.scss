@@ -19,6 +19,27 @@
   max-width: 1200px;
 }
 
+@media screen and (max-width: 1000px) {
+  .col-container {
+    flex-direction: column;
+  }
+
+  .date-placeholder {
+    height: 0px;
+    width: 0px;
+  }
+
+  .tasker-index {
+    width: 100%;
+    max-width: 1001px;
+
+    ul {
+      padding-right: 40px;
+    }
+  }
+}
+
+
 h5 {
   color: #828a8b;
   text-transform: uppercase;
@@ -27,8 +48,13 @@ h5 {
   margin: 0px 0px 6px 0px;
 }
 
-.detail-container {
+.detail-main {
+  padding-top: 32px;
   max-width: 960px;
+  margin: auto;
+}
+
+.detail-container {
   width: auto;
 
   margin: auto;
@@ -74,7 +100,30 @@ h5 {
   margin: auto;
 }
 
+.task-banner {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 32px;
+  h2 {
+    display: inline-block;
+  }
+}
+
+.task-banner-pic {
+  width: 72px;
+  height: 72px;
+  margin-right: 32px;
+  border-radius: 50%;
+}
+
+.taskers-main {
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 32px;
+}
+
 .booking-date {
+  margin: 16px 0px;
   width: 400px;
 }
 

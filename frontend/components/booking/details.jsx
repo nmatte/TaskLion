@@ -2,8 +2,10 @@ var React = require('react'),
     BookingActions = require('../../actions/booking_actions'),
     LocationForm = require('./location_form'),
     DescriptionForm = require('./description_form'),
+    TaskBanner = require('./task_banner'),
     History = require('react-router').History,
     BookingStore = require('../../stores/booking'),
+    TaskStore = require('../../stores/task'),
     LinkedStateMixin = require('react-addons-linked-state-mixin');
 
 
@@ -12,6 +14,7 @@ module.exports = React.createClass({
 
   getInitialState: function () {
     return {
+      task: TaskStore.find(this.props.params.task_id),
       address: this.getAddressFromStore(),
       description: this.getDescriptionFromStore(),
       errors: [],
@@ -38,11 +41,13 @@ module.exports = React.createClass({
 
   componentDidMount: function() {
     this.bookingListener = BookingStore.addListener(this._onBookingChange);
+    this.taskListener = TaskStore.addListener(this._onTasksChange);
     BookingActions.fetchBooking();
   },
 
   componentWillUnmount: function() {
     this.bookingListener.remove();
+    this.taskListener.remove();
   },
 
   _onBookingChange: function () {
@@ -50,6 +55,14 @@ module.exports = React.createClass({
       booking: BookingStore.current()
     });
   },
+
+
+  _onTasksChange: function () {
+    this.setState({
+      task: TaskStore.find(this.props.params.task_id)
+    });
+  },
+
 
   _onFormClick: function (clickSource) {
     this.setState({
@@ -59,9 +72,12 @@ module.exports = React.createClass({
 
   render: function () {
     return (
-      <div className="detail-container">
-        <LocationForm id="location_form" isFocused={this.state.focused === "location"} onComplete={this._locationClick} onFormClick={this._onFormClick}/>
-        <DescriptionForm id="description_form" isFocused={this.state.focused === "description"} onComplete={this._proceedClick} onFormClick={this._onFormClick}/>
+      <div className="detail-main">
+        <TaskBanner task={this.state.task}/>
+        <div className="detail-container">
+          <LocationForm id="location_form" isFocused={this.state.focused === "location"} onComplete={this._locationClick} onFormClick={this._onFormClick}/>
+          <DescriptionForm id="description_form" isFocused={this.state.focused === "description"} onComplete={this._proceedClick} onFormClick={this._onFormClick}/>
+        </div>
       </div>
     );
   }
