@@ -31,7 +31,13 @@ module.exports = React.createClass({
 
   _proceedClick: function (value) {
     BookingActions.updateBooking({description: value});
-    this.history.push("book/" + this.props.params.task_id + "/taskers");
+    if (this.refs.loc.isValid()) {
+      this.props.history.push("book/" + this.props.params.task_id + "/taskers");
+    } else {
+      this.setState({
+        focused: "location"
+      });
+    }
   },
 
   _locationClick: function (value) {
@@ -56,7 +62,6 @@ module.exports = React.createClass({
     });
   },
 
-
   _onTasksChange: function () {
     this.setState({
       task: TaskStore.find(this.props.params.task_id)
@@ -65,9 +70,11 @@ module.exports = React.createClass({
 
 
   _onFormClick: function (clickSource) {
-    this.setState({
-      focused: clickSource
-    });
+    if (this.refs.loc.isValid()) {
+      this.setState({
+        focused: clickSource
+      });
+    }
   },
 
   render: function () {
@@ -75,8 +82,8 @@ module.exports = React.createClass({
       <div className="detail-main">
         <TaskBanner task={this.state.task}/>
         <div className="detail-container">
-          <LocationForm id="location_form" isFocused={this.state.focused === "location"} onComplete={this._locationClick} onFormClick={this._onFormClick}/>
-          <DescriptionForm id="description_form" isFocused={this.state.focused === "description"} onComplete={this._proceedClick} onFormClick={this._onFormClick}/>
+          <LocationForm id="location_form" ref="loc" isFocused={this.state.focused === "location"} onComplete={this._locationClick} onFormClick={this._onFormClick}/>
+          <DescriptionForm id="description_form" ref="descr" isFocused={this.state.focused === "description"} onComplete={this._proceedClick} onFormClick={this._onFormClick}/>
         </div>
       </div>
     );

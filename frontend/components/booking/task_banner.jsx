@@ -1,6 +1,9 @@
 var React = require('react');
 
 module.exports = React.createClass({
+  componentWillReceiveProps: function(nextProps) {
+    this.forceUpdate();
+  },
   render: function () {
     return (
       <div className="task-banner">

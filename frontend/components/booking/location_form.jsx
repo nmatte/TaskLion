@@ -25,22 +25,31 @@ module.exports = React.createClass({
   },
 
   _placeChange: function () {
-    this._validateInput();
+    if (this.isValid()) {
+      this.props.onComplete(this.state.location);
+    }
   },
 
   _onSubmit: function (event) {
     event.preventDefault();
-    this._validateInput();
+    if (this.isValid()) {
+      this.props.onComplete(this.state.location);
+    }
   },
 
   _validateInput: function () {
     var place = this.autocomplete.getPlace();
     if (place && place.geometry) {
       this.setState({location: place.formatted_address, errorMessage: "", valid: true});
-      this.props.onComplete(place.formatted_address);
+      return true;
     } else {
       this.setState({errorMessage: "Please enter a valid address.", valid: false});
+      return false;
     }
+  },
+
+  isValid: function () {
+    return this._validateInput();
   },
 
   formClick: function (event) {
@@ -61,33 +70,31 @@ module.exports = React.createClass({
 
     var errorMessage = <div className={"error-info" + collapse}>{this.state.errorMessage}</div>;
 
-    return (
-      <form  id="location_submit">
-        <div className={"detail-item" + shadow + collapse} onClick={this.formClick}>
-          <label htmlFor="location_input">
-            <h5 onClick={this.formClick}>Your Task Location</h5>
-          </label>
-          <div className={"completed-info" + collapse} onClick={this.formClick}>{this.state.location}</div>
-          <div className={"booking-detail-content" + collapse} >
-            <div className={"detail-content-wrapper"}>
-              <input id="location_input"
-                className="input"
-                disabled={dis}
-                type="text"
-                valueLink={this.linkState('location')}>
-              </input>
+    return <form  id="location_submit">
+            <div className={"detail-item" + shadow + collapse} onClick={this.formClick}>
+              <label htmlFor="location_input">
+                <h5 onClick={this.formClick}>Your Task Location</h5>
+              </label>
+              <div className={"completed-info" + collapse} onClick={this.formClick}>{this.state.location}</div>
+              <div className={"booking-detail-content" + collapse} >
+                <div className={"detail-content-wrapper"}>
+                  <input id="location_input"
+                    className="input"
+                    disabled={dis}
+                    type="text"
+                    valueLink={this.linkState('location')}>
+                  </input>
+                </div>
+                {errorMessage}
+                <div className={"detail-content-wrapper"}>
+                  <input
+                    type="submit"
+                    className="dark-blue-button booking-button"
+                    value="Continue">
+                  </input>
+                </div>
             </div>
-            {errorMessage}
-            <div className={"detail-content-wrapper"}>
-              <input
-                type="submit"
-                className="dark-blue-button booking-button"
-                value="Continue">
-              </input>
-            </div>
-        </div>
-      </div>
-    </form>
-    );
+          </div>
+        </form>;
   }
 });
