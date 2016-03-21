@@ -10,6 +10,7 @@ module.exports = React.createClass({
     );
     return (
       <div className="booking-index">
+        <h3>Current Tasks</h3>
         {bookingLis}
       </div>
     );

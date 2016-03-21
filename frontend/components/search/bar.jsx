@@ -49,7 +49,7 @@ module.exports = React.createClass({
     return (
       <nav className="search-bar" id="search" >
         <div className="search-icon"></div>
-        <input type="text" className="search-input" onChange={this._onInputChange} placeholder="What can we help you with?"/>
+        <input type="text" className="search-input" onChange={this._onInputChange} placeholder="Search for tasks..."/>
         <div className={"results-dropdown" + (this.state.showResults ? "" : " hide")}>
           <SearchBarResults tasks={this.state.results}/>
         </div>
