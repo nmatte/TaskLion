@@ -34,8 +34,13 @@ module.exports = React.createClass({
                 <h3 className="tasker-name">{this.props.tasker.fname +" "+ this.props.tasker.lname}</h3>
                 <div className="rate-badge"><strong>${this.props.tasker.rate}</strong>/hr</div>
               </div>
-              <div>
-                {this.props.tasker.blurb}
+              <div className="tasker-blurb">
+                <label>
+                  <strong>
+                    How I can help:
+                  </strong>
+                </label>
+                  {this.props.tasker.blurb}
               </div>
             </div>
           </li>;

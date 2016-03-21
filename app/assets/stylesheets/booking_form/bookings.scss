@@ -5,7 +5,7 @@
 .trust-banner {
   text-align: center;
   background: #EBECEC;
-  height: 45px;
+  // height: 45px;
   line-height: 45px;
   font-size: 18px;
   padding: 12px 0px;
@@ -25,8 +25,14 @@
   }
 
   .date-placeholder {
-    height: 0px;
-    width: 0px;
+    width: 100%;
+  }
+
+  .booking-date-container {
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+    position: relative !important;
   }
 
   .tasker-index {
@@ -133,6 +139,13 @@ h5 {
 
 .booking-date-container {
   width: 400px;
+  background: white;
+  margin-top: 16px;
+  box-sizing: border-box;
+
+  input {
+    max-width: 200px;
+  }
 }
 
 .booking-date-container.fixed {

@@ -180,3 +180,16 @@
 .profile-main-container {
   margin-bottom: 85px;
 }
+
+.tasker-blurb {
+  padding-top: 16px;
+  border-top: 1px solid #ebecec;
+
+  label {
+    color: #323A3B;
+    font-size: 14px;
+    font-weight: 300;
+    width: 100%;
+    display: inline-block;
+  }
+}
