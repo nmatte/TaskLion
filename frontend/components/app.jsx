@@ -1,5 +1,5 @@
 var React = require('react'),
-    Account = require('./account'),
+    Account = require('./account/account'),
     Navbar = require('./nav_bar'),
     CategoryStore = require('../stores/category'),
     TaskStore = require('../stores/task'),

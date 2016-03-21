@@ -47,13 +47,13 @@ module.exports = React.createClass({
   render: function () {
     // Don't see what you're looking for? Check out one of our featured tasks:
     return (
-      <div className="search-bar" id="search" >
+      <nav className="search-bar" id="search" >
         <div className="search-icon"></div>
         <input type="text" className="search-input" onChange={this._onInputChange} placeholder="What can we help you with?"/>
         <div className={"results-dropdown" + (this.state.showResults ? "" : " hide")}>
           <SearchBarResults tasks={this.state.results}/>
         </div>
-      </div>
+      </nav>
     );
   }
 });
