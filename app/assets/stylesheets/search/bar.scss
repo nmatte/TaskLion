@@ -4,7 +4,7 @@
   position: absolute;
   background: white;
   overflow: hidden;
-  padding-right: 48px;
+  // padding-right: 48px;
   width: 100%;
   z-index: 50;
   transition: height 0.2s;
@@ -23,18 +23,19 @@
 
 .search-bar {
   position: relative;
-  max-width: 709px;
+  width: 100%;
 }
 
 .search-input {
   border-radius: 4px;
   color: #323A3B;
-  height: 22px;
+  height: 42px;
   font-size: 15px;
   outline: none;
   border: none;
   width: 100%;
   padding: 10px 16px 10px 40px;
+  box-sizing: border-box;
 }
 
 .search-icon {
