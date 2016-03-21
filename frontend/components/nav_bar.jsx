@@ -2,8 +2,6 @@ var React = require('react'),
     Link = require('react-router').Link;
 
 module.exports = React.createClass({
-
-
   render: function () {
     if (this.props.mode === "opaque") {
       return <div className="nav-bar">

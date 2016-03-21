@@ -1,6 +1,5 @@
-// .tasker-index {
-//   max-width: 800px;
-// }
+
+
 
 
 .tasker-index-item {
@@ -15,18 +14,19 @@
 }
 
 .tasker-img {
-  width: 201px;
-  height: 201px;
+  max-width: 201px;
+  max-height: 201px;
   background-color: black;
   border-radius: 4px;
   overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  display: block;
 }
 
 .tasker-select-box {
-  width: 201px;
+  max-width: 201px;
   height: auto;
 
   .blue-button {
@@ -65,6 +65,26 @@
 .tasker-index-item-top {
   height: 44px;
   margin-bottom: 8px;
+}
+
+@media screen and (max-width: 600px) {
+  .tasker-index-item {
+    flex-direction: column;
+    max-width: 350px;
+    margin: auto;
+  }
+
+  .tasker-select-box {
+    width: 100%;
+    max-width: 600px ;
+  }
+
+  .tasker-img {
+    max-width: 320px;
+    max-height: 320px;
+    width: 100%;
+    height: auto;
+  }
 }
 
 
