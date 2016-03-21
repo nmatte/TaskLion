@@ -1,6 +1,6 @@
 var React = require('react'),
-    CategoryIndex = require('../category_index'),
-    SearchBar = require('../search_bar'),
+    CategoryIndex = require('../categories/index'),
+    SearchBar = require('../search/bar'),
     SessionStore = require('../../stores/session'),
     AvailableTaskStore = require('../../stores/available_task'),
     BookingIndex = require('../booking/index'),

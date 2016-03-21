@@ -1,5 +1,5 @@
 var React = require('react'),
-    TaskerStore = require('../stores/tasker'),
+    TaskerStore = require('../../stores/tasker'),
     Link = require('react-router').Link;
 
 module.exports = React.createClass({

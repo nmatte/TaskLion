@@ -1,7 +1,7 @@
 var React = require('react'),
-    SearchApiUtil = require('../util/search_api_util'),
-    SearchResultsStore = require('../stores/search_results'),
-    SearchBarResults = require('./search_bar_results');
+    SearchApiUtil = require('../../util/search_api_util'),
+    SearchResultsStore = require('../../stores/search_results'),
+    SearchBarResults = require('./results');
 
 module.exports = React.createClass({
   getInitialState: function() {

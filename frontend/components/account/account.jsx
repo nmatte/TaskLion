@@ -1,6 +1,6 @@
 var React = require('react'),
     SessionStore = require('../stores/session'),
-    AccountDetail = require('./account/detail'),
+    AccountDetail = require('./detail'),
     PasswordDetail = require('./password_detail'),
     ApiUtil = require('../util/api_util'),
     Link = require('react-router').Link,

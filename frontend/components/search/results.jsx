@@ -1,5 +1,5 @@
 var React = require('react'),
-    SearchBarResultsItem = require('./search_bar_results_item');
+    SearchBarResultsItem = require('./results_item');
 
 module.exports = React.createClass({
   render: function () {

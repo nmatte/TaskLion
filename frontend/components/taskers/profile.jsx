@@ -40,7 +40,7 @@ module.exports = React.createClass({
             <div className="profile-banner">
               <div className="profile-banner-content">
                 <div className="tasker-img-circ" style={style}></div>
-                <h2 className="profile-title"><strong>Hello, </strong>I'm {this.state.tasker.fname} {this.state.tasker.lname.slice(0,1)}.</h2>
+                <h2 className="profile-title"><strong>Hello, </strong>I'm' {this.state.tasker.fname}  {this.state.tasker.lname.slice(0,1)}.</h2>
               </div>
             </div>
             {this.props.children}

@@ -1,7 +1,7 @@
 var React = require('react'),
-    CategoryStore = require('../stores/category'),
-    TaskIndexItem = require('./task_index_item'),
-    ApiUtil = require('../util/api_util');
+    CategoryStore = require('../../stores/category'),
+    TaskIndexItem = require('./index_item'),
+    ApiUtil = require('../../util/api_util');
 
 module.exports = React.createClass({
   getInitialState: function() {
