@@ -1,6 +1,6 @@
 var React = require('react'),
-    SessionStore = require('../stores/session'),
-    ApiUtil = require('../util/api_util');
+    SessionStore = require('../../stores/session'),
+    ApiUtil = require('../../util/api_util');
 
 module.exports = React.createClass({
   getInitialState: function() {

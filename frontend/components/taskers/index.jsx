@@ -1,7 +1,7 @@
 var React = require('react'),
-    TaskerStore = require('../stores/tasker'),
-    TaskerIndexItem = require('./tasker_index_item'),
-    TaskApiUtil = require('../util/tasker_api_util');
+    TaskerStore = require('../../stores/tasker'),
+    TaskerIndexItem = require('./index_item'),
+    TaskApiUtil = require('../../util/tasker_api_util');
 
 module.exports = React.createClass({
   render: function () {

@@ -1,7 +1,7 @@
 var React = require('react'),
-    TaskerStore = require('../stores/tasker'),
-    TaskerApiUtil = require('../util/tasker_api_util'),
-    AvailableTaskIndex = require('./available_task_index');
+    TaskerStore = require('../../stores/tasker'),
+    TaskerApiUtil = require('../../util/tasker_api_util'),
+    AvailableTaskIndex = require('./../available_task_index');
 
 module.exports = React.createClass({
   getInitialState: function() {

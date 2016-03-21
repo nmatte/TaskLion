@@ -1,6 +1,6 @@
 var React = require('react'),
-    BookingStore = require('../stores/booking'),
-    BookingActions = require('../actions/booking_actions'),
+    BookingStore = require('../../stores/booking'),
+    BookingActions = require('../../actions/booking_actions'),
     Link = require('react-router').Link,
     History = require('react-router').History;
 
