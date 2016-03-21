@@ -34,13 +34,13 @@ module.exports = React.createClass({
     if (tasker) {
       var style = (tasker !== undefined) ? {backgroundImage: 'url('+tasker.img_url_sm+')'} : {};
       var child = <div>Nothing to see here</div>;
-
+      var im = "I'm";
         var content = (
           <div className="profile-main-container">
             <div className="profile-banner">
               <div className="profile-banner-content">
                 <div className="tasker-img-circ" style={style}></div>
-                <h2 className="profile-title"><strong>Hello, </strong>I'm' {this.state.tasker.fname}  {this.state.tasker.lname.slice(0,1)}.</h2>
+                <h2 className="profile-title"><strong>Hello, </strong>{im} {this.state.tasker.fname}  {this.state.tasker.lname.slice(0,1)}.</h2>
               </div>
             </div>
             {this.props.children}

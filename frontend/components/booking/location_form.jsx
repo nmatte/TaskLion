@@ -7,7 +7,8 @@ module.exports = React.createClass({
   getInitialState: function() {
     return {
       location: "",
-      errorMessage: ""
+      errorMessage: "",
+      valid: false
     };
   },
 
@@ -24,31 +25,22 @@ module.exports = React.createClass({
   },
 
   _placeChange: function () {
-    var place = this.autocomplete.getPlace();
-    if (place.geometry) {
-      this.setState({location: place.formatted_address, errorMessage: ""});
-      this.props.onComplete(place.formatted_address);
-    } else {
-      this.setState({errorMessage: "Please enter a valid address."});
-    }
+    this._validateInput();
   },
 
   _onSubmit: function (event) {
     event.preventDefault();
-    if (this.state.location === "") {
-      this.setState({errorMessage: "Please enter an address."});
-    }
-    var place = this.autocomplete.getPlace();
-    if (place && place.geometry) {
-      this.setState({location: place.formatted_address, errorMessage: ""});
-      this.props.onComplete(place.formatted_address);
-    } else {
-      this.setState({errorMessage: "Please enter a valid address."});
-    }
+    this._validateInput();
   },
 
-  componentWillReceiveProps: function(nextProps) {
-
+  _validateInput: function () {
+    var place = this.autocomplete.getPlace();
+    if (place && place.geometry) {
+      this.setState({location: place.formatted_address, errorMessage: "", valid: true});
+      this.props.onComplete(place.formatted_address);
+    } else {
+      this.setState({errorMessage: "Please enter a valid address.", valid: false});
+    }
   },
 
   formClick: function (event) {
@@ -88,12 +80,9 @@ module.exports = React.createClass({
             {errorMessage}
             <div className={"detail-content-wrapper"}>
               <input
-
                 type="submit"
                 className="dark-blue-button booking-button"
-                value="Continue"
-                >
-
+                value="Continue">
               </input>
             </div>
         </div>

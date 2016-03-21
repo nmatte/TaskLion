@@ -68,7 +68,7 @@ module.exports = React.createClass({
       var taskerName = this.state.availableTask.fname + " " + this.state.availableTask.lname.slice(0,1) + ".";
 
 
-      var header = (
+      var header = 
         <div className="confirmation-header-strip">
           <h2>
             {this.state.availableTask.task_name}
@@ -76,8 +76,7 @@ module.exports = React.createClass({
           <span>
             <strong>${this.state.availableTask.rate}</strong>/hr
           </span>
-        </div>
-      );
+        </div>;
 
       var dateInfos = (
         <div className="confirmation-col">

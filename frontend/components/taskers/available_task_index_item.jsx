@@ -2,7 +2,9 @@ var React = require('react'),
     Link = require('react-router').Link;
 
 module.exports = React.createClass({
+
   render: function () {
+    debugger;
     return (
       <div className="tasker-task-row">
         <div className="tasker-task-info">

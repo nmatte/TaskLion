@@ -18,17 +18,12 @@ var React = require('react'),
     AvailableTaskIndex = require('./components/taskers/available_task_index'),
     ProfileReviewIndex = require('./components/taskers/profile_review_index'),
     Router = require('react-router').Router,
+    hashHistory = require('react-router').hashHistory,
     Route = require('react-router').Route,
     IndexRoute = require('react-router').IndexRoute,
     IndexRedirect = require('react-router').IndexRedirect;
 
-window.ApiUtil = ApiUtil;
-window.DateFormat = require('dateformat');
-window.TaskerApiUtil = require('./util/tasker_api_util');
-window.TaskerStore = require('./stores/tasker');
-window.SearchApiUtil = require('./util/search_api_util');
-window.ReactDom = ReactDom;
-var routes = (
+var routes =
   <Route component={App} path="/">
     <Route component={Account} path="account">
       <IndexRoute component={AccountDetail} />
@@ -61,8 +56,10 @@ var routes = (
         </Route>
       </Route>
     </Route>
-  </Route>
-);
+  </Route>;
+
+var router =
+    <Router history={hashHistory} routes={routes}/>;
 
 document.addEventListener("DOMContentLoaded", function functionName() {
   var app = document.getElementById('app');
@@ -70,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function functionName() {
   var search = document.getElementById('search-bar-splash');
   if (app) {
     ReactDom.render(
-      <Router>{routes}</Router>,
+      router,
       app);
   } else if (catIndex) {
     ReactDom.render(
