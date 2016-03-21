@@ -2,19 +2,7 @@ var React = require('react'),
     Link = require('react-router').Link;
 
 module.exports = React.createClass({
-  _truncateDescription: function (descr) {
-    var trunc = descr;
-    var truncLength = 30;
-    if (descr.length > truncLength + 3) {
-      trunc = descr.slice(0,truncLength);
-      trunc += "...";
-    }
-
-    return trunc;
-  },
-
   render: function () {
-    // var descr = this._truncateDescription(this.props.category.description);
     var descr = this.props.category.description;
     var style = {};
     if (this.props.category.img_url_big){
