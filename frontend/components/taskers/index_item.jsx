@@ -1,11 +1,9 @@
 var React = require('react'),
     BookingStore = require('../../stores/booking'),
     BookingActions = require('../../actions/booking_actions'),
-    Link = require('react-router').Link,
-    History = require('react-router').History;
+    Link = require('react-router').Link;
 
 module.exports = React.createClass({
-  mixins: [History],
   _taskerClick: function (event) {
     event.preventDefault();
 
@@ -13,7 +11,7 @@ module.exports = React.createClass({
       tasker_id: this.props.tasker.id,
       available_task_id: this.props.tasker.available_task_id
     });
-    this.history.push({
+    this.props.history.push({
       pathname: "book/" + this.props.taskId + "/confirm",
       query: {available_task_id: this.props.tasker.available_task_id}
     });

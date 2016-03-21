@@ -6,11 +6,9 @@ var React = require('react'),
     TaskStore = require('../../stores/task'),
     TaskerStore = require('../../stores/tasker'),
     AvailableTaskStore = require('../../stores/available_task'),
-    BookingActions = require('../../actions/booking_actions'),
-    History = require('react-router').History;
+    BookingActions = require('../../actions/booking_actions');
 
 module.exports = React.createClass({
-  mixins: [History],
 
   getInitialState: function () {
     return {
@@ -54,7 +52,8 @@ module.exports = React.createClass({
     bk.client_id = SessionStore.user().id;
     ApiUtil.postBooking(bk);
     BookingActions.clearBooking();
-    this.history.push("/dashboard");
+    // debugger;
+    this.props.history.push("/dashboard");
   },
 
   render: function () {
@@ -68,7 +67,7 @@ module.exports = React.createClass({
       var taskerName = this.state.availableTask.fname + " " + this.state.availableTask.lname.slice(0,1) + ".";
 
 
-      var header = 
+      var header =
         <div className="confirmation-header-strip">
           <h2>
             {this.state.availableTask.task_name}
@@ -78,13 +77,13 @@ module.exports = React.createClass({
           </span>
         </div>;
 
-      var dateInfos = (
+      var dateInfos =
         <div className="confirmation-col">
           <label>Date & Time</label>
           <div className="confirmation-section-value">
             {dateInfo}
           </div>
-        </div>);
+        </div>;
 
       var avatar = <div className="loader white"/>;
       var t = this.state.availableTask;
@@ -120,8 +119,8 @@ module.exports = React.createClass({
       );
       // BookingStore.current().address
       // BookingStore.current().description
-      content = (
-        <div className="confirmation-container">
+      content =
+        <article className="confirmation-container">
           <div className="confirmation-panel shadow">
             {header}
             <div className="confirmation-section">
@@ -138,8 +137,8 @@ module.exports = React.createClass({
               </div>
             </section>
           </div>
-      </div>
-    );
+      </article>
+    ;
 
       return content;
     }
