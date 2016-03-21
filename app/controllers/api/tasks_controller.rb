@@ -6,7 +6,7 @@ class Api::TasksController < ApplicationController
 
   def search
     if params[:query].present?
-      @tasks = Task.where("name ~ ?", "^#{params[:query].capitalize}")
+      @tasks = Task.where("name ~ ?", "^#{params[:query].capitalize}|#{params[:query]}")
     else
       @tasks = Task.none
     end
