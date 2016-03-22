@@ -35,23 +35,22 @@ module.exports = React.createClass({
       var style = (tasker !== undefined) ? {backgroundImage: 'url('+tasker.img_url_sm+')'} : {};
       var child = <div>Nothing to see here</div>;
       var im = "I'm";
-        var content = (
-          <div className="profile-main-container">
-            <div className="profile-banner">
-              <div className="profile-banner-content">
-                <div className="tasker-img-circ" style={style}></div>
-                <h2 className="profile-title"><strong>Hello, </strong>{im} {this.state.tasker.fname}  {this.state.tasker.lname.slice(0,1)}.</h2>
-              </div>
-            </div>
-            {this.props.children}
-          </div>
-        );
 
-      return (
-        <div>
-          {content}
-        </div>
-      );
+
+      return <div className="profile-main-container">
+              <section className="profile-banner">
+                <div className="profile-banner-content">
+                  <div className="tasker-img-circ" style={style}></div>
+                  <h2 className="profile-title"><strong>Hello, </strong>{im} {this.state.tasker.fname}  {this.state.tasker.lname.slice(0,1)}.</h2>
+                  <div className="stats-gutter">
+                    <div className="stats-figure">
+                      {Math.round(this.state.tasker.review_avg)}% positive rating
+                    </div>
+                  </div>
+                </div>
+              </section>
+              {this.props.children}
+            </div>;
     } else {
       return <div className="loader">Loading...</div>;
     }

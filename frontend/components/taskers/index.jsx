@@ -11,15 +11,13 @@ module.exports = React.createClass({
           <TaskerIndexItem
           key={index}
           tasker={tasker}
-          taskId={this.props.taskId} />);
+          taskId={this.props.taskId} onTaskerChoose={this.props.onTaskerChoose} />);
       }.bind(this)
     );
-    return (
-      <div className="tasker-index">
-        <ul>
-          {content}
-        </ul>
-      </div>
-    );
+    return <div className="tasker-index">
+            <ul>
+              {content}
+            </ul>
+          </div>;
   }
 });

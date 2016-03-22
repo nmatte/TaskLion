@@ -75,6 +75,18 @@ module.exports = React.createClass({
     TaskApiUtil.fetchTask(nextProps.params.task_id);
   },
 
+  _onTaskerChoose: function (taskerId, avTaskId) {
+    BookingActions.updateBooking({
+      tasker_id: taskerId,
+      available_task_id: avTaskId
+    });
+
+    this.props.history.push({
+      pathname: "book/" + taskerId + "/confirm",
+      query: {available_task_id: avTaskId}
+    });
+  },
+
   render: function () {
     var bookingContainerClass =
       this.state.dateContainerAtTop
@@ -104,7 +116,7 @@ module.exports = React.createClass({
                     />
                 </div>
               </div>
-              <TaskerIndex taskers={this.state.taskers} taskId={this.props.params.task_id}/>
+              <TaskerIndex taskers={this.state.taskers} taskId={this.props.params.task_id} onTaskerChoose={this._onTaskerChoose}/>
             </div>
           </div>;
   }
