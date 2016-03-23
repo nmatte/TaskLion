@@ -46,6 +46,12 @@ module.exports = React.createClass({
                     <div className="stats-figure">
                       {Math.round(this.state.tasker.review_avg)}% positive rating
                     </div>
+                    <div className="stats-figure">
+                      I've done <strong>
+                      {this.state.tasker.reviews.length} tasks.
+                    </strong>
+
+                    </div>
                   </div>
                 </div>
               </section>

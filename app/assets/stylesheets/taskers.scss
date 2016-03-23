@@ -1,15 +1,23 @@
 .stats-gutter {
   margin: auto;
+  margin-top: 32px;
   color: white;
-  display: inline-block;
-  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  // width: 200px;
 }
 
 .stats-figure {
   width: auto;
   display: inline-block;
-  border-right: 1px solid white;
   padding: 0px 28px;
+}
+
+.stats-figure:not(:last-child) {
+  border-right: 1px solid white;
+
 }
 
 .tasker-index-item {

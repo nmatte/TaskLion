@@ -1,8 +1,6 @@
 # TaskLion
 
-[Heroku link](http://tasklion.tech)
-
-[heroku](http://www.herokuapp.com)
+[Live demo](http://tasklion.tech)
 
 ## Minimum Viable Product
 
